@@ -7,6 +7,8 @@ module.exports = {
     extend: {
       fontFamily: {
         base : ['LabilGrotesk-Medium', 'sans-serif'],
+        baseRegular : ['LabilGrotesk-Regular', 'sans-serif'],
+        baskerville : ['Baskerville', 'sans-serif'],
       },
     },
   },
