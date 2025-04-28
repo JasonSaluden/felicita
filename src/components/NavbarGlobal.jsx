@@ -39,7 +39,7 @@ function Navbar() {
       <nav className="sticky top-8 z-50 w-full bg-[#FFF7CC] font-baseRegular shadow-lg rounded-lg py-2 px-4">
         <ul className="flex flex-wrap justify-center gap-6 text-sm tracking-wide py-2">
           {/* Accueil */}
-          <li className="relative group flex items-center">
+          <li className="relative group flex items-center ">
             <Link
               to="/"
               className="flex items-center justify-center h-10 hover:underline"
