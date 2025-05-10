@@ -57,7 +57,7 @@ function Navbar() {
             />
           </li>
 
-          {/* Infos Pratiques */}
+          {/* Infos Pratiques
           <li className="relative group flex items-center">
             <a
               href="#"
@@ -85,13 +85,13 @@ function Navbar() {
           </li>
 
           {/* Picto */}
-          <li className="flex items-center justify-center">
+          {/* <li className="flex items-center justify-center">
             <img
               src="/assets/picto3.png"
               alt="Line Up"
               className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
             />
-          </li>
+          </li> */}
 
           {/* Restrospective
 
@@ -124,7 +124,7 @@ function Navbar() {
               </div>
             </li> */}
 
-          <li className="relative group flex items-center">
+          {/* <li className="relative group flex items-center">
             <a
               href="#"
               className="flex items-center justify-center h-10 hover:underline"
@@ -142,19 +142,19 @@ function Navbar() {
                 Edition 2022
               </a>
             </div>
-          </li>
+          </li> */}
 
           {/* Picto */}
-          <li className="flex items-center justify-center">
+          {/* <li className="flex items-center justify-center">
             <img
               src="/assets/picto3.png"
               alt="Line Up"
               className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
             />
-          </li>
+          </li> */}
 
           {/* L'Association */}
-          <li className="relative group flex items-center">
+          {/* <li className="relative group flex items-center">
             <a
               href="#"
               className="flex items-center justify-center h-10 hover:underline"
@@ -169,16 +169,16 @@ function Navbar() {
                 Nous Rejoindre
               </a>
             </div>
-          </li>
+          </li> */}
 
           {/* Picto */}
-          <li className="flex items-center justify-center">
+          {/* <li className="flex items-center justify-center">
             <img
               src="/assets/picto3.png"
               alt="Line Up"
               className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
             />
-          </li>
+          </li> */}
 
           {/* Billetterie */}
           <li className="relative group flex items-center">
@@ -191,16 +191,16 @@ function Navbar() {
           </li>
 
           {/* Picto */}
-          <li className="flex items-center justify-center">
+          {/* <li className="flex items-center justify-center">
             <img
               src="/assets/picto3.png"
               alt="Line Up"
               className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
             />
-          </li>
+          </li> */}
 
           {/* Contact */}
-          <li className="relative group flex items-center">
+          {/* <li className="relative group flex items-center">
             <a
               href="/Contact"
               className="flex items-center justify-center h-10 hover:underline"
@@ -215,7 +215,7 @@ function Navbar() {
                 FAQ
               </a>
             </div>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>
