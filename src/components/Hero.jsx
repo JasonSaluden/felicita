@@ -26,7 +26,7 @@ function Hero() {
 
   return (
     <main className="w-full bg-[#FFF8C9] overflow-hidden font-baseRegular">
-      {/* Section principale avec image de fond - Hauteur augmentée */}
+      {/* Section principale avec image de fond */}
       <div
         className="relative w-full h-[80vh] bg-cover bg-center pt-16"
         style={{
@@ -47,7 +47,7 @@ function Hero() {
                 <span className="text-yellow-300">Festival</span>
               </h1>
               <p className="text-xl lg:text-2xl mb-6 text-gray-200">
-                Cette année, laissez-vous emporter par la Cité du vent !
+                Cette année, laissez-vous emporter par la Cité du vent ! Le festival Felicità revient pour une nouvelle édition.
                 
               </p>
 
