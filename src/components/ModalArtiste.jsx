@@ -97,7 +97,7 @@ function ModalArtiste({ artist, isOpen, onClose }) {
             {/* Réseaux sociaux */}
             {artist.socialLinks && Object.keys(artist.socialLinks).length > 0 && (
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Suivre l'artiste (ne fonctionne pas)</h3>
+                <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Suivre l'artiste</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {Object.entries(artist.socialLinks).map(([platform, link]) => (
                     <a 

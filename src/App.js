@@ -8,6 +8,8 @@ import Admin from './pages/Admin'
 import Billetterie from "./pages/Billetterie";
 import Programmation from "./pages/Programmation";
 import BandeauHeader from "./components/BandeauHeader";
+import './App.css';
+
 
 function App() {
   return (

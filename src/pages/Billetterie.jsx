@@ -42,7 +42,7 @@ function Billetterie() {
           </p>
         </div>
 
-        {/* Bouton principal - Style cohérent */}
+        {/* Bouton principal */}
         <div className="text-center mb-16">
           <a
             href="https://www.helloasso.com/associations/la-felicita-festival/evenements/la-felicita-2025-la-cite-du-vent"
@@ -122,10 +122,10 @@ function Billetterie() {
             
             <div className="relative z-10 text-center">
               <div className="inline-block bg-green-200 text-green-800 px-3 py-1 rounded-full text-xs font-bold mb-3 border border-green-300">
-                EARLY BIRD 🔥
+                EARLY BIRD 
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">PASS EARLY BIRD</h3>
-              <div className="text-2xl font-bold text-gray-800 mb-3">15€</div>
+              <div className="text-4xl font-bold text-gray-800 mb-3">15€</div>
               <div className="text-xs text-gray-600 leading-relaxed">
                 Places à tarif réduit pour les premières personnes motivées !
               </div>
@@ -149,10 +149,10 @@ function Billetterie() {
             
             <div className="relative z-10 text-center">
               <div className="inline-block bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-xs font-bold mb-3 border border-blue-300">
-                TARIF RÉDUIT 💙
+                TARIF RÉDUIT 
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">PASS DOUX</h3>
-              <div className="text-2xl font-bold text-gray-800 mb-3">15€</div>
+              <div className="text-4xl font-bold text-gray-800 mb-3">15€</div>
               <div className="text-xs text-gray-600 leading-relaxed">
                 Étudiants, demandeurs d'emploi, bénéficiaires RSA & allocation handicapé
               </div>
@@ -176,10 +176,10 @@ function Billetterie() {
             
             <div className="relative z-10 text-center">
               <div className="inline-block bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-xs font-bold mb-3 border border-orange-300">
-                TARIF NORMAL ⭐
+                TARIF NORMAL 
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">PASS JUSTE</h3>
-              <div className="text-2xl font-bold text-gray-800 mb-3">20€</div>
+              <div className="text-4xl font-bold text-gray-800 mb-3">20€</div>
               <div className="text-xs text-gray-600 leading-relaxed">
                 Tarif pour permettre à l'équipe de faire perdurer le festival
               </div>
@@ -203,10 +203,10 @@ function Billetterie() {
             
             <div className="relative z-10 text-center">
               <div className="inline-block bg-purple-200 text-purple-800 px-3 py-1 rounded-full text-xs font-bold mb-3 border border-purple-300">
-                SOUTIEN 💜
+                SOUTIEN 
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">PASS SOUTIEN</h3>
-              <div className="text-2xl font-bold text-gray-800 mb-3">25€+</div>
+              <div className="text-4xl font-bold text-gray-800 mb-3">25€+</div>
               <div className="text-xs text-gray-600 leading-relaxed">
                 Pour les festivaliers qui veulent soutenir l'association
               </div>
@@ -230,10 +230,10 @@ function Billetterie() {
             
             <div className="relative z-10 text-center">
               <div className="inline-block bg-yellow-200 text-yellow-800 px-3 py-1 rounded-full text-xs font-bold mb-3 border border-yellow-300">
-                -18 ANS 🌱
+                -18 ANS 
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">JEUNE POUSSE</h3>
-              <div className="text-2xl font-bold text-gray-800 mb-3">Prix libre</div>
+              <div className="text-4xl font-bold text-gray-800 mb-3">Prix libre</div>
               <div className="text-xs text-gray-600 leading-relaxed">
                 Pour les -18 ans sur justificatif
               </div>
@@ -257,10 +257,10 @@ function Billetterie() {
             
             <div className="relative z-10 text-center">
               <div className="inline-block bg-pink-200 text-pink-800 px-3 py-1 rounded-full text-xs font-bold mb-3 border border-pink-300">
-                BÉNÉVOLE 🤝
+                BÉNÉVOLE 
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">PASS BÉNÉVOLE</h3>
-              <div className="text-2xl font-bold text-gray-800 mb-3">Gratuit</div>
+              <div className="text-4xl font-bold text-gray-800 mb-3">Gratuit</div>
               <div className="text-xs text-gray-600 leading-relaxed">
                 Deviens bénévole pour La Felicità !
               </div>

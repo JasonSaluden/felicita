@@ -37,7 +37,6 @@ const useArtistsData = () => {
     artists, 
     loading, 
     error,
-    // Fonctions utiles que le hook ajoute
     getArtistById: (id) => artists.find(artist => artist.id === id),
     getArtistsByGenre: (genre) => artists.filter(artist => artist.genre === genre),
     refreshArtists: () => {

@@ -48,7 +48,6 @@ function Hero() {
               </h1>
               <p className="text-xl lg:text-2xl mb-6 text-gray-200">
                 Cette année, laissez-vous emporter par la Cité du vent ! Le festival Felicità revient pour une nouvelle édition.
-                
               </p>
 
               {/* Date et lieu */}
