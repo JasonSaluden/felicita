@@ -26,3 +26,13 @@ code {
 .logoAccueil{
   width: 12%;
 }
+
+:root{
+  --ff-bg1:#A3D7E9;
+  --ff-bg2:#5C6BC0;
+  --ff-text:#EAF8FF;
+  --ff-navy:#0E1A40;
+  --ff-mint:#DEFCF0;
+  --ff-accent:#73C7E3;
+  --ff-border:#EAF8FF;
+}

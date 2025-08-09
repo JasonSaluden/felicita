@@ -145,7 +145,7 @@ function LineUp() {
                 <div className="flex items-center justify-center space-x-2">
                   <span className="text-sm text-gray-600">En partenariat avec</span>
                   <img
-                    src="./assets/SUN-LOGO-JAUNE.png"
+                    src="./assets/partners/SUN-LOGO-JAUNE.png"
                     alt="Logo SUN"
                     className="hover:scale-110 transition-transform duration-300"
                     style={{ width: '6rem', height: '6rem' }}
