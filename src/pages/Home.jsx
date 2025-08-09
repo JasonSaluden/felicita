@@ -9,8 +9,6 @@ function Home() {
     <div>
       <Hero />
       <LineUp />
-      {/* <About /> */}
-      {/* <PracticalInfo /> */}
       <Footer />
     </div>
   );
