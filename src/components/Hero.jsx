@@ -3,21 +3,14 @@ import { useState, useEffect } from "react";
 function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Fermer avec Escape
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setIsModalOpen(false);
-      }
-    };
-
+    const handleKeyDown = (e) => { if (e.key === "Escape") setIsModalOpen(false); };
     if (isModalOpen) {
       document.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
     }
-
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "unset";
@@ -28,10 +21,8 @@ function Hero() {
     <main className="w-full bg-[#FFF8C9] overflow-hidden font-baseRegular">
       {/* Section principale avec image de fond */}
       <div
-        className="relative w-full h-[80vh] bg-cover bg-center pt-16"
-        style={{
-          backgroundImage: "url('/assets/coesamuseIMGM7449.JPG')",
-        }}
+        className="relative w-full h-[80vh] bg-cover bg-center pt-16 pb-28"
+        style={{ backgroundImage: "url('/assets/coesamuseIMGM7449.JPG')" }}
       >
         {/* Overlay pour la lisibilité */}
         <div className="absolute inset-0 bg-black/30"></div>
@@ -47,7 +38,7 @@ function Hero() {
                 <span className="text-yellow-300">Festival</span>
               </h1>
               <p className="text-xl lg:text-2xl mb-6 text-gray-200">
-                Cette année, laissez-vous emporter par la Cité du vent ! Le festival Felicità revient pour une nouvelle édition.
+                La Felicità, le festival angevin qui célèbre la fin de l'été en musique, est de retour pour sa 6ème édition
               </p>
 
               {/* Date et lieu */}
@@ -58,7 +49,7 @@ function Hero() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="text-yellow-300">📍</span>
-                  <span class="bg-white-300 px-2 py-1 rounded">Brissac-Quincé - 49320</span>
+                  <span className="bg-white-300 px-2 py-1 rounded">Brissac-Quincé - 49320</span>
                 </div>
               </div>
             </div>
@@ -79,6 +70,49 @@ function Hero() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* 🫧 Bulle d'annonce comme pont vers LineUp */}
+      <div className="relative -mt-20 z-30 flex justify-center px-4 pb-16">
+        <div className="max-w-4xl w-full">
+          {/* Bulle principale avec effet de transition */}
+          <div className="relative rounded-3xl px-8 py-6 shadow-2xl
+                          bg-gradient-to-br from-white/95 via-white/90 to-[#FFF8C9]/80 
+                          backdrop-blur-lg border border-white/50
+                          transform hover:scale-105 transition-all duration-500">
+            
+            {/* Contenu de la bulle */}
+            <div className="text-center">
+              <p className="text-lg md:text-xl text-gray-800 mb-4 leading-relaxed">
+                Découvrez une programmation unique avec des artistes émergeant et locaux,
+                des installations lumineuses et sonores immersives, ainsi que des ateliers
+                créatifs pour tous les âges.
+              </p>
+              
+              {/* Petit séparateur avec flèche vers le bas */}
+              {/* <div className="flex items-center justify-center space-x-4 mt-6">
+                <div className="h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent flex-1"></div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-purple-600 font-semibold text-sm tracking-wide">PROGRAMMATION</span>
+                  <svg className="w-4 h-4 text-purple-600 animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div className="h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent flex-1"></div>
+              </div> */}
+            </div>
+
+            {/* Éléments décoratifs flottants */}
+            <div className="absolute -top-3 -left-3 w-6 h-6 bg-yellow-400 rounded-full opacity-80 animate-pulse"></div>
+            <div className="absolute -top-2 -right-4 w-4 h-4 bg-pink-400 rounded-full opacity-70 animate-pulse delay-300"></div>
+            <div className="absolute -bottom-2 left-8 w-5 h-5 bg-purple-400 rounded-full opacity-60 animate-pulse delay-500"></div>
+          </div>
+
+          {/* Ligne de connexion subtile qui s'étend vers la section suivante */}
+          {/* <div className="flex justify-center mt-8">
+            <div className="w-1 h-12 bg-gradient-to-b from-purple-300 via-purple-200 to-transparent opacity-60"></div>
+          </div> */}
         </div>
       </div>
 
@@ -109,15 +143,12 @@ function Hero() {
           onClick={() => setIsModalOpen(false)}
         >
           <div className="relative max-w-4xl max-h-full">
-            {/* Bouton fermer */}
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute -top-10 right-0 text-white hover:text-yellow-300 text-2xl font-bold"
             >
               ✕ Fermer
             </button>
-
-            {/* Image */}
             <img
               src="./assets/Affiche_Felicita_Festival_2025.jpg"
               alt="Affiche Felicità Festival 2025"
