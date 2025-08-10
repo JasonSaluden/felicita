@@ -38,8 +38,6 @@ function Navbar() {
       {/* NAVBAR */}
       <nav className="sticky top-7 z-50 w-full bg-[#FFF7CC] font-baseRegular shadow-lg rounded-lg py-2 px-4">
         <ul className="flex flex-wrap justify-center gap-6 text-sm tracking-wide py-2">
-
-
           {/* Accueil */}
           <li className="relative group flex items-center ">
             <Link
@@ -59,16 +57,15 @@ function Navbar() {
             />
           </li>
 
-
           {/* Infos Pratiques */}
-          {/* <li className="relative group flex items-center">
+          <li className="relative group flex items-center">
             <a
-              href="#"
+              href="/infospratiques"
               className="flex items-center justify-center h-10 hover:underline"
             >
               Infos Pratiques
             </a>
-            <div className="submenu absolute left-0 top-full mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col bg-white text-black shadow-lg rounded z-10">
+            {/* <div className="submenu absolute left-0 top-full mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col bg-white text-black shadow-lg rounded z-10">
               <a
                 href="/Articles"
                 className="block px-4 py-2 text-sm hover:bg-gray-100"
@@ -90,17 +87,17 @@ function Navbar() {
               <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
                 Banque
               </a>
-            </div>
-          </li> */}
+            </div> */}
+          </li>
 
           {/* Picto */}
-          {/* <li className="flex items-center justify-center">
+          <li className="flex items-center justify-center">
             <img
               src="/assets/Elmts/picto3.png"
               alt="Line Up"
               className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
             />
-          </li> */}
+          </li>
 
           {/* Restrospective */}
 
@@ -124,7 +121,7 @@ function Navbar() {
             </div>
           </li> */}
 
-          {/* Infos Pratiques */}
+          {/* Programmation */}
           <li className="relative group flex items-center">
             <a
               href="/programmation"
@@ -211,31 +208,31 @@ function Navbar() {
           </li>
 
           {/* Picto */}
-          {/* <li className="flex items-center justify-center">
+          <li className="flex items-center justify-center">
             <img
               src="/assets/Elmts/picto3.png"
               alt="Line Up"
               className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
             />
-          </li> */}
+          </li>
 
           {/* Contact */}
-          {/* <li className="relative group flex items-center">
+          <li className="relative group flex items-center">
             <a
               href="/Contact"
               className="flex items-center justify-center h-10 hover:underline"
             >
               Contact
             </a>
-            <div className="submenu absolute left-0 top-full mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col bg-white text-black shadow-lg rounded z-10">
+            {/* <div className="submenu absolute left-0 top-full mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col bg-white text-black shadow-lg rounded z-10">
               <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
                 Nous Contacter
               </a>
               <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
                 FAQ
               </a>
-            </div>
-          </li> */}
+            </div> */}
+          </li>
         </ul>
       </nav>
     </>

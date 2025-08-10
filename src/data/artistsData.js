@@ -18,6 +18,7 @@ export const artistsData = [
       id: "9BOpOF3XCbI"
     }
   },
+
   {
     id: 2,
     name: "Créature",
@@ -31,7 +32,12 @@ export const artistsData = [
       instagram: "https://www.instagram.com/creature.michelle.tv?igsh=dXlweGVpbnJkN2t3",
       LinkTree: "https://linktr.ee/michelle.lesgarcons?utm_source=linktree_profile_share&ltsid=a1fab370-4a4a-43b9-b52f-ae649298fc21&fbclid=PAZXh0bgNhZW0CMTEAAac0qT4vmu01KucR3CuZ9Yq159EUj03Vwzepi5a2Q5JRF3jM9qx7ZNl8efGYWg_aem_QsddBeffsb2hjTi-c8bHZg",
     },
+    video: {
+      type: "youtube",
+      id: "DUi0xiow7sI",
+    },
   },
+
   {
     id: 3,
     name: "Amartia Mou",
@@ -42,7 +48,7 @@ export const artistsData = [
     genre: "Laïko Grec",
     time: "",
     socialLinks: {
-      instagram: "@neondreams80s",
+      // instagram: "@neondreams80s",
       youtube: "https://www.youtube.com/@Amartia_Mou",
     },
     video: {
@@ -65,14 +71,12 @@ export const artistsData = [
     // Structure corrigée pour les vidéos locales multiples
     videos: [
       {
-        type: "local",
-        src: "/assets/videos/EERLOW.mov",
-        title: "EERLOW"
+        type: "youtube",
+        id: "5jv4OFIjvX0?",
       },
       {
-        type: "local", 
-        src: "/assets/videos/GUIBY.MOV",
-        title: "GUIBY"
+        type: "youtube",
+        id: "YRSok757jok"
       }
     ]
   },
@@ -87,7 +91,7 @@ export const artistsData = [
     time: "",
     socialLinks: {
       instagram: "https://instagram.com/nerlov.nerlov",
-      facebook: "https://facebook.com/nerlovamish",
+      LinkTree: "https://linktr.ee/nerlov",
     },
     video: {
       type: "youtube",
@@ -96,7 +100,7 @@ export const artistsData = [
   },
   {
     id: 6,
-    name: "Marianne",
+    name: "Marianne Perrudin",
     image: "/assets/artistes/Marianne_Slide_1.png",
     image2: "/assets/artistes/Marianne_Slide_2.png",
     description:
@@ -107,7 +111,13 @@ export const artistsData = [
       instagram: "https://www.instagram.com/marianneperrudin/",
       LinkTree: "https://linktr.ee/marianneperrudin?fbclid=PAZXh0bgNhZW0CMTEAAaeUg5nJqkSbSCrGnoH1wL7rqByW8VBvbfmsyJ95JtqmYxo9gCBDpkje0we9wg_aem_IUc3kQ-tKyMNsqGqwsE8og",
     },
+    video: {
+      type: "youtube",
+      id: "w12YGDnFV7k",
+    },
   },
+
+
   {
     id: 7,
     name: "Big Alice",
