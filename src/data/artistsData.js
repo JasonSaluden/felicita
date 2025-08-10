@@ -13,10 +13,10 @@ export const artistsData = [
       instagram: "https://instagram.com/spoinkmusic",
       site: "https://spoinkmusic.fr/",
     },
-      video: {
-        type: "youtube",
-        id: "9BOpOF3XCbI"
-      }
+    video: {
+      type: "youtube",
+      id: "9BOpOF3XCbI"
+    }
   },
   {
     id: 2,
@@ -50,19 +50,31 @@ export const artistsData = [
       id: "3tpOQ741gWM",
     },
   },
-
   {
     id: 4,
     name: "Guiby BZB Eerlow",
     image: "/assets/artistes/Guiby_Bzb_Eerlow_Slide_1.png",
     image2: "/assets/artistes/Guiby_Bzb_Eerlow_Slide_2.png",
-    description: "",
-    genre: "Techno qui Groove un max",
+    description: "Techno brute et vibrations électroniques \n Résidents du crew Sincity, Eerlow et Guiby fusionnent \n leurs univers pour un B2B intense, entre hardgroove, acid, \ntextures industrielles et élévation rythmique. \n L'un façonne une techno brute et immersive, \n l'autre insuffle une vibration introspective et singulière. \n Ensemble, ils créent un set puissant et libérateur, taillé \n pour le lâcher-prise et la communion sonore.",
+    genre: "TECHNO BRUTE, IMMERSIVE ET VIVANTE",
     time: "",
     socialLinks: {
-      instagram: "@chaoscontrol_music",
-      youtube: "https://youtube.com/chaoscontrol",
+      instagram1: "https://instagram.com/robichonguillaume",
+      instagram2: "https://instagram.com/remiierlo",
     },
+    // Structure corrigée pour les vidéos locales multiples
+    videos: [
+      {
+        type: "local",
+        src: "/assets/videos/EERLOW.mov",
+        title: "EERLOW"
+      },
+      {
+        type: "local", 
+        src: "/assets/videos/GUIBY.MOV",
+        title: "GUIBY"
+      }
+    ]
   },
   {
     id: 5,
