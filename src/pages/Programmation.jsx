@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function Programmation() {
   const { artists, loading, error } = useArtistsData();
-  
+
   // État pour la modal
   const [selectedArtist, setSelectedArtist] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -70,10 +70,12 @@ function Programmation() {
                 className="h-6 w-6 object-contain opacity-80"
               />
             </div>
-            
+
             {/* Sous-titre avec cadre */}
             <div className="inline-block bg-white/60 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm">
-              <p className="text-xl text-gray-700 font-medium">Samedi 30 Août 2025</p>
+              <p className="text-xl text-gray-700 font-medium">
+                Samedi 30 Août 2025
+              </p>
             </div>
           </div>
         </div>
@@ -83,18 +85,19 @@ function Programmation() {
       <div className="max-w-7xl mx-auto px-6 pb-16">
         {/* Grille des artistes */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-12 lg:gap-16 mb-16">
-          {artists.map((artist) => (
-            <div 
-              key={artist.id} 
-              onClick={() => openModal(artist)}
-              className="cursor-pointer transform transition-transform duration-200 hover:scale-[1.02]"
-            >
-              <ArtistCardSimple artist={artist} />
-            </div>
-          ))}
+          {artists
+            .slice() // pour éviter de muter l’original
+            .sort((a, b) => a.id - b.id)
+            .map((artist) => (
+              <div
+                key={artist.id}
+                onClick={() => openModal(artist)}
+                className="cursor-pointer transform transition-transform duration-200 hover:scale-[1.02]"
+              >
+                <ArtistCardSimple artist={artist} />
+              </div>
+            ))}
         </div>
-
-
 
         <div className="text-center">
           <a
@@ -105,33 +108,48 @@ function Programmation() {
           >
             {/* Bouton principal dans le thème des cartes */}
             <div className="bg-gradient-to-br from-blue-100 to-blue-200 hover:from-blue-150 hover:to-blue-250 border-2 border-orange-200 px-12 py-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 relative overflow-hidden">
-              
               {/* Éléments décoratifs aux coins comme sur les cartes */}
               <div className="absolute top-3 left-3 w-6 h-6 opacity-70">
-                <img src="/assets/Elmts/picto3.png" alt="Décoration" className="w-full h-full object-contain" />
+                <img
+                  src="/assets/Elmts/picto3.png"
+                  alt="Décoration"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="absolute top-3 right-3 w-6 h-6 opacity-70">
-                <img src="/assets/Elmts/picto3.png" alt="Décoration" className="w-full h-full object-contain" />
+                <img
+                  src="/assets/Elmts/picto3.png"
+                  alt="Décoration"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="absolute bottom-3 left-3 w-6 h-6 opacity-70">
-                <img src="/assets/Elmts/picto3.png" alt="Décoration" className="w-full h-full object-contain" />
+                <img
+                  src="/assets/Elmts/picto3.png"
+                  alt="Décoration"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="absolute bottom-3 right-3 w-6 h-6 opacity-70">
-                <img src="/assets/Elmts/picto3.png" alt="Décoration" className="w-full h-full object-contain" />
+                <img
+                  src="/assets/Elmts/picto3.png"
+                  alt="Décoration"
+                  className="w-full h-full object-contain"
+                />
               </div>
-              
+
               {/* Contenu du bouton */}
               <div className="relative z-10">
                 {/* Badge comme sur les cartes */}
                 <div className="inline-block bg-orange-200 text-orange-800 px-4 py-1 rounded-full text-sm font-bold mb-3 border border-orange-300">
                   BILLETTERIE EN LIGNE
                 </div>
-                
+
                 {/* Titre principal */}
                 <h3 className="text-2xl font-bold text-gray-800 mb-2 tracking-wide">
                   RÉSERVER SA PLACE
                 </h3>
-                
+
                 {/* Date répétée pour cohérence */}
                 <p className="text-lg font-medium text-gray-700 mb-3">
                   SAMEDI 30 AOÛT
@@ -143,7 +161,7 @@ function Programmation() {
       </div>
 
       {/* Modal artiste */}
-      <ModalArtiste 
+      <ModalArtiste
         artist={selectedArtist}
         isOpen={isModalOpen}
         onClose={closeModal}

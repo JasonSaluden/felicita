@@ -1,7 +1,7 @@
 // data/artistsData.js
 export const artistsData = [
   {
-    id: 1,
+    id: 2,
     name: "Spoink",
     image: "/assets/artistes/Spoink_Slide_1.png",
     image2: "/assets/artistes/Spoink_Slide_2.png",
@@ -20,7 +20,7 @@ export const artistsData = [
   },
 
   {
-    id: 2,
+    id: 3,
     name: "Créature",
     image: "/assets/artistes/Creature_Slide_1.png",
     image2: "/assets/artistes/Creature_Slide_2.png",
@@ -39,7 +39,7 @@ export const artistsData = [
   },
 
   {
-    id: 3,
+    id: 7,
     name: "Amartia Mou",
     image: "/assets/artistes/Amartia_Mou_Slide_1.png",
     image2: "/assets/artistes/Amartia_Mou_Slide_2.png",
@@ -48,7 +48,6 @@ export const artistsData = [
     genre: "Laïko Grec",
     time: "",
     socialLinks: {
-      // instagram: "@neondreams80s",
       youtube: "https://www.youtube.com/@Amartia_Mou",
     },
     video: {
@@ -57,7 +56,7 @@ export const artistsData = [
     },
   },
   {
-    id: 4,
+    id: 8,
     name: "Guiby BZB Eerlow",
     image: "/assets/artistes/Guiby_Bzb_Eerlow_Slide_1.png",
     image2: "/assets/artistes/Guiby_Bzb_Eerlow_Slide_2.png",
@@ -81,7 +80,7 @@ export const artistsData = [
     ]
   },
   {
-    id: 5,
+    id: 1,
     name: "Nerlov",
     image: "/assets/artistes/Nerlov_Slide_1.png",
     image2: "/assets/artistes/Nerlov_Slide_2.png",
@@ -119,7 +118,7 @@ export const artistsData = [
 
 
   {
-    id: 7,
+    id: 5,
     name: "Big Alice",
     image: "/assets/artistes/Big_Alice_Slide_1.png",
     image2: "/assets/artistes/Big_Alice_Slide_2.png",
@@ -133,7 +132,7 @@ export const artistsData = [
     },
   },
   {
-    id: 8,
+    id: 4,
     name: "Monika",
     image: "/assets/artistes/Monika_Slide_1.png",
     image2: "/assets/artistes/Monika_Slide_2.png",

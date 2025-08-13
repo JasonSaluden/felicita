@@ -33,7 +33,7 @@ function Hero() {
           <div className="flex-1 text-white">
             <div className="max-w-xl">
               <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
-                Felicità
+                La Felicità
                 <br />
                 <span className="text-yellow-300">Festival</span>
               </h1>

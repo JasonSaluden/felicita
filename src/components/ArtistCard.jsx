@@ -2,7 +2,7 @@ import { useState } from "react";
 import useArtistsData from "../hooks/useArtistsData"; // Import du hook externe
 
 // ========================
-// 🎴 COMPOSANT CARTE ARTISTE
+// COMPOSANT CARTE ARTISTE
 // ========================
 function ArtistCard({ artist }) {
   const [currentSlide, setCurrentSlide] = useState(0);

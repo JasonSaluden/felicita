@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {
     const onScroll = () => {
@@ -13,6 +14,44 @@ function Navbar() {
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Mettre à jour le path quand on navigue
+  useEffect(() => {
+    const updatePath = () => {
+      setCurrentPath(window.location.pathname);
+    };
+    
+    window.addEventListener("popstate", updatePath);
+    
+    return () => window.removeEventListener("popstate", updatePath);
+  }, []);
+
+  // Fonction pour vérifier si un lien est actif
+  const isActive = (path) => {
+    return currentPath === path;
+  };
+
+  // Fonction pour obtenir les classes CSS du lien
+  const getLinkClasses = (path, isButton = false) => {
+    const baseClasses = isButton 
+      ? "flex items-center justify-center bg-[#FFD7B5] text-black px-6 py-2 rounded-full text-sm hover:bg-[#ffc399] transition h-10"
+      : "flex items-center justify-center h-10 hover:underline transition-all";
+    
+    if (isActive(path)) {
+      return isButton
+        ? `${baseClasses} ring-2 ring-orange-400`
+        : `${baseClasses} underline font-bold text-orange-600`;
+    }
+    
+    return baseClasses;
+  };
+
+  // Fonction pour gérer le clic sur un lien
+  const handleLinkClick = () => {
+    setTimeout(() => {
+      setCurrentPath(window.location.pathname);
+    }, 100);
+  };
 
   return (
     <>
@@ -39,10 +78,11 @@ function Navbar() {
       <nav className="sticky top-7 z-50 w-full bg-[#FFF7CC] font-baseRegular shadow-lg rounded-lg py-2 px-4">
         <ul className="flex flex-wrap justify-center gap-6 text-sm tracking-wide py-2">
           {/* Accueil */}
-          <li className="relative group flex items-center ">
+          <li className="relative group flex items-center">
             <Link
               to="/"
-              className="flex items-center justify-center h-10 hover:underline"
+              className={getLinkClasses("/")}
+              onClick={handleLinkClick}
             >
               Accueil
             </Link>
@@ -59,35 +99,13 @@ function Navbar() {
 
           {/* Infos Pratiques */}
           <li className="relative group flex items-center">
-            <a
-              href="/infospratiques"
-              className="flex items-center justify-center h-10 hover:underline"
+            <Link
+              to="/infospratiques"
+              className={getLinkClasses("/infospratiques")}
+              onClick={handleLinkClick}
             >
               Infos Pratiques
-            </a>
-            {/* <div className="submenu absolute left-0 top-full mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col bg-white text-black shadow-lg rounded z-10">
-              <a
-                href="/Articles"
-                className="block px-4 py-2 text-sm hover:bg-gray-100"
-              >
-                Dernières news
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Venir à la Felicita
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Boire et manger
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Camping
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Prévention
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Banque
-              </a>
-            </div> */}
+            </Link>
           </li>
 
           {/* Picto */}
@@ -98,37 +116,16 @@ function Navbar() {
               className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
             />
           </li>
-
-          {/* Restrospective */}
-
-          {/* <li className="relative group flex items-center">
-            <a
-              href="#"
-              className="flex items-center justify-center h-10 hover:underline"
-            >
-              Rétrospective
-            </a>
-            <div className="submenu absolute left-0 top-full mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col bg-white text-black shadow-lg rounded z-10">
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Edition 2024
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Edition 2023
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Edition 2022
-              </a>
-            </div>
-          </li> */}
 
           {/* Programmation */}
           <li className="relative group flex items-center">
-            <a
-              href="/programmation"
-              className="flex items-center justify-center h-10 hover:underline"
+            <Link
+              to="/programmation"
+              className={getLinkClasses("/programmation")}
+              onClick={handleLinkClick}
             >
               Programmation
-            </a>
+            </Link>
           </li>
 
           {/* Picto */}
@@ -140,71 +137,15 @@ function Navbar() {
             />
           </li>
 
-          {/* <li className="relative group flex items-center">
-            <a
-              href="#"
-              className="flex items-center justify-center h-10 hover:underline"
-            >
-              Le Festival
-            </a>
-            <div className="submenu absolute left-0 top-full mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col bg-white text-black shadow-lg rounded z-10">
-              <a
-                href="#"
-                className="block px-4 py-2 text-sm hover:bg-gray-100"
-              ></a>
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Edition 2023
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Edition 2022
-              </a>
-            </div>
-          </li> */}
-
-          {/* Picto */}
-          {/* <li className="flex items-center justify-center">
-            <img
-              src="/assets/Elmts/picto3.png"
-              alt="Line Up"
-              className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
-            />
-          </li> */}
-
-          {/* L'Association */}
-          {/* <li className="relative group flex items-center">
-            <a
-              href="#"
-              className="flex items-center justify-center h-10 hover:underline"
-            >
-              L'association
-            </a>
-            <div className="submenu absolute left-0 top-full mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col bg-white text-black shadow-lg rounded z-10">
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Notre Histoire
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Nous Rejoindre
-              </a>
-            </div>
-          </li> */}
-
-          {/* Picto */}
-          {/* <li className="flex items-center justify-center">
-            <img
-              src="/assets/Elmts/picto3.png"
-              alt="Line Up"
-              className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
-            />
-          </li> */}
-
           {/* Billetterie */}
           <li className="relative group flex items-center">
-            <a
-              href="/billetterie"
-              className="flex items-center justify-center bg-[#FFD7B5] text-black px-6 py-2 rounded-full text-sm hover:bg-[#ffc399] transition h-10"
+            <Link
+              to="/billetterie"
+              className={getLinkClasses("/billetterie", true)}
+              onClick={handleLinkClick}
             >
               Billetterie
-            </a>
+            </Link>
           </li>
 
           {/* Picto */}
@@ -218,20 +159,13 @@ function Navbar() {
 
           {/* Contact */}
           <li className="relative group flex items-center">
-            <a
-              href="/Contact"
-              className="flex items-center justify-center h-10 hover:underline"
+            <Link
+              to="/contact"
+              className={getLinkClasses("/contact")}
+              onClick={handleLinkClick}
             >
               Contact
-            </a>
-            {/* <div className="submenu absolute left-0 top-full mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col bg-white text-black shadow-lg rounded z-10">
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                Nous Contacter
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">
-                FAQ
-              </a>
-            </div> */}
+            </Link>
           </li>
         </ul>
       </nav>

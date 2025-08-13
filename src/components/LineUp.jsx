@@ -37,7 +37,7 @@ function LineUp() {
   }
 
   const selectedArtists = artists.filter((artist) =>
-    ["Nerlov", "Spoink", "Big Alice"].includes(artist.name)
+    ["Nerlov", "Spoink", "Créature"].includes(artist.name)
   );
 
   return (

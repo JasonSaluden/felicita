@@ -9,31 +9,32 @@ function Billetterie() {
         backgroundImage: "url('/assets/0070 coesamuse_ Chloé André.jpg')",
       }}
     >
-      {/* Overlay pour améliorer la lisibilité */}
       <div className="absolute inset-0 bg-black/20"></div>
 
-      {/* Contenu principal */}
-      <div className="relative z-10 max-w-5xl w-full">
-        {/* Header avec titre et pictos */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center space-x-6 mb-6">
-            <img
-              src="/assets/Elmts/picto3.png"
-              alt="Picto"
-              className="h-8 w-8 object-contain opacity-80"
-            />
-            <h1 className="text-4xl lg:text-5xl font-bold text-white uppercase tracking-wider">
-              Billetterie
-            </h1>
-            <img
-              src="/assets/Elmts/picto3.png"
-              alt="Picto"
-              className="h-8 w-8 object-contain opacity-80"
-            />
-          </div>
+{/* Contenu principal */}
+<div className="relative z-10 max-w-5xl w-full">
+  {/* Header avec titre et pictos - AMÉLIORÉ */}
+  <div className="text-center mb-12">
+    {/* Container avec fond pour améliorer la visibilité */}
+    <div className="bg-white/80 backdrop-blur-md border-2 border-white/50 p-8 rounded-3xl shadow-xl mb-8 inline-block">
+      <div className="flex items-center justify-center space-x-6 mb-4">
+        <img
+          src="/assets/Elmts/picto3.png"
+          alt="Picto"
+          className="h-8 w-8 object-contain opacity-90"
+        />
+        <h1 className="text-4xl lg:text-6xl font-bold text-gray-800 uppercase tracking-wider drop-shadow-lg">
+          Billetterie
+        </h1>
+        <img
+          src="/assets/Elmts/picto3.png"
+          alt="Picto"
+          className="h-8 w-8 object-contain opacity-90"
+        />
+      </div>
 
           {/* Sous-titre avec cadre */}
-          <div className="inline-block bg-white/80 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm mb-4">
+          <div className="inline-block bg-gradient-to-r from-blue-100 to-azur-100 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm mb-4">
             <p className="text-xl text-gray-800 font-medium">
               Samedi 30 Août 2025
             </p>
@@ -432,6 +433,7 @@ function Billetterie() {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </main>
   );
