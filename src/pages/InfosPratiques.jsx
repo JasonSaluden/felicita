@@ -235,10 +235,10 @@ function InfosPratiques() {
                   <div className="mb-8">
                     <Carousel
                       images={[
-                        { src: "/assets/Restau/9453 coesamuse_ Chloé André.jpg", caption: "Photo : Coesamuse"},
-                        {src: "/assets/Restau/9563 coesamuse_ Chloé André.jpg", caption: "Photo : Coesamuse"},
-                        {src: "/assets/Restau/coesamuseIMGM8262.JPG", caption: "Photo : Coesamuse"},
-                        {src: "/assets/Restau/coesamuseIMGM7422.JPG", caption: "Photo : Coesamuse"}
+                        { src: "/assets/Restau/9453 coesamuse_ Chloé André.jpg", caption: "Photo : @coesamuse_"},
+                        {src: "/assets/Restau/9563 coesamuse_ Chloé André.jpg", caption: "Photo : @coesamuse_"},
+                        {src: "/assets/Restau/coesamuseIMGM8262.JPG", caption: "Photo : @coesamuse_"},
+                        {src: "/assets/Restau/coesamuseIMGM7422.JPG", caption: "Photo : @coesamuse_"}
                       ]}
                       ariaLabel="Carrousel restauration (éditions précédentes)"
                     />
@@ -408,8 +408,8 @@ function InfosPratiques() {
                   <div className="mb-8">
                     <Carousel
                       images={[
-                        { src: "/assets/Camping/coesamuseIMGM8311.JPG", caption: "Photo : Coesamuse"},
-                        { src: "/assets/Camping/9414 coesamuse_ Chloé André.jpg", caption: "Photo : Coesamuse"}
+                        { src: "/assets/Camping/coesamuseIMGM8311.JPG", caption: "Photo : @coesamuse_"},
+                        { src: "/assets/Camping/9414 coesamuse_ Chloé André.jpg", caption: "Photo : @coesamuse_"}
                       ]}
                       ariaLabel="Carrousel restauration (éditions précédentes)"
                     />
