@@ -402,29 +402,16 @@ function InfosPratiques() {
                     />
                   </div>
                   <p className="text-center text-sm text-gray-600 mt-2 italic">
-                    Préparez-vous pour un festival inoubliable ! 🎒
-                  </p>
+                  Souvenir des éditions précédentes 😋
+
+</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {/* À manger */}
                   <div className="bg-white/70 p-6 rounded-2xl border border-gray-200">
                     <div className="text-center mb-4">
-                      <div className="w-16 h-16 mx-auto mb-3 bg-yellow-100 rounded-full flex items-center justify-center">
-                        <svg
-                          className="w-8 h-8 text-yellow-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4 6h16M4 10h16M10 14h10M4 18h10"
-                          />
-                        </svg>
-                      </div>
+                      
                       <h3 className="text-xl font-bold text-gray-800 mb-2">
                         À manger
                       </h3>
@@ -433,7 +420,7 @@ function InfosPratiques() {
                     {[
                       {
                         key: "fouees",
-                        badge: "🔥 Fouées by Moulin de Sarré",
+                        badge: "🥖 Fouées by Moulin de Sarré",
                         desc: "Salées & sucrées, avec plein de choix de garniture",
                         cls: "bg-red-50 border-red-200 text-red-800",
                       },
@@ -447,7 +434,7 @@ function InfosPratiques() {
                         key: "Barquettes de falafels",
                         badge: "🧆 Falafel",
                         desc: "Boulettes de pois chiches, sauce au choix",
-                        cls: "bg-green-50 border-green-200 text-green-800",
+                        cls: "bg-lime-100 border-lime-300 text-lime-900",
                       },
                       {
                         key: "crepe-bn",
@@ -475,27 +462,7 @@ function InfosPratiques() {
                   {/* Boissons */}
                   <div className="bg-white/70 p-6 rounded-2xl border border-gray-200">
                     <div className="text-center mb-4">
-                      <div className="w-16 h-16 mx-auto mb-3 bg-purple-100 rounded-full flex items-center justify-center">
-                        <svg
-                          className="w-8 h-8 text-purple-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M7 8h10l4 9H3l4-9z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2"
-                          />
-                        </svg>
-                      </div>
+                     
                       <h3 className="text-xl font-bold text-gray-800 mb-2">
                         Boissons
                       </h3>
@@ -506,17 +473,36 @@ function InfosPratiques() {
                         <h4 className="font-medium text-amber-800 mb-1">
                           🍺 Bières de la Piautre
                         </h4>
-                        <p className="text-sm text-amber-700">
-                          Blonde et Ambrée artisanales locales
+                        <p className="text-sm text-amber-700 text-justify">
+                          Blonde et IPA artisanales locales
                         </p>
                       </div>
 
-                      <div className="bg-purple-50 p-3 rounded-xl border border-purple-200">
+                      <div className="flex bg-purple-50 p-3 rounded-xl border border-purple-200">
+                        <div className="w-1/2 pr-3 border-r border-purple-200">
+                          <h4 className="font-medium text-purple-800 mb-1">
+                            🍷 Vins de Loire
+                          </h4>
+                          <p className="text-sm text-purple-700 text-justify">
+                            Rouge, blanc et rosé de la région
+                          </p>
+                        </div>
+                        <div className="w-1/2 pl-3">
+                          <h4 className="font-medium text-purple-800 mb-1">
+                            🍷 Vins sans alcool
+                          </h4>
+                          <p className="text-sm text-purple-700 text-justify">
+                            Pinot noir, Chardonnay
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="bg-pink-100 p-3 rounded-xl border border-pink-300">
                         <h4 className="font-medium text-purple-800 mb-1">
-                          🍷 Vins de Loire
+                          🍹 Cocktails
                         </h4>
-                        <p className="text-sm text-purple-700">
-                          Rouge, Blanc et Rosé de la région
+                        <p className="text-sm text-purple-700 text-justify">
+                          Felici'Spritz, Felici'Sangria et Felici'Kir
                         </p>
                       </div>
 
@@ -524,23 +510,24 @@ function InfosPratiques() {
                         <h4 className="font-medium text-blue-800 mb-1">
                           💧 Boissons fraîches
                         </h4>
-                        <p className="text-sm text-blue-700">
+                        <p className="text-sm text-blue-700 text-justify">
                           Sodas, jus de fruits, eau...
                         </p>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="mt-6 text-center">
-                  <div className="bg-white/80 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm inline-block">
-                    <p className="text-sm text-gray-700">
-                      🌱{" "}
-                      <strong>
-                        Options végétariennes et véganes disponibles
-                      </strong>{" "}
-                      • Prix doux et locaux privilégiés
-                    </p>
+                  {/* Options végé centré */}
+                  <div className="md:col-span-2 mt-6 flex justify-center">
+                    <div className="bg-white/80 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm">
+                      <p className="text-sm text-gray-700">
+                        🌱{" "}
+                        <strong>
+                          Options végétariennes et véganes disponibles
+                        </strong>{" "}
+                        • Prix doux et locaux privilégiés
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -815,8 +802,7 @@ function InfosPratiques() {
 
                       <div className="bg-blue-50 p-3 rounded-xl border border-blue-200">
                         <p className="text-sm text-blue-800 font-medium">
-                          N'hésitez pas à passer nous voir pour toute
-                          question !
+                          N'hésitez pas à passer nous voir pour toute question !
                         </p>
                       </div>
                     </div>
@@ -836,35 +822,49 @@ function InfosPratiques() {
                           <span className="text-lg mr-3 mt-0.5">🥤</span>
                           <div>
                             <span className="font-semibold">Éco-cup</span>
-                            <p className="text-sm text-gray-600">Ramène ton gobelet réutilisable !</p>
+                            <p className="text-sm text-gray-600">
+                              Ramène ton gobelet réutilisable !
+                            </p>
                           </div>
                         </li>
                         <li className="flex items-start">
                           <span className="text-lg mr-3 mt-0.5">🔦</span>
                           <div>
-                            <span className="font-semibold">Lampe frontale</span>
-                            <p className="text-sm text-gray-600">Indispensable pour les déplacements nocturnes</p>
+                            <span className="font-semibold">
+                              Lampe frontale
+                            </span>
+                            <p className="text-sm text-gray-600">
+                              Indispensable pour les déplacements nocturnes
+                            </p>
                           </div>
                         </li>
                         <li className="flex items-start">
                           <span className="text-lg mr-3 mt-0.5">🧥</span>
                           <div>
-                            <span className="font-semibold">Vêtements chauds</span>
-                            <p className="text-sm text-gray-600">Les soirées peuvent être fraîches !</p>
+                            <span className="font-semibold">
+                              Vêtements chauds
+                            </span>
+                            <p className="text-sm text-gray-600">
+                              Les soirées peuvent être fraîches !
+                            </p>
                           </div>
                         </li>
                         <li className="flex items-start">
                           <span className="text-lg mr-3 mt-0.5">🍫</span>
                           <div>
                             <span className="font-semibold">Encas</span>
-                            <p className="text-sm text-gray-600">Petite faim entre deux concerts</p>
+                            <p className="text-sm text-gray-600">
+                              Petite faim entre deux concerts
+                            </p>
                           </div>
                         </li>
                         <li className="flex items-start">
                           <span className="text-lg mr-3 mt-0.5">💧</span>
                           <div>
                             <span className="font-semibold">Gourde</span>
-                            <p className="text-sm text-gray-600">Points d'eau potable disponibles</p>
+                            <p className="text-sm text-gray-600">
+                              Points d'eau potable disponibles
+                            </p>
                           </div>
                         </li>
                       </ul>
