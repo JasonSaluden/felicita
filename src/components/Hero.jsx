@@ -85,22 +85,10 @@ function Hero() {
             {/* Contenu de la bulle */}
             <div className="text-center">
               <p className="text-lg md:text-xl text-gray-800 mb-4 leading-relaxed">
-                Découvrez une programmation unique avec des artistes émergeant et locaux,
-                des installations lumineuses et sonores immersives, ainsi que des ateliers
-                créatifs pour tous les âges.
+              Découvrez une programmation unique avec des artistes émergent·e·s et locaux·ales, 
+              des installations lumineuses et sonores immersives, ainsi que des ateliers créatifs pour tous les âges.
               </p>
-              
-              {/* Petit séparateur avec flèche vers le bas */}
-              {/* <div className="flex items-center justify-center space-x-4 mt-6">
-                <div className="h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent flex-1"></div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-purple-600 font-semibold text-sm tracking-wide">PROGRAMMATION</span>
-                  <svg className="w-4 h-4 text-purple-600 animate-bounce" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <div className="h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent flex-1"></div>
-              </div> */}
+
             </div>
 
             {/* Éléments décoratifs flottants */}
@@ -108,11 +96,6 @@ function Hero() {
             <div className="absolute -top-2 -right-4 w-4 h-4 bg-pink-400 rounded-full opacity-70 animate-pulse delay-300"></div>
             <div className="absolute -bottom-2 left-8 w-5 h-5 bg-purple-400 rounded-full opacity-60 animate-pulse delay-500"></div>
           </div>
-
-          {/* Ligne de connexion subtile qui s'étend vers la section suivante */}
-          {/* <div className="flex justify-center mt-8">
-            <div className="w-1 h-12 bg-gradient-to-b from-purple-300 via-purple-200 to-transparent opacity-60"></div>
-          </div> */}
         </div>
       </div>
 

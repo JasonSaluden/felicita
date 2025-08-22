@@ -69,7 +69,7 @@ function LineUp() {
             <path d="m18.707 12.707-1.414-1.414L13 15.586V6h-2v9.586l-4.293-4.293-1.414 1.414L12 19.414z" />
           </svg>
           <p className="text-center font-bold text-gray-800 tracking-wide pt-4">
-            Et Bien d'autres artistes !
+            Et bien d'autres artistes !
           </p>
           <svg
             className="pt-2 animate-bounce"
@@ -152,8 +152,8 @@ function LineUp() {
                   />
                 </div>
                 <p className="text-lg text-gray-700 mb-2">
-                  Découvrez les sons qui rythmeront le festival avec cette sélection spéciale
-                  des artistes de la Felicità Festival 2025.
+                  Découvrez les sons qui rythmeront cette 6<sup>ème</sup>
+                  edition
                 </p>
               </div>
             </div>

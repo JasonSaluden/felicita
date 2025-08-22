@@ -59,7 +59,7 @@ function Footer() {
     },
     {
       src: "./assets/partners/Logo montgolfières.png",
-      alt: "Mongolfières d'Anjou",
+      alt: "Montgolfières d'Anjou",
       cat: "locaux",
       link: "https://montgolfieres.fr",
     },
@@ -80,43 +80,39 @@ function Footer() {
     {
       src: "./assets/partners/1024px-Logo_Radio_Campus_Angers.png",
       alt: "Radio Campus Angers",
-      cat: "hors",
+      cat: "media",
       link: "https://www.radiocampusangers.com",
     },
     {
       src: "./assets/partners/SUN-LOGO-JAUNE.png",
       alt: "SUN Radio",
-      cat: "hors",
+      cat: "media",
       link: "https://lesonunique.com",
     },
   ];
 
-  const renderPartners = (categoryName, label) => (
-    <div className="mb-12">
-      <h4 className="text-2xl font-bold text-center text-[#8D4E1B] mb-6">
-        {label}
-      </h4>
-      <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
-        {partners
-          .filter((p) => p.cat === categoryName)
-          .map((p) => (
-            <a
-              key={p.alt}
-              href={p.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-center"
-            >
-              <img
-                src={p.src}
-                alt={p.alt}
-                className="h-18 md:h-20 w-auto max-w-[180px] object-contain transition-transform duration-300 filter brightness-90 hover:brightness-100 hover:scale-105"
-              />
-            </a>
-          ))}
-      </div>
-    </div>
-  );
+  const renderPartners = (categoryName, size = "normal") => {
+    const heightClass = size === "large" ? "h-24 md:h-28" : "h-18 md:h-20";
+    const maxWidthClass = size === "large" ? "max-w-[220px]" : "max-w-[180px]";
+    
+    return partners
+      .filter((p) => p.cat === categoryName)
+      .map((p) => (
+        <a
+          key={p.alt}
+          href={p.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center justify-center"
+        >
+          <img
+            src={p.src}
+            alt={p.alt}
+            className={`${heightClass} w-auto ${maxWidthClass} object-contain transition-transform duration-300 filter brightness-90 hover:brightness-100 hover:scale-105`}
+          />
+        </a>
+      ));
+  };
 
   return (
     <footer className="bg-gradient-to-b from-[#FFF8E1] to-[#FFE0B2] text-[#8D4E1B] font-baseRegular relative">
@@ -207,7 +203,7 @@ function Footer() {
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                 </a>
               </div>
@@ -226,11 +222,36 @@ function Footer() {
               Un grand merci à nos partenaires qui rendent ce festival possible
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4">
-            {renderPartners("publics", "Partenaires Publics")}
-            {renderPartners("hors", "Partenaires hors Brissac")}
+
+          {/* Section Partenaires Locaux */}
+          <div className="mb-16">
+            <h4 className="text-2xl font-bold text-center text-[#8D4E1B] mb-8">
+              Partenaires Locaux
+            </h4>
+            
+            {/* Partenaires Publics en ligne */}
+            <div className="flex justify-center items-center gap-12 mb-8">
+              {renderPartners("publics")}
+            </div>
+
+            {/* Séparation horizontale */}
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-[#8D4E1B]/30 to-transparent mb-8"></div>
+
+            {/* Partenaires Locaux justifiés */}
+            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
+              {renderPartners("locaux")}
+            </div>
           </div>
-          {renderPartners("locaux", "Partenaires Locaux")}
+
+          {/* Section Partenaires Média - Plus gros */}
+          <div className="mb-8">
+            <h4 className="text-2xl font-bold text-center text-[#8D4E1B] mb-8">
+              Partenaires Média
+            </h4>
+            <div className="flex flex-wrap justify-center items-center gap-12">
+              {renderPartners("media", "large")}
+            </div>
+          </div>
         </div>
       </div>
 
