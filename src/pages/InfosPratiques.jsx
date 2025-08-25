@@ -426,13 +426,13 @@ function InfosPratiques() {
                       },
                       {
                         key: "Barquettes de frites",
-                        badge: "🍟 Frites maison",
+                        badge: "🍟 Barquettes de frites",
                         desc: "Bonne dose de frites, sauce au choix",
                         cls: "bg-amber-50 border-amber-200 text-amber-800",
                       },
                       {
                         key: "Barquettes de falafels",
-                        badge: "🧆 Falafel",
+                        badge: "🧆 Barquettes de falafels",
                         desc: "Boulettes de pois chiches, sauce au choix",
                         cls: "bg-lime-100 border-lime-300 text-lime-900",
                       },
@@ -523,9 +523,8 @@ function InfosPratiques() {
                       <p className="text-sm text-gray-700">
                         🌱{" "}
                         <strong>
-                          Options végétariennes et véganes disponibles
+                          Options végétariennes disponibles
                         </strong>{" "}
-                        • Prix doux et locaux privilégiés
                       </p>
                     </div>
                   </div>
@@ -570,7 +569,7 @@ function InfosPratiques() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   {/* Emplacement */}
                   <div className="bg-white/70 p-6 rounded-2xl border border-gray-200 text-center">
                     <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
@@ -598,8 +597,8 @@ function InfosPratiques() {
                       Emplacements
                     </h3>
                     <p className="text-sm text-gray-600">
-                      Grands espaces sius les arbres pour planter votre tente
-                      dans la cité du vent !
+                      Grands espaces sous les arbres pour planter votre tente
+                      dans la Cité du Vent !
                     </p>
                   </div>
 
@@ -660,11 +659,7 @@ function InfosPratiques() {
                       </li>
                       <li className="flex items-center">
                         <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
-                        Douches
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
-                        Point d'eau potable
+                        Eau potable
                       </li>
                       <li className="flex items-center">
                         <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
@@ -675,19 +670,24 @@ function InfosPratiques() {
 
                   <div className="bg-white/80 p-6 rounded-2xl border border-gray-200">
                     <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
-                      <svg
-                        className="w-5 h-5 text-orange-600 mr-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.268 16.5C3.498 18.333 4.46 20 6 20z"
-                        />
-                      </svg>
+                    <svg
+  className="w-5 h-5 text-orange-600 mr-2"
+  fill="currentColor"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <clipPath id="triangle-clip">
+      <path d="M12 2.5L22.5 20.5H1.5L12 2.5Z" />
+    </clipPath>
+  </defs>
+  
+  <path d="M12 2.5L22.5 20.5H1.5L12 2.5Z" />
+  
+  <g clipPath="url(#triangle-clip)">
+    <rect x="11" y="8" width="2" height="7" fill="white" rx="1" />
+    <circle cx="12" cy="17.5" r="1.25" fill="white" />
+  </g>
+</svg>
                       À prévoir
                     </h3>
                     <ul className="space-y-2 text-sm text-gray-600">
@@ -714,7 +714,7 @@ function InfosPratiques() {
                 <div className="mt-6 text-center">
                   <div className="bg-white/80 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm inline-block">
                     <p className="text-sm text-gray-700">
-                      🌿 <strong>Camping gratuit et éco-responsable</strong> •
+                      🌿 <strong>Camping gratuit</strong> •
                       Installation dès midi le samedi
                     </p>
                   </div>
@@ -744,16 +744,16 @@ function InfosPratiques() {
                     <Carousel
                       images={[
                         {
-                          src: "/assets/Kit/kit1.jpg",
-                          caption: "L'essentiel du festivalier",
+                          src: "/assets/Kit/9676coesamuse_ChloeAndre.jpg",
+                          caption: "@coesamuse_",
                         },
                         {
-                          src: "/assets/Kit/kit2.jpg",
-                          caption: "Bien équipé pour profiter",
+                          src: "/assets/Kit/postPrev.png",
+                          caption: "@coesamuse_",
                         },
                         {
-                          src: "/assets/Kit/kit3.jpg",
-                          caption: "Festival éco-responsable",
+                          src: "/assets/Kit/coesamuseIMGM7757.jpg",
+                          caption: " 'Le kiffeur' - @coesamuse_",
                         },
                       ]}
                       ariaLabel="Carrousel kit festivalier"
@@ -904,14 +904,7 @@ function InfosPratiques() {
                   </div>
                 </div>
 
-                <div className="mt-6 text-center">
-                  <div className="bg-white/80 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm inline-block">
-                    <p className="text-sm text-gray-700">
-                      🌿 <strong>Festival éco-responsable</strong> • Pensez à
-                      ramener vos déchets et respecter la nature !
-                    </p>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>
