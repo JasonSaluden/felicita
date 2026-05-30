@@ -26,7 +26,7 @@ function Billetterie() {
         <iframe
           id="haWidget"
           allowTransparency="true"
-          src="https://www.helloasso.com/associations/la-felicita-festival/evenements/la-felicita-2025-la-cite-du-vent/widget"
+          src="https://www.helloasso.com/associations/la-felicita-festival/evenements/la-felicita-2026-la-cite-au-bord-de-ruisseau/widget"
           style={{
             width: '100%',
             border: 'none'

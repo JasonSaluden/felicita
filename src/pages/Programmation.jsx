@@ -1,55 +1,6 @@
-import ArtistCardSimple from "../components/ArtistCardSimple";
-import ModalArtiste from "../components/ModalArtiste";
-import useArtistsData from "../hooks/useArtistsData";
-import { useState } from "react";
-
 function Programmation() {
-  const { artists, loading, error } = useArtistsData();
-
-  // État pour la modal
-  const [selectedArtist, setSelectedArtist] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Fonction pour ouvrir la modal avec un artiste
-  const openModal = (artist) => {
-    setSelectedArtist(artist);
-    setIsModalOpen(true);
-  };
-
-  // Fonction pour fermer la modal
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedArtist(null);
-  };
-
-  // Gestion du loading
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-[#FFF8C9] flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Chargement de la programmation...</p>
-        </div>
-      </div>
-    );
-  }
-
-  // Gestion des erreurs
-  if (error) {
-    return (
-      <div className="min-h-screen bg-[#FFF8C9] flex items-center justify-center">
-        <div className="text-center">
-          <div className="bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded-lg">
-            <p className="font-bold">Erreur de chargement</p>
-            <p>{error}</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-[#FFF8C9]">
+    <div className="min-h-screen bg-[#0E5C3A]">
       {/* Header avec titre et pictos */}
       <div className="pt-16 pb-12">
         <div className="max-w-7xl mx-auto px-6">
@@ -61,7 +12,7 @@ function Programmation() {
                 alt="Picto"
                 className="h-6 w-6 object-contain opacity-80"
               />
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-800">
+              <h1 className="text-4xl lg:text-5xl font-bold text-[#F4D4DC]">
                 PROGRAMMATION
               </h1>
               <img
@@ -74,7 +25,7 @@ function Programmation() {
             {/* Sous-titre avec cadre */}
             <div className="inline-block bg-white/60 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm">
               <p className="text-xl text-gray-700 font-medium">
-                Samedi 30 Août 2025
+                Samedi 29 Août 2026
               </p>
             </div>
           </div>
@@ -83,20 +34,51 @@ function Programmation() {
 
       {/* Contenu principal */}
       <div className="max-w-7xl mx-auto px-6 pb-16">
-        {/* Grille des artistes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-12 lg:gap-16 mb-16">
-          {artists
-            .slice() // pour éviter de muter l’original
-            .sort((a, b) => a.id - b.id)
-            .map((artist) => (
-              <div
-                key={artist.id}
-                onClick={() => openModal(artist)}
-                className="cursor-pointer transform transition-transform duration-200 hover:scale-[1.02]"
-              >
-                <ArtistCardSimple artist={artist} />
-              </div>
-            ))}
+        {/* Bloc "Ça arrive bientôt" */}
+        <div className="flex justify-center mb-16">
+          <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-lg px-10 py-14 max-w-2xl w-full text-center overflow-hidden">
+            {/* Éléments décoratifs aux coins */}
+            <div className="absolute top-4 left-4 w-6 h-6 opacity-70">
+              <img
+                src="/assets/Elmts/picto3.png"
+                alt="Décoration"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="absolute top-4 right-4 w-6 h-6 opacity-70">
+              <img
+                src="/assets/Elmts/picto3.png"
+                alt="Décoration"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="absolute bottom-4 left-4 w-6 h-6 opacity-70">
+              <img
+                src="/assets/Elmts/picto3.png"
+                alt="Décoration"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="absolute bottom-4 right-4 w-6 h-6 opacity-70">
+              <img
+                src="/assets/Elmts/picto3.png"
+                alt="Décoration"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            <div className="inline-block bg-orange-200 text-orange-800 px-4 py-1 rounded-full text-sm font-bold mb-5 border border-orange-300">
+              ÉDITION 2026
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 tracking-wide animate-pulse">
+              Ça arrive bientôt
+            </h2>
+            <p className="text-lg text-gray-700 max-w-md mx-auto">
+              La programmation de cette nouvelle édition est en cours de
+              préparation. Restez connectés, les artistes seront bientôt
+              dévoilés !
+            </p>
+          </div>
         </div>
 
         <div className="text-center">
@@ -159,13 +141,6 @@ function Programmation() {
           </a>
         </div>
       </div>
-
-      {/* Modal artiste */}
-      <ModalArtiste
-        artist={selectedArtist}
-        isOpen={isModalOpen}
-        onClose={closeModal}
-      />
     </div>
   );
 }

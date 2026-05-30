@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #FFF8C5;
+  background-color: #0E5C3A;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -24,15 +24,15 @@ code {
 }
 
 .logoAccueil{
-  width: 12%;
+  width: 44%;
 }
 
 :root{
-  --ff-bg1:#A3D7E9;
-  --ff-bg2:#5C6BC0;
-  --ff-text:#EAF8FF;
-  --ff-navy:#0E1A40;
-  --ff-mint:#DEFCF0;
-  --ff-accent:#73C7E3;
-  --ff-border:#EAF8FF;
+  --ff-bg1:#0E5C3A;
+  --ff-bg2:#2A5DB8;
+  --ff-text:#F4D4DC;
+  --ff-navy:#0A1F14;
+  --ff-mint:#F0A5B8;
+  --ff-accent:#E89BAE;
+  --ff-border:#F4D4DC;
 }

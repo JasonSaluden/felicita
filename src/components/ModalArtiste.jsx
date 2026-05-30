@@ -301,7 +301,7 @@ function ModalArtiste({ artist, isOpen, onClose }) {
               {/* Info supplémentaire */}
               <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-6 text-center">
                 <p className="text-gray-600 text-sm mb-2">
-                  💫 Performance prévue le <strong>Samedi 30 Août 2025</strong>
+                  💫 Performance prévue le <strong>Samedi 29 Août 2026</strong>
                 </p>
                 <p className="text-gray-500 text-xs">
                   Appuyez sur Échap pour fermer

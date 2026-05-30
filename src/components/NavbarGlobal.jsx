@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { editions } from "../data/editionsData";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [isRetroOpen, setIsRetroOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -33,21 +35,22 @@ function Navbar() {
 
   // Fonction pour obtenir les classes CSS du lien
   const getLinkClasses = (path, isButton = false) => {
-    const baseClasses = isButton 
-      ? "flex items-center justify-center bg-[#FFD7B5] text-black px-6 py-2 rounded-full text-sm hover:bg-[#ffc399] transition h-10"
-      : "flex items-center justify-center h-10 hover:underline transition-all";
-    
+    const baseClasses = isButton
+      ? "flex items-center justify-center bg-[#F0A5B8] text-[#0A1F14] px-6 py-2 rounded-full text-sm hover:bg-[#E89BAE] transition h-10"
+      : "flex items-center justify-center h-10 text-[#0A1F14] hover:underline transition-all";
+
     if (isActive(path)) {
       return isButton
-        ? `${baseClasses} ring-2 ring-orange-400`
-        : `${baseClasses} underline font-bold text-orange-600`;
+        ? `${baseClasses} ring-2 ring-[#0A1F14]`
+        : `${baseClasses} underline font-bold`;
     }
-    
+
     return baseClasses;
   };
 
   // Fonction pour gérer le clic sur un lien
   const handleLinkClick = () => {
+    setIsRetroOpen(false);
     setTimeout(() => {
       setCurrentPath(window.location.pathname);
     }, 100);
@@ -66,7 +69,7 @@ function Navbar() {
         >
           <Link to="/" className="flex items-center mb-4 logoContainer">
             <img
-              src="/assets/logo_fest.png"
+              src="/assets/logoFelicita.png"
               alt="Logo Felicita"
               className="logoAccueil"
             />
@@ -75,7 +78,7 @@ function Navbar() {
       </div>
 
       {/* NAVBAR */}
-      <nav className="sticky top-7 z-50 w-full bg-[#FFF7CC] font-baseRegular shadow-lg rounded-lg py-2 px-4">
+      <nav className="sticky top-7 z-50 w-full bg-[#F4D4DC] font-baseRegular shadow-lg rounded-lg py-2 px-4">
         <ul className="flex flex-wrap justify-center gap-6 text-sm tracking-wide py-2">
           {/* Accueil */}
           <li className="relative group flex items-center">
@@ -126,6 +129,67 @@ function Navbar() {
             >
               Programmation
             </Link>
+          </li>
+
+          {/* Picto */}
+          <li className="flex items-center justify-center">
+            <img
+              src="/assets/Elmts/picto3.png"
+              alt="Line Up"
+              className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
+            />
+          </li>
+
+          {/* Rétrospective (menu déroulant) */}
+          <li className="relative flex items-center">
+            <button
+              type="button"
+              onClick={() => setIsRetroOpen((open) => !open)}
+              aria-expanded={isRetroOpen}
+              className={`flex items-center justify-center h-10 gap-1 text-[#0A1F14] hover:underline transition-all ${
+                currentPath.startsWith("/retrospective")
+                  ? "underline font-bold"
+                  : ""
+              }`}
+            >
+              Rétrospective
+              <svg
+                className={`h-3 w-3 transition-transform duration-200 ${
+                  isRetroOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            {isRetroOpen && (
+
+              <ul className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-44 bg-[#F4D4DC] rounded-lg shadow-lg py-2 z-50">
+                <li className="px-4 py-2 text-center text-xs font-bold uppercase tracking-wide text-[#0A1F14]/60 cursor-default select-none border-b border-[#0A1F14]/15 mb-1">
+                  Editions précédentes
+                </li>
+                {editions.map((edition) => (
+                  <li key={edition.annee}>
+                    <Link
+                      to={`/retrospective/${edition.annee}`}
+                      onClick={handleLinkClick}
+                      className="block px-4 py-2 text-center text-[#0A1F14] hover:bg-[#F0A5B8] transition-colors rounded-md mx-1"
+                    >
+                      {edition.numero}
+                      <sup>e</sup> — {edition.annee}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
 
           {/* Picto */}

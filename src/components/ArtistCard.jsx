@@ -47,7 +47,7 @@ function ArtistCard({ artist }) {
           {
             type: "social",
             content: (
-              <div className="relative h-full bg-gradient-to-br from-[#FFF8C9] to-[#F5E6A8] rounded-lg flex flex-col justify-center items-center p-6">
+              <div className="relative h-full bg-gradient-to-br from-[#F0A5B8] to-[#E89BAE] rounded-lg flex flex-col justify-center items-center p-6">
                 {/* Nom de l'artiste en grand */}
                 <h3 className="text-2xl font-bold mb-6 text-gray-800 text-center tracking-wider">
                   {artist.name.toUpperCase()}

@@ -1,0 +1,191 @@
+import { useState } from "react";
+import { useParams, Navigate } from "react-router-dom";
+import ArtistCardSimple from "../components/ArtistCardSimple";
+import ModalArtiste from "../components/ModalArtiste";
+import { editions, getEditionByAnnee } from "../data/editionsData";
+
+function Retrospective() {
+  const { annee } = useParams();
+
+  // Édition sélectionnée : celle de l'URL, sinon la plus récente
+  const edition = annee ? getEditionByAnnee(annee) : editions[0];
+
+  // État pour la modal
+  const [selectedArtist, setSelectedArtist] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (artist) => {
+    setSelectedArtist(artist);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedArtist(null);
+  };
+
+  // Année inconnue dans l'URL → on renvoie vers la rétrospective par défaut
+  if (annee && !edition) {
+    return <Navigate to="/retrospective" replace />;
+  }
+
+  return (
+    <div className="min-h-screen bg-[#0E5C3A]">
+      {/* Header avec titre et pictos */}
+      <div className="pt-16 pb-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-6 mb-8">
+              <img
+                src="/assets/Elmts/picto3.png"
+                alt="Picto"
+                className="h-6 w-6 object-contain opacity-80"
+              />
+              <h1 className="text-4xl lg:text-5xl font-bold text-[#F4D4DC]">
+                RÉTROSPECTIVE
+              </h1>
+              <img
+                src="/assets/Elmts/picto3.png"
+                alt="Picto"
+                className="h-6 w-6 object-contain opacity-80"
+              />
+            </div>
+
+            <div className="inline-block bg-white/60 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm">
+              <p className="text-xl text-gray-700 font-medium">
+                {edition.theme && `  ${edition.theme} • `}
+                {edition.numero}
+                <sup>e</sup> édition <br></br>{edition.annee}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Contenu principal */}
+      <div className="max-w-7xl mx-auto px-6 pb-16">
+        {/* Affiche de l'édition */}
+        <div className="flex justify-center mb-16">
+          <div className="bg-white rounded-2xl shadow-xl p-3 max-w-md w-full">
+            {edition.affiche ? (
+              <img
+                src={edition.affiche}
+                alt={`Affiche de l'édition ${edition.annee}`}
+                className="w-full h-auto rounded-lg object-cover"
+              />
+            ) : (
+              <div className="aspect-[3/4] w-full rounded-lg bg-gray-100 flex items-center justify-center text-center px-6">
+                <p className="text-gray-500 font-medium">
+                  Affiche à venir
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Grille des artistes de l'édition */}
+        {edition.artists.length > 0 ? (
+          <>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#F4D4DC] tracking-wide">
+                Ils ont enflammé la Félicità
+              </h2>
+              <div className="flex items-center justify-center mt-4">
+                <div className="h-px w-24 bg-gray-300/70"></div>
+                <img
+                  src="/assets/Elmts/picto3.png"
+                  alt="Picto"
+                  className="h-5 w-5 object-contain opacity-80 mx-4"
+                />
+                <div className="h-px w-24 bg-gray-300/70"></div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {edition.artists
+              .slice()
+              .sort((a, b) => a.id - b.id)
+              .map((artist) => (
+                <div
+                  key={artist.id}
+                  onClick={() => openModal(artist)}
+                  className="cursor-pointer transform transition-transform duration-200 hover:scale-[1.02]"
+                >
+                  <ArtistCardSimple artist={artist} />
+                </div>
+              ))}
+            </div>
+          </>
+        ) : (
+          <div className="text-center">
+            <div className="inline-block bg-white/60 backdrop-blur-sm border border-gray-200 px-8 py-6 rounded-2xl shadow-sm">
+              <p className="text-lg text-gray-700 font-medium">
+                La programmation de cette édition arrive bientôt.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Partenaires de l'édition */}
+        {edition.partenaires && edition.partenaires.length > 0 && (
+          <div className="mt-20">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#F4D4DC] tracking-wide">
+                Nos partenaires cette année-là
+              </h2>
+              <div className="flex items-center justify-center mt-4">
+                <div className="h-px w-24 bg-gray-300/70"></div>
+                <img
+                  src="/assets/Elmts/picto3.png"
+                  alt="Picto"
+                  className="h-5 w-5 object-contain opacity-80 mx-4"
+                />
+                <div className="h-px w-24 bg-gray-300/70"></div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+              {edition.partenaires.map((partenaire) => {
+                const contenu = (
+                  <div className="bg-white rounded-2xl shadow-lg h-32 flex items-center justify-center p-6 transition-transform duration-200 group-hover:scale-105">
+                    <img
+                      src={partenaire.logo}
+                      alt={partenaire.nom}
+                      title={partenaire.nom}
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </div>
+                );
+
+                return partenaire.lien ? (
+                  <a
+                    key={partenaire.nom}
+                    href={partenaire.lien}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block"
+                  >
+                    {contenu}
+                  </a>
+                ) : (
+                  <div key={partenaire.nom} className="group">
+                    {contenu}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Modal artiste */}
+      <ModalArtiste
+        artist={selectedArtist}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
+    </div>
+  );
+}
+
+export default Retrospective;

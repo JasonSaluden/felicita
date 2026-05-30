@@ -8,6 +8,7 @@ import InfosPratiques from "./pages/InfosPratiques";
 import Admin from './pages/Admin'
 import Billetterie from "./pages/Billetterie";
 import Programmation from "./pages/Programmation";
+import Retrospective from "./pages/Retrospective";
 import BandeauHeader from "./components/BandeauHeader";
 import './App.css';
 import Footer from "./components/Footer";
@@ -16,7 +17,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#FFF8C9] text-black">
+      <div className="min-h-screen bg-[#0E5C3A] text-[#F4D4DC]">
         <BandeauHeader />
         <Navbar />
         <main>
@@ -28,6 +29,8 @@ function App() {
             <Route path="/admin" element={<Admin />} />
             <Route path="/articles" element={<Articles />} />
             <Route path="/programmation" element={<Programmation />} />
+            <Route path="/retrospective" element={<Retrospective />} />
+            <Route path="/retrospective/:annee" element={<Retrospective />} />
           </Routes>
         </main>
         <Footer />

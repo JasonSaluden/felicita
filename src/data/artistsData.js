@@ -40,7 +40,7 @@ export const artistsData = [
 
   {
     id: 7,
-    name: "Amartia Mou",
+    name: "",
     image: "/assets/artistes/Amartia_Mou_Slide_1.png",
     image2: "/assets/artistes/Amartia_Mou_Slide_2.png",
     description:

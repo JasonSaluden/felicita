@@ -18,11 +18,11 @@ function Hero() {
   }, [isModalOpen]);
 
   return (
-    <main className="w-full bg-[#FFF8C9] overflow-hidden font-baseRegular">
+    <main className="w-full bg-[#0E5C3A] overflow-hidden font-baseRegular">
       {/* Section principale avec image de fond */}
       <div
         className="relative w-full h-[80vh] bg-cover bg-center pt-16 pb-28"
-        style={{ backgroundImage: "url('/assets/coesamuseIMGM7449.JPG')" }}
+        style={{ backgroundImage: "url('/assets/VianneyToutSeul.JPG')" }}
       >
         {/* Overlay pour la lisibilité */}
         <div className="absolute inset-0 bg-black/30"></div>
@@ -36,16 +36,18 @@ function Hero() {
                 La Felicità
                 <br />
                 <span className="text-yellow-300">Festival</span>
+                <br />
+                 revient
               </h1>
               <p className="text-xl lg:text-2xl mb-6 text-gray-200">
-                La Felicità, le festival angevin qui célèbre la fin de l'été en musique, est de retour pour sa 6ème édition
+                La Felicità, le festival angevin qui célèbre la fin de l'été en musique, est de retour pour sa 7ème édition
               </p>
 
               {/* Date et lieu */}
               <div className="space-y-2 text-lg">
                 <div className="flex items-center space-x-2">
                   <span className="text-yellow-300">📅</span>
-                  <span>Samedi 30 Août 2025</span>
+                  <span>Samedi 29 Août 2026</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="text-yellow-300">📍</span>
@@ -58,15 +60,15 @@ function Hero() {
           {/* Partie droite - Affiche du festival plus grande (Desktop) */}
           <div className="hidden lg:block flex-shrink-0 ml-8">
             <div className="relative group">
-              <img
+              {/* <img
                 src="./assets/Affiche_Felicita_Festival_2025.jpg"
                 alt="Affiche Felicità Festival 2025"
                 className="w-96 h-auto rounded-lg shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300"
                 onClick={() => setIsModalOpen(true)}
-              />
-              {/* Badge "Édition 2025" */}
+              /> */}
+              {/* Badge "Édition 2026" */}
               <div className="absolute -top-3 -right-3 bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold rotate-12">
-                Édition 2025
+                Édition 2026
               </div>
             </div>
           </div>
@@ -78,7 +80,7 @@ function Hero() {
         <div className="max-w-4xl w-full">
           {/* Bulle principale avec effet de transition */}
           <div className="relative rounded-3xl px-8 py-6 shadow-2xl
-                          bg-gradient-to-br from-white/95 via-white/90 to-[#FFF8C9]/80 
+                          bg-gradient-to-br from-[#F0A5B8]/95 via-[#F0A5B8]/90 to-[#F4D4DC]/80 
                           backdrop-blur-lg border border-white/50
                           transform hover:scale-105 transition-all duration-500">
             
@@ -100,9 +102,9 @@ function Hero() {
       </div>
 
       {/* Version mobile de l'affiche plus grande */}
-      <div className="lg:hidden bg-[#FFF8C9] py-8">
+      <div className="lg:hidden bg-[#0E5C3A] py-8">
         <div className="text-center px-6">
-          <h3 className="text-xl font-bold text-gray-800 mb-4">Affiche 2025</h3>
+          <h3 className="text-xl font-bold text-gray-800 mb-4">Affiche 2026</h3>
           <div className="flex justify-center">
             <div className="relative">
               <img
@@ -112,7 +114,7 @@ function Hero() {
                 onClick={() => setIsModalOpen(true)}
               />
               <div className="absolute -top-2 -right-2 bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-bold">
-                2025
+                2026
               </div>
             </div>
           </div>

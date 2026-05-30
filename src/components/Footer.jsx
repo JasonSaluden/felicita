@@ -115,7 +115,7 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-[#FFF8E1] to-[#FFE0B2] text-[#8D4E1B] font-baseRegular relative">
+    <footer className="bg-gradient-to-b from-[#0E5C3A] to-[#0A4A2D] text-[#F4D4DC] font-baseRegular relative">
       {/* Section principale */}
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -124,22 +124,22 @@ function Footer() {
             <div className="flex items-start space-x-6">
               <div className="flex-shrink-0">
                 <img
-                  src="./assets/logo_fest.png"
+                  src="./assets/logoFelicita.png"
                   alt="Felicità Festival Logo"
                   className="w-24 h-auto"
                 />
               </div>
               <div>
-                <p className="bg-[#FF8A65] text-[#FFFFFF] text-lg mb-4 font-medium px-3 py-1 rounded inline-block">
+                <p className="bg-[#F0A5B8] text-[#FFFFFF] text-lg mb-4 font-medium px-3 py-1 rounded inline-block">
                   Festival musical & artistique
                 </p>
-                <div className="space-y-3 text-[#8D4E1B]">
+                <div className="space-y-3 text-[#F4D4DC]">
                   <div className="flex items-center space-x-3">
-                    <span className="text-[#FF8A65] text-lg">📅</span>
-                    <span className="font-medium">Samedi 30 Août 2025</span>
+                    <span className="text-[#F0A5B8] text-lg">📅</span>
+                    <span className="font-medium">Samedi 29 Août 2026</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <span className="text-[#FF8A65] text-lg">📍</span>
+                    <span className="text-[#F0A5B8] text-lg">📍</span>
                     <span className="font-medium">Brissac-Quincé - 49320</span>
                   </div>
                 </div>
@@ -149,7 +149,7 @@ function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-xl font-bold mb-6 bg-[#FF8A65] text-[#FFFFFF] px-3 py-1 rounded">
+            <h4 className="text-xl font-bold mb-6 bg-[#F0A5B8] text-[#FFFFFF] px-3 py-1 rounded">
               Navigation
             </h4>
             <ul className="space-y-3">
@@ -162,7 +162,7 @@ function Footer() {
                 <li key={idx}>
                   <a
                     href={item.href}
-                    className="text-[#8D4E1B] hover:text-[#FF8A65] transition-colors duration-200 hover:translate-x-1 transform block"
+                    className="text-[#F4D4DC] hover:text-[#F0A5B8] transition-colors duration-200 hover:translate-x-1 transform block"
                   >
                     {item.label}
                   </a>
@@ -173,7 +173,7 @@ function Footer() {
 
           {/* Réseaux sociaux */}
           <div>
-            <h4 className="text-xl font-bold mb-6 bg-[#FF8A65] text-[#FFFFFF] px-3 py-1 rounded">
+            <h4 className="text-xl font-bold mb-6 bg-[#F0A5B8] text-[#FFFFFF] px-3 py-1 rounded">
               Suivez-nous
             </h4>
             <div className="flex justify-center space-x-6 mb-8">
@@ -212,56 +212,56 @@ function Footer() {
       </div>
 
       {/* Section partenaires */}
-      <div className="border-t border-[#8D4E1B]/30 bg-[#8D4E1B]/5">
+      {/* <div className="border-t border-[#F4D4DC]/30 bg-[#F4D4DC]/5">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="text-center mb-10">
-            <h3 className="text-3xl font-bold bg-[#FF8A65] text-white px-4 py-2 rounded inline-block mb-4">
+            <h3 className="text-3xl font-bold bg-[#F0A5B8] text-[#FFFFFF] px-4 py-2 rounded inline-block mb-4">
               Nos Partenaires
             </h3>
-            <p className="text-[#8D4E1B] text-lg max-w-2xl mx-auto">
+            <p className="text-[#F4D4DC] text-lg max-w-2xl mx-auto">
               Un grand merci à nos partenaires qui rendent ce festival possible
             </p>
-          </div>
+          </div> */}
 
           {/* Section Partenaires Locaux */}
-          <div className="mb-16">
-            <h4 className="text-2xl font-bold text-center text-[#8D4E1B] mb-8">
+          {/* <div className="mb-16">
+            <h4 className="text-2xl font-bold text-center text-[#F4D4DC] mb-8">
               Partenaires Locaux
-            </h4>
+            </h4> */}
             
             {/* Partenaires Publics en ligne */}
-            <div className="flex justify-center items-center gap-12 mb-8">
+            {/* <div className="flex justify-center items-center gap-12 mb-8">
               {renderPartners("publics")}
-            </div>
+            </div> */}
 
             {/* Séparation horizontale */}
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-[#8D4E1B]/30 to-transparent mb-8"></div>
+            {/* <div className="w-full h-px bg-gradient-to-r from-transparent via-[#F4D4DC]/30 to-transparent mb-8"></div> */}
 
             {/* Partenaires Locaux justifiés */}
-            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
+            {/* <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
               {renderPartners("locaux")}
             </div>
-          </div>
+          </div> */}
 
           {/* Section Partenaires Média - Plus gros */}
-          <div className="mb-8">
-            <h4 className="text-2xl font-bold text-center text-[#8D4E1B] mb-8">
+          {/* <div className="mb-8">
+            <h4 className="text-2xl font-bold text-center text-[#F4D4DC] mb-8">
               Partenaires Média
             </h4>
             <div className="flex flex-wrap justify-center items-center gap-12">
               {renderPartners("media", "large")}
             </div>
-          </div>
-        </div>
-      </div>
+          </div> */}
+        {/* </div>
+      </div> */}
 
       {/* Copyright */}
-      <div className="border-t border-[#8D4E1B]/30">
-        <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-[#8D4E1B]">
-          <div>© 2025 Felicità Festival. Tous droits réservés.</div>
+      <div className="border-t border-[#F4D4DC]/30">
+        <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-[#F4D4DC]">
+          <div>© 2026 Felicità Festival. Tous droits réservés.</div>
           <a
             href="/contact"
-            className="hover:text-[#FF8A65] transition-colors duration-200"
+            className="hover:text-[#F0A5B8] transition-colors duration-200"
           >
             Contact
           </a>

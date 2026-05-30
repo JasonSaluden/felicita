@@ -126,7 +126,7 @@ export default function Admin() {
   if (user.email !== 'contactlafelicita@gmail.com') return <p>Accès refusé</p>
 
   return (
-    <div className="min-h-screen bg-[#FFF8C9] py-8 px-4">
+    <div className="min-h-screen bg-[#0E5C3A] py-8 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
@@ -141,7 +141,7 @@ export default function Admin() {
               onClick={() => {setActiveTab('create'); resetForm()}}
               className={`px-6 py-2 rounded-md font-medium transition-all ${
                 activeTab === 'create'
-                  ? 'bg-[#FFD7B5] text-black shadow-sm'
+                  ? 'bg-[#F0A5B8] text-black shadow-sm'
                   : 'text-gray-600 hover:text-black'
               }`}
             >
@@ -151,7 +151,7 @@ export default function Admin() {
               onClick={() => setActiveTab('manage')}
               className={`px-6 py-2 rounded-md font-medium transition-all ${
                 activeTab === 'manage'
-                  ? 'bg-[#FFD7B5] text-black shadow-sm'
+                  ? 'bg-[#F0A5B8] text-black shadow-sm'
                   : 'text-gray-600 hover:text-black'
               }`}
             >
@@ -176,7 +176,7 @@ export default function Admin() {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="Ex: Nouvelle programmation annoncée !"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD7B5] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F0A5B8] focus:border-transparent"
                   required
                 />
               </div>
@@ -189,7 +189,7 @@ export default function Admin() {
                   type="date"
                   value={articleDate}
                   onChange={(e) => setArticleDate(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD7B5] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F0A5B8] focus:border-transparent"
                 />
                 <p className="text-xs text-gray-500 mt-1">
                   Si non renseignée, la date actuelle sera utilisée
@@ -205,7 +205,7 @@ export default function Admin() {
                   onChange={(e) => setContent(e.target.value)}
                   placeholder="Rédigez votre article ici..."
                   rows="8"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD7B5] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F0A5B8] focus:border-transparent"
                   required
                 />
               </div>
@@ -218,7 +218,7 @@ export default function Admin() {
                   type="file"
                   onChange={(e) => setImage(e.target.files[0])}
                   accept="image/*"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD7B5] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F0A5B8] focus:border-transparent"
                 />
               </div>
 
@@ -226,7 +226,7 @@ export default function Admin() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex-1 bg-[#FFD7B5] text-black px-6 py-3 rounded-lg font-semibold hover:bg-[#ffc399] transition disabled:opacity-50"
+                  className="flex-1 bg-[#F0A5B8] text-black px-6 py-3 rounded-lg font-semibold hover:bg-[#E89BAE] transition disabled:opacity-50"
                 >
                   {loading ? '⏳ Publication...' : (editingArticle ? '💾 Mettre à jour' : '🚀 Publier')}
                 </button>

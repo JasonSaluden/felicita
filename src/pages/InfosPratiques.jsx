@@ -12,7 +12,7 @@ function InfosPratiques() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFF8C9]">
+    <div className="min-h-screen bg-[#0E5C3A]">
       {/* Header avec titre et pictos */}
       <div className="pt-16 pb-12">
         <div className="max-w-7xl mx-auto px-6">

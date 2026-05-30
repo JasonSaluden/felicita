@@ -46,7 +46,7 @@ export default function Articles() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#FFF8C9] flex items-center justify-center">
+      <div className="min-h-screen bg-[#0E5C3A] flex items-center justify-center">
         <div className="text-center">
           <div className="text-4xl mb-4">🎪</div>
           <p className="text-lg">Chargement des articles...</p>
@@ -111,7 +111,7 @@ export default function Articles() {
             <p className="text-gray-700 leading-relaxed">
               {truncateText(article.content, 150)}
             </p>
-            <button className="mt-4 text-[#FF9F68] hover:text-[#FF8A50] font-semibold">
+            <button className="mt-4 text-[#F0A5B8] hover:text-[#E89BAE] font-semibold">
               Lire la suite →
             </button>
           </div>
@@ -125,12 +125,12 @@ export default function Articles() {
     <div className="max-w-3xl mx-auto">
       <div className="relative">
         {/* Ligne centrale */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-[#FFD7B5] h-full"></div>
+        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-[#F0A5B8] h-full"></div>
         
         {articles.map((article, index) => (
           <div key={article.id} className={`relative flex items-center mb-16 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
             {/* Point sur la timeline */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#FF9F68] rounded-full border-4 border-white shadow-lg z-10"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#E89BAE] rounded-full border-4 border-white shadow-lg z-10"></div>
             
             {/* Contenu de l'article */}
             <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
@@ -191,7 +191,7 @@ export default function Articles() {
   )
 
   return (
-    <div className="min-h-screen bg-[#FFF8C9] py-8 px-4">
+    <div className="min-h-screen bg-[#0E5C3A] py-8 px-4">
       {/* Header avec sélecteur de layout */}
       <div className="max-w-6xl mx-auto mb-8">
         <div className="text-center mb-8">
@@ -204,7 +204,7 @@ export default function Articles() {
           <button
             onClick={() => setLayout('magazine')}
             className={`px-4 py-2 rounded-lg font-medium transition-all ${
-              layout === 'magazine' ? 'bg-[#FFD7B5] text-black' : 'bg-white text-gray-600 hover:bg-gray-50'
+              layout === 'magazine' ? 'bg-[#F0A5B8] text-black' : 'bg-white text-gray-600 hover:bg-gray-50'
             }`}
           >
             📖 Magazine
@@ -212,7 +212,7 @@ export default function Articles() {
           <button
             onClick={() => setLayout('cards')}
             className={`px-4 py-2 rounded-lg font-medium transition-all ${
-              layout === 'cards' ? 'bg-[#FFD7B5] text-black' : 'bg-white text-gray-600 hover:bg-gray-50'
+              layout === 'cards' ? 'bg-[#F0A5B8] text-black' : 'bg-white text-gray-600 hover:bg-gray-50'
             }`}
           >
             🃏 Cartes
@@ -220,7 +220,7 @@ export default function Articles() {
           <button
             onClick={() => setLayout('timeline')}
             className={`px-4 py-2 rounded-lg font-medium transition-all ${
-              layout === 'timeline' ? 'bg-[#FFD7B5] text-black' : 'bg-white text-gray-600 hover:bg-gray-50'
+              layout === 'timeline' ? 'bg-[#F0A5B8] text-black' : 'bg-white text-gray-600 hover:bg-gray-50'
             }`}
           >
             ⏰ Timeline
@@ -228,7 +228,7 @@ export default function Articles() {
           <button
             onClick={() => setLayout('masonry')}
             className={`px-4 py-2 rounded-lg font-medium transition-all ${
-              layout === 'masonry' ? 'bg-[#FFD7B5] text-black' : 'bg-white text-gray-600 hover:bg-gray-50'
+              layout === 'masonry' ? 'bg-[#F0A5B8] text-black' : 'bg-white text-gray-600 hover:bg-gray-50'
             }`}
           >
             🧱 Masonry
