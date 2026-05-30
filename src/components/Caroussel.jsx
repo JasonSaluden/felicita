@@ -25,6 +25,7 @@ export default function Carousel({
         });
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [images.length]
   );
   
@@ -69,6 +70,7 @@ export default function Carousel({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   // Autoplay

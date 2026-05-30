@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer";
 
 function Billetterie() {
   const handleIframeLoad = () => {
@@ -25,6 +24,7 @@ function Billetterie() {
       <div className="relative z-10 max-w-5xl w-full">
         <iframe
           id="haWidget"
+          title="Billetterie HelloAsso - La Felicità Festival"
           allowTransparency="true"
           src="https://www.helloasso.com/associations/la-felicita-festival/evenements/la-felicita-2026-la-cite-au-bord-de-ruisseau/widget"
           style={{

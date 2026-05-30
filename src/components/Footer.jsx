@@ -91,6 +91,7 @@ function Footer() {
     },
   ];
 
+  // eslint-disable-next-line no-unused-vars
   const renderPartners = (categoryName, size = "normal") => {
     const heightClass = size === "large" ? "h-24 md:h-28" : "h-18 md:h-20";
     const maxWidthClass = size === "large" ? "max-w-[220px]" : "max-w-[180px]";
