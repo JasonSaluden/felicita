@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Carousel from "../components/Caroussel";
-import PoissonsFond from "../components/PoissonsFond";
 
 function InfosPratiques() {
   const [activeTab, setActiveTab] = useState("venir");
@@ -13,8 +12,10 @@ function InfosPratiques() {
   ];
 
   return (
-    <div className="relative isolate overflow-hidden min-h-screen bg-[#0E5C3A]">
-      <PoissonsFond />
+    <div
+      className="relative isolate overflow-hidden min-h-screen bg-[#0E5C3A] bg-cover bg-center"
+      style={{ backgroundImage: "url('/assets/backgrounds/BackgroundBody.webp')" }}
+    >
       {/* Header avec titre et pictos */}
       <div className="pt-16 pb-12">
         <div className="max-w-7xl mx-auto px-6">
@@ -22,7 +23,7 @@ function InfosPratiques() {
             {/* Titre avec pictos */}
             <div className="flex items-center justify-center space-x-6 mb-8">
               <img
-                src="/assets/mascottes/Felicita_Ed7_Fleur01.png"
+                src="/assets\pictos\picto2.png"
                 alt=""
                 aria-hidden="true"
                 className="h-8 w-8 object-contain opacity-90"
@@ -31,7 +32,7 @@ function InfosPratiques() {
                 INFOS PRATIQUES
               </h1>
               <img
-                src="/assets/mascottes/Felicita_Ed7_Fleur01.png"
+                src="/assets\pictos\picto2.png"
                 alt=""
                 aria-hidden="true"
                 className="h-8 w-8 object-contain opacity-90"
@@ -83,263 +84,6 @@ function InfosPratiques() {
                   Comment venir à la Felicità ?
                 </h2>
 
-                {/* Grid des moyens de transport */}
-
-                {/* Message incitatif avant la carte */}
-                <div className="mb-6 text-center">
-                  <div className="bg-blue-50 border border-blue-200 p-4 rounded-xl inline-block">
-                    <p className="text-sm font-medium text-blue-800">
-                      💡{" "}
-                      <strong>
-                        Cliquez sur les moyens de transport ci-dessus
-                      </strong>{" "}
-                      pour plus d'informations et réserver !
-                    </p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                  {/* Covoiturage */}
-                  <a
-                    href="https://www.mobicoop.fr/covoiturages-evenements/7392/Festival-La-Felicita---La-cite-du-vent"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block group"
-                  >
-                    <div className="bg-white/70 p-4 rounded-2xl border border-gray-200 hover:bg-white/90 hover:border-green-300 hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer relative overflow-hidden">
-                      {/* Icône de lien externe */}
-                      <div className="absolute top-3 right-3 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                        <svg
-                          className="w-4 h-4 text-gray-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                          />
-                        </svg>
-                      </div>
-
-                      <div className="text-center mb-3">
-                        <div className="w-12 h-12 mx-auto mb-2 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 transition-colors duration-300">
-                          <svg
-                            className="w-6 h-6 text-green-600 group-hover:text-green-700"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                            />
-                          </svg>
-                        </div>
-                        <h3 className="font-bold text-gray-800 group-hover:text-green-700 transition-colors duration-300">
-                          Covoiturage
-                        </h3>
-                      </div>
-                      <p className="text-xs text-gray-600 text-center group-hover:text-gray-700 transition-colors duration-300">
-                        Mobicoop, groupe Facebook du festival, ou organisez-vous
-                        entre amis !
-                      </p>
-
-                      {/* Call to action au hover */}
-                      <div className="mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-xs font-medium text-green-600">
-                          → Voir les trajets disponibles
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-
-                  {/* À vélo */}
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSeEE1ky1vSOSyR_lBOuUVf37zZT_AHEB1skyNkKhABGZ6x0_w/viewform"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block group"
-                  >
-                    <div className="bg-white/70 p-4 rounded-2xl border border-gray-200 hover:bg-white/90 hover:border-orange-300 hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer relative overflow-hidden">
-                      {/* Icône de lien externe */}
-                      <div className="absolute top-3 right-3 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                        <svg
-                          className="w-4 h-4 text-gray-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                          />
-                        </svg>
-                      </div>
-
-                      <div className="text-center mb-3">
-                        <div className="w-12 h-12 mx-auto mb-2 bg-orange-100 rounded-full flex items-center justify-center group-hover:bg-orange-200 transition-colors duration-300">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlnsXlink="http://www.w3.org/1999/xlink"
-                            fill="#bc6406ff"
-                            height="600px"
-                            width="600px"
-                            version="1.1"
-                            id="Capa_1"
-                            viewBox="0 0 493.407 493.407"
-                            xmlSpace="preserve"
-                            className="w-6 h-6 group-hover:fill-orange-700 transition-colors duration-300"
-                          >
-                            <path d="M488.474,270.899c-12.647-37.192-47.527-62.182-86.791-62.182c-5.892,0-11.728,0.749-17.499,1.879l-34.324-100.94  c-1.71-5.014-6.417-8.392-11.721-8.392H315.02c-6.836,0-12.382,5.547-12.382,12.382c0,6.836,5.545,12.381,12.382,12.381h14.252  l12.462,36.645H206.069v-21.998l21.732-2.821c3.353-0.434,6.135-3.079,6.585-6.585c0.54-4.183-2.402-8.013-6.585-8.553l-68.929-8.94  c-1.362-0.168-2.853-0.185-4.281,0c-9.116,1.186-15.55,9.537-14.373,18.653c1.185,9.118,9.537,15.55,18.653,14.364l22.434-2.909  v26.004l-41.255,52.798c-14.059-8.771-30.592-13.93-48.349-13.93C41.135,208.757,0,249.885,0,300.443  c0,50.565,41.135,91.7,91.701,91.7c44.882,0,82.261-32.437,90.113-75.095h33.605v12.647h-5.909c-4.563,0-8.254,3.693-8.254,8.254  c0,4.563,3.691,8.254,8.254,8.254h36.58c4.563,0,8.254-3.691,8.254-8.254c0-4.561-3.691-8.254-8.254-8.254h-5.908v-12.647h5.545  c3.814,0,7.409-1.756,9.755-4.756l95.546-122.267l9.776,28.729c-17.854,8.892-32.444,22.965-41.409,41.168  c-10.825,21.973-12.438,46.842-4.553,70.034c12.662,37.201,47.55,62.189,86.815,62.189c10.021,0,19.951-1.645,29.519-4.9  c23.191-7.885,41.926-24.329,52.744-46.302C494.746,318.966,496.367,294.09,488.474,270.899z M143.46,258.542  c7.698,9.488,12.776,21.014,14.349,33.742h-40.717L143.46,258.542z M91.701,367.379c-36.912,0-66.938-30.026-66.938-66.936  c0-36.904,30.026-66.923,66.938-66.923c12.002,0,23.11,3.427,32.864,8.981l-42.619,54.54c-2.917,3.732-3.448,8.794-1.378,13.05  c2.08,4.256,6.4,6.957,11.134,6.957h64.592C148.861,345.906,122.84,367.379,91.701,367.379z M239.69,292.284h-56.707  c-1.839-20.667-10.586-39.329-23.868-53.782l22.191-28.398v32.47c0,6.836,5.545,12.381,12.381,12.381  c6.836,0,12.382-5.545,12.382-12.381v-55.138h115.553L239.69,292.284z M383.546,285.618l6.384,18.79  c1.75,5.151,6.562,8.392,11.721,8.392c1.321,0,2.667-0.21,3.99-0.661c6.471-2.201,9.93-9.23,7.729-15.711l-6.336-18.637  c7.731,1.838,14.221,7.312,16.855,15.083c2.024,5.94,1.613,12.309-1.161,17.935c-2.773,5.626-7.569,9.835-13.509,11.858  c-12.068,4.078-25.716-2.717-29.785-14.671C376.735,300.055,378.597,291.689,383.546,285.618z M461.712,329.994  c-7.908,16.042-21.579,28.044-38.507,33.808c-6.997,2.378-14.244,3.578-21.547,3.578c-28.664,0-54.129-18.249-63.374-45.399  c-5.757-16.926-4.571-35.081,3.328-51.112c6.047-12.27,15.494-22.112,27.165-28.666l8.981,26.416  c-13.414,10.108-19.644,27.931-13.954,44.691c5.522,16.227,20.732,27.124,37.853,27.124c4.378,0,8.707-0.725,12.882-2.145  c10.108-3.434,18.282-10.607,22.999-20.184c4.723-9.585,5.425-20.435,1.982-30.551c-5.545-16.299-21.57-26.787-38.289-26.818  l-8.997-26.472c3.128-0.453,6.28-0.783,9.448-0.783c28.658,0,54.112,18.242,63.351,45.399  C470.788,295.799,469.613,313.96,461.712,329.994z" />
-                          </svg>
-                        </div>
-                        <h3 className="font-bold text-gray-800 group-hover:text-orange-700 transition-colors duration-300">
-                          À vélo
-                        </h3>
-                      </div>
-                      <p className="text-xs text-gray-600 text-center group-hover:text-gray-700 transition-colors duration-300">
-                        Pistes cyclables depuis Angers. Goûter sur place offert
-                        aux courageux !
-                      </p>
-
-                      {/* Call to action au hover */}
-                      <div className="mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-xs font-medium text-orange-600">
-                          → S'inscrire pour le goûter
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-
-                  {/* Transport en commun */}
-                  <a
-                    href="https://drive.google.com/file/d/1N-YpbWlNDXLE1Y7i6d0tXFenO46QmUsm/view"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block group"
-                  >
-                    <div className="bg-white/70 p-4 rounded-2xl border border-gray-200 hover:bg-white/90 hover:border-purple-300 hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer relative overflow-hidden">
-                      {/* Icône de lien externe */}
-                      <div className="absolute top-3 right-3 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                        <svg
-                          className="w-4 h-4 text-gray-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                          />
-                        </svg>
-                      </div>
-
-                      <div className="text-center mb-3">
-                        <div className="w-12 h-12 mx-auto mb-2 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-200 transition-colors duration-300">
-                          <svg
-                            fill="#902878ff"
-                            viewBox="-5.5 0 32 32"
-                            version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-6 h-6 group-hover:fill-purple-700 transition-colors duration-300"
-                          >
-                            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                            <g
-                              id="SVGRepo_tracerCarrier"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            ></g>
-                            <g id="SVGRepo_iconCarrier">
-                              <title>bus</title>
-                              <path d="M0 22.281v-13.563c0-0.438 0.25-1 0.594-1.344 0.094-0.094 0.219-0.156 0.313-0.219h0.031c1.5-1.156 3.469-2 5.719-2.469 1.188-0.219 2.438-0.344 3.75-0.344s2.563 0.125 3.75 0.344c2.25 0.469 4.219 1.313 5.719 2.469h0.031c0.094 0.063 0.188 0.125 0.281 0.219 0.344 0.344 0.625 0.906 0.625 1.344v13.563c0 1-0.688 1.781-1.594 2v1.813c0 0.844-0.688 1.563-1.531 1.563-0.875 0-1.563-0.719-1.563-1.563v-1.75h-11.438v1.75c0 0.844-0.719 1.563-1.563 1.563-0.875 0-1.563-0.719-1.563-1.563v-1.813c-0.906-0.219-1.563-1-1.563-2zM15.625 6.688h-10.438c-0.563 0-1.031 0.469-1.031 1.031 0 0.531 0.469 1 1.031 1h10.438c0.563 0 1-0.469 1-1 0-0.563-0.438-1.031-1-1.031zM3.125 17.063h14.531c0.563 0 1.031-0.5 1.031-1.063v-5.156c0-0.563-0.469-1.063-1.031-1.063h-14.531c-0.563 0-1 0.5-1 1.063v5.156c0 0.563 0.438 1.063 1 1.063zM4.25 22.281c0.906 0 1.625-0.75 1.625-1.656 0-0.938-0.719-1.656-1.625-1.656-0.938 0-1.656 0.719-1.656 1.656 0 0.906 0.719 1.656 1.656 1.656zM16.531 22.281c0.938 0 1.688-0.75 1.688-1.656 0-0.938-0.75-1.656-1.688-1.656-0.906 0-1.625 0.719-1.625 1.656 0 0.906 0.719 1.656 1.625 1.656z"></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <h3 className="font-bold text-gray-800 group-hover:text-purple-700 transition-colors duration-300">
-                          Bus
-                        </h3>
-                      </div>
-                      <p className="text-xs text-gray-600 text-center group-hover:text-gray-700 transition-colors duration-300">
-                        Ligne de bus direction Brissac. Cliquez pour voir les
-                        horaires
-                      </p>
-
-                      {/* Call to action au hover */}
-                      <div className="mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-xs font-medium text-purple-600">
-                          → Consulter les horaires
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-
-                  {/* Navette */}
-                  <a
-                    href="https://www.helloasso.com/associations/la-felicita-festival/evenements/navette-la-felicita"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block group"
-                  >
-                    <div className="bg-white/70 p-4 rounded-2xl border border-gray-200 hover:bg-white/90 hover:border-pink-300 hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer relative overflow-hidden">
-                      {/* Icône de lien externe */}
-                      <div className="absolute top-3 right-3 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                        <svg
-                          className="w-4 h-4 text-gray-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                          />
-                        </svg>
-                      </div>
-
-                      <div className="text-center mb-3">
-                        <div className="w-12 h-12 mx-auto mb-2 bg-pink-100 rounded-full flex items-center justify-center group-hover:bg-pink-200 transition-colors duration-300">
-                          <svg
-                            className="w-6 h-6 text-pink-600 group-hover:text-pink-700 transition-colors duration-300"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                            />
-                          </svg>
-                        </div>
-                        <h3 className="font-bold text-gray-800 group-hover:text-pink-700 transition-colors duration-300">
-                          Navette
-                        </h3>
-                      </div>
-                      <p className="text-xs text-gray-600 text-center group-hover:text-gray-700 transition-colors duration-300">
-                        Plusieurs navettes aller/retour depuis la gare d'Angers.
-                      </p>
-
-                      {/* Call to action au hover */}
-                      <div className="mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-xs font-medium text-pink-600">
-                          → Réserver sa place
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-
                 {/* Carte Google Maps */}
                 <div className="bg-white/70 p-4 rounded-2xl border border-gray-200">
                   <h3 className="font-bold text-gray-800 mb-4 text-center">
@@ -386,19 +130,19 @@ function InfosPratiques() {
                     <Carousel
                       images={[
                         {
-                          src: "/assets/Restau/9453 coesamuse_ Chloé André.jpg",
+                          src: "/assets/photos/Restau/9453 coesamuse_ Chloé André.webp",
                           caption: "Photo : @coesamuse_",
                         },
                         {
-                          src: "/assets/Restau/9563 coesamuse_ Chloé André.jpg",
+                          src: "/assets/photos/Restau/9563 coesamuse_ Chloé André.webp",
                           caption: "Photo : @coesamuse_",
                         },
                         {
-                          src: "/assets/Restau/coesamuseIMGM8262.JPG",
+                          src: "/assets/photos/Restau/coesamuseIMGM8262.webp",
                           caption: "Photo : @coesamuse_",
                         },
                         {
-                          src: "/assets/Restau/coesamuseIMGM7422.JPG",
+                          src: "/assets/photos/Restau/coesamuseIMGM7422.webp",
                           caption: "Photo : @coesamuse_",
                         },
                       ]}
@@ -557,11 +301,11 @@ function InfosPratiques() {
                     <Carousel
                       images={[
                         {
-                          src: "/assets/Camping/coesamuseIMGM8311.JPG",
+                          src: "/assets/photos/Camping/coesamuseIMGM8311.webp",
                           caption: "Photo : @coesamuse_",
                         },
                         {
-                          src: "/assets/Camping/9414 coesamuse_ Chloé André.jpg",
+                          src: "/assets/photos/Camping/9414 coesamuse_ Chloé André.webp",
                           caption: "Photo : @coesamuse_",
                         },
                       ]}
@@ -748,15 +492,15 @@ function InfosPratiques() {
                     <Carousel
                       images={[
                         {
-                          src: "/assets/Kit/9676coesamuse_ChloeAndre.jpg",
+                          src: "/assets/photos/Kit/9676coesamuse_ChloeAndre.webp",
                           caption: "@coesamuse_",
                         },
                         {
-                          src: "/assets/Kit/postPrev.png",
+                          src: "/assets/photos/Kit/postPrev.webp",
                           caption: "@coesamuse_",
                         },
                         {
-                          src: "/assets/Kit/coesamuseIMGM7757.jpg",
+                          src: "/assets/photos/Kit/coesamuseIMGM7757.webp",
                           caption: " 'Le kiffeur' - @coesamuse_",
                         },
                       ]}

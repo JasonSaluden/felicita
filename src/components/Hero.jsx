@@ -22,7 +22,7 @@ function Hero() {
       {/* Section principale avec image de fond */}
       <div
         className="relative w-full h-[80vh] bg-cover bg-center pt-16 pb-28"
-        style={{ backgroundImage: "url('/assets/VianneyToutSeul.JPG')" }}
+        style={{ backgroundImage: "url('/assets/backgrounds/VianneyToutSeul.webp')" }}
       >
         {/* Overlay pour la lisibilité */}
         <div className="absolute inset-0 bg-black/30"></div>
@@ -68,7 +68,7 @@ function Hero() {
           <div className="hidden lg:block flex-shrink-0 ml-8">
             <div className="relative group">
               {/* <img
-                src="./assets/Affiche_Felicita_Festival_2025.jpg"
+                src="/assets/affiches/Affiche_Felicita_Festival_2025.webp"
                 alt="Affiche Felicità Festival 2025"
                 className="w-96 h-auto rounded-lg shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300"
                 onClick={() => setIsModalOpen(true)}
@@ -89,7 +89,7 @@ function Hero() {
           <div className="flex justify-center">
             <div className="relative">
               <img
-                src="./assets/Affiche_Felicita_Festival_2025.jpg"
+                src="/assets/affiches/Affiche_Felicita_Festival_2025.webp"
                 alt="Affiche Felicità Festival 2025"
                 className="w-80 h-auto rounded-lg shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300"
                 onClick={() => setIsModalOpen(true)}
@@ -116,7 +116,7 @@ function Hero() {
               ✕ Fermer
             </button>
             <img
-              src="./assets/Affiche_Felicita_Festival_2025.jpg"
+              src="/assets/affiches/Affiche_Felicita_Festival_2025.webp"
               alt="Affiche Felicità Festival 2025"
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
               onClick={(e) => e.stopPropagation()}

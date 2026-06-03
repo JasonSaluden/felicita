@@ -3,8 +3,8 @@ export const artistsData = [
   {
     id: 2,
     name: "Spoink",
-    image: "/assets/artistes/Spoink_Slide_1.png",
-    image2: "/assets/artistes/Spoink_Slide_2.png",
+    image: "/assets/artistes/2025/Spoink_Slide_1.webp",
+    image2: "/assets/artistes/2025/Spoink_Slide_2.webp",
     description:
       "Rien n'est prévu. Tout est joué.\nQuatre musiciens, branchés serré.\nDes machines, des instruments, de la sueur.\nÇa commence sans savoir où ça va.\nÇa groove, ça déraille, ça retombe sur ses pattes.\nDrum & bass ? Parfois. Dubstep ? Possible.\nClub étrange ? Souvent.\nPas de setlist. Pas de filet.\nLe son se fabrique en direct, avec les mains, les oreilles,\nles corps.\nSpoink, c'est ça : une improvisation qui donne envie de bouger.",
     genre: "Electro Impro",
@@ -22,8 +22,8 @@ export const artistsData = [
   {
     id: 3,
     name: "Créature",
-    image: "/assets/artistes/Creature_Slide_1.png",
-    image2: "/assets/artistes/Creature_Slide_2.png",
+    image: "/assets/artistes/2025/Creature_Slide_1.webp",
+    image2: "/assets/artistes/2025/Creature_Slide_2.webp",
     description:
       "Creature est né·e de l'union explosive entre la lave d'un volcan sulfureux et les eaux enchantées d'une cascade magique. \nAlchimiste en lien profond avec les éléments, iel s'exprime par la performance, le show, et la présence. \nDe la tente berbère ensorcelée aux clubs en transe, du théâtre au podium, en passant par le chant et le drag, Creature traverse les formes et brouille les frontières. À la Félicita, iel proposera des expériences immersives, intenses et sensorielles. \nAvec amour et douceur, avec feu et splendeur,\nCreature luv u",
     genre: "Performance, show",
@@ -41,8 +41,8 @@ export const artistsData = [
   {
     id: 7,
     name: "",
-    image: "/assets/artistes/Amartia_Mou_Slide_1.png",
-    image2: "/assets/artistes/Amartia_Mou_Slide_2.png",
+    image: "/assets/artistes/2025/Amartia_Mou_Slide_1.webp",
+    image2: "/assets/artistes/2025/Amartia_Mou_Slide_2.webp",
     description:
       "Au croisement de la nostalgie et de la modernité,\nAmartia Mou réinvente le Laïko grec en chansons\nsincères et vibrantes.\n\nChantant l'amour, l'exil et la joie de vivre, ils vous\nferont voyager... et peut-être danser.",
     genre: "Laïko Grec",
@@ -58,8 +58,8 @@ export const artistsData = [
   {
     id: 8,
     name: "Guiby BZB Eerlow",
-    image: "/assets/artistes/Guiby_Bzb_Eerlow_Slide_1.png",
-    image2: "/assets/artistes/Guiby_Bzb_Eerlow_Slide_2.png",
+    image: "/assets/artistes/2025/Guiby_Bzb_Eerlow_Slide_1.webp",
+    image2: "/assets/artistes/2025/Guiby_Bzb_Eerlow_Slide_2.webp",
     description: "Techno brute et vibrations électroniques \n Résidents du crew Sincity, Eerlow et Guiby fusionnent \n leurs univers pour un B2B intense, entre hardgroove, acid, \ntextures industrielles et élévation rythmique. \n L'un façonne une techno brute et immersive, \n l'autre insuffle une vibration introspective et singulière. \n Ensemble, ils créent un set puissant et libérateur, taillé \n pour le lâcher-prise et la communion sonore.",
     genre: "TECHNO BRUTE, IMMERSIVE ET VIVANTE",
     time: "",
@@ -82,8 +82,8 @@ export const artistsData = [
   {
     id: 1,
     name: "Nerlov",
-    image: "/assets/artistes/Nerlov_Slide_1.png",
-    image2: "/assets/artistes/Nerlov_Slide_2.png",
+    image: "/assets/artistes/2025/Nerlov_Slide_1.webp",
+    image2: "/assets/artistes/2025/Nerlov_Slide_2.png",
     description:
       "Nerlov est un artiste qui fusionne des éléments de musique traditionnelle avec des sons modernes, créant une expérience auditive unique.",
     genre: "Pop Electro, Chanson",
@@ -100,8 +100,8 @@ export const artistsData = [
   {
     id: 6,
     name: "Marianne Perrudin",
-    image: "/assets/artistes/Marianne_Slide_1.png",
-    image2: "/assets/artistes/Marianne_Slide_2.png",
+    image: "/assets/artistes/2025/Marianne_Slide_1.webp",
+    image2: "/assets/artistes/2025/Marianne_Slide_2.png",
     description:
       "Marianne est une artiste qui explore les thèmes de l'identité et de la culture à travers sa musique, mêlant des influences folk et électroniques.",
     genre: "Folk Délicate",
@@ -120,8 +120,8 @@ export const artistsData = [
   {
     id: 5,
     name: "Big Alice",
-    image: "/assets/artistes/Big_Alice_Slide_1.png",
-    image2: "/assets/artistes/Big_Alice_Slide_2.png",
+    image: "/assets/artistes/2025/Big_Alice_Slide_1.webp",
+    image2: "/assets/artistes/2025/Big_Alice_Slide_2.png",
     description:
       "Big Alice est un groupe qui mélange le rock et la musique traditionnelle, créant un son énergique et captivant.",
     genre: "House Progressive & Hard",
@@ -134,8 +134,8 @@ export const artistsData = [
   {
     id: 4,
     name: "Monika",
-    image: "/assets/artistes/Monika_Slide_1.png",
-    image2: "/assets/artistes/Monika_Slide_2.png",
+    image: "/assets/artistes/2025/Monika_Slide_1.webp",
+    image2: "/assets/artistes/2025/Monika_Slide_2.png",
     description:
       "Punk Anglais 90's & Techno",
     genre: "Jazz Pop",

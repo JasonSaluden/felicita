@@ -61,7 +61,7 @@ function Navbar() {
       {/* LOGO sur fond bannière */}
       <div
         className="flex flex-col items-center pt-12 bg-cover bg-center"
-        style={{ backgroundImage: "url('/assets/BanniereHeader.jpg')" }}
+        style={{ backgroundImage: "url('/assets/backgrounds/BanniereHeader.webp')" }}
       >
         <div
           className={`transition-all duration-500 ease-in-out ${
@@ -72,7 +72,7 @@ function Navbar() {
         >
           <Link to="/" className="flex items-center mb-4 logoContainer">
             <img
-              src="/assets/Logo_Felicita_rose.png"
+              src="/assets/logos/Logo_Felicita_rose.webp"
               alt="Logo Felicita"
               className="logoAccueil"
             />
@@ -99,7 +99,7 @@ function Navbar() {
           {/* Picto */}
           <li className="flex items-center justify-center">
             <img
-              src="/assets/Elmts/picto3.png"
+              src="/assets/pictos/picto3.png"
               alt=""
               aria-hidden="true"
               className="h-4 w-4 object-contain opacity-90 hover:opacity-100 hover:scale-110 transition"
@@ -120,7 +120,7 @@ function Navbar() {
           {/* Picto */}
           <li className="flex items-center justify-center">
             <img
-              src="/assets/Elmts/picto3.png"
+              src="/assets/pictos/picto3.png"
               alt=""
               aria-hidden="true"
               className="h-4 w-4 object-contain opacity-90 hover:opacity-100 hover:scale-110 transition"
@@ -141,7 +141,7 @@ function Navbar() {
           {/* Picto */}
           <li className="flex items-center justify-center">
             <img
-              src="/assets/Elmts/picto3.png"
+              src="/assets/pictos/picto3.png"
               alt=""
               aria-hidden="true"
               className="h-4 w-4 object-contain opacity-90 hover:opacity-100 hover:scale-110 transition"
@@ -203,7 +203,7 @@ function Navbar() {
           {/* Picto */}
           <li className="flex items-center justify-center">
             <img
-              src="/assets/Elmts/picto3.png"
+              src="/assets/pictos/picto3.png"
               alt=""
               aria-hidden="true"
               className="h-4 w-4 object-contain opacity-90 hover:opacity-100 hover:scale-110 transition"
@@ -224,7 +224,7 @@ function Navbar() {
           {/* Picto */}
           <li className="flex items-center justify-center">
             <img
-              src="/assets/Elmts/picto3.png"
+              src="/assets/pictos/picto3.png"
               alt=""
               aria-hidden="true"
               className="h-4 w-4 object-contain opacity-90 hover:opacity-100 hover:scale-110 transition"

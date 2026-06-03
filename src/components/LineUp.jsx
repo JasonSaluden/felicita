@@ -1,13 +1,11 @@
 // components/LineUp.jsx
-import PoissonsFond from "./PoissonsFond";
 
 function LineUp() {
   return (
     <section
       className="relative isolate flow-root pb-16 px-6 bg-[#0E5C3A] bg-cover bg-center font-baseRegular"
-      style={{ backgroundImage: "url('/assets/BackgroundBody.jpg')" }}
+      style={{ backgroundImage: "url('/assets/backgrounds/BackgroundBody.webp')" }}
     >
-      <PoissonsFond />
 
       {/* 🫧 Bulle d'annonce qui chevauche le Hero et la LineUp */}
       <div className="relative z-30 -mt-24 mb-12 flex justify-center px-4">
@@ -41,28 +39,28 @@ function LineUp() {
             {/* Éléments décoratifs aux coins */}
             <div className="absolute top-4 left-4 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute top-4 right-4 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute bottom-4 left-4 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute bottom-4 right-4 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
@@ -74,7 +72,7 @@ function LineUp() {
             <h3 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 tracking-wide flex flex-col items-center justify-center gap-4">
               Ça arrive bientôt
               <img
-                src="/assets/mascottes/Felicita_Ed7_Ecrevisse.png"
+                src="/assets/mascottes/Felicita_Ed7_Ecrevisse.webp"
                 alt="Ecrevisse"
                 style={{ width: "300px", height: "auto" }}
                 className="object-contain"

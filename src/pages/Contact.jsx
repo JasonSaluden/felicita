@@ -5,7 +5,7 @@ function Contact() {
     <main
     className="flex flex-col items-center justify-center min-h-screen p-8 bg-cover bg-center relative font-baseRegular"
     style={{
-      backgroundImage: "url('/assets/contact_sunset.JPG')",
+      backgroundImage: "url('/assets/backgrounds/contact_sunset.webp')",
     }}>
       <div className="min-h-screen">
         {/* Header avec titre et pictos - AMÉLIORÉ */}
@@ -17,7 +17,7 @@ function Contact() {
                 {/* Titre avec pictos */}
                 <div className="flex items-center justify-center space-x-6 mb-4">
                   <img
-                    src="/assets/Elmts/picto3.png"
+                    src="/assets/pictos/picto3.png"
                     alt="Picto"
                     className="h-8 w-8 object-contain opacity-90"
                   />
@@ -25,7 +25,7 @@ function Contact() {
                     CONTACT
                   </h1>
                   <img
-                    src="/assets/Elmts/picto3.png"
+                    src="/assets/pictos/picto3.png"
                     alt="Picto"
                     className="h-8 w-8 object-contain opacity-90"
                   />
@@ -49,28 +49,28 @@ function Contact() {
             {/* Pictos décoratifs */}
             <div className="absolute top-3 left-3 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto2.png"
+                src="/assets/pictos/picto2.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute top-3 right-3 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto2.png"
+                src="/assets/pictos/picto2.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute bottom-3 left-3 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto2.png"
+                src="/assets/pictos/picto2.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute bottom-3 right-3 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto2.png"
+                src="/assets/pictos/picto2.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
@@ -112,28 +112,28 @@ function Contact() {
             {/* Pictos décoratifs */}
             <div className="absolute top-4 left-4 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute top-4 right-4 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute bottom-4 left-4 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute bottom-4 right-4 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />

@@ -1,9 +1,9 @@
-import PoissonsFond from "../components/PoissonsFond";
-
 function Programmation() {
   return (
-    <div className="relative isolate overflow-hidden min-h-screen bg-[#0E5C3A]">
-      <PoissonsFond />
+    <div
+      className="relative isolate overflow-hidden min-h-screen bg-[#0E5C3A] bg-cover bg-center"
+      style={{ backgroundImage: "url('/assets/backgrounds/BackgroundBody.webp')" }}
+    >
       {/* Header avec titre et pictos */}
       <div className="pt-16 pb-12">
         <div className="max-w-7xl mx-auto px-6">
@@ -11,7 +11,7 @@ function Programmation() {
             {/* Titre avec pictos */}
             <div className="flex items-center justify-center space-x-6 mb-8">
               <img
-                src="/assets/mascottes/Felicita_Ed7_Fleur01.png"
+                src="/assets\pictos\picto2.png"
                 alt=""
                 aria-hidden="true"
                 className="h-8 w-8 object-contain opacity-90"
@@ -20,7 +20,7 @@ function Programmation() {
                 PROGRAMMATION
               </h1>
               <img
-                src="/assets/mascottes/Felicita_Ed7_Fleur01.png"
+                src="/assets\pictos\picto2.png"
                 alt=""
                 aria-hidden="true"
                 className="h-8 w-8 object-contain opacity-90"
@@ -45,28 +45,28 @@ function Programmation() {
             {/* Éléments décoratifs aux coins */}
             <div className="absolute top-4 left-4 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute top-4 right-4 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute bottom-4 left-4 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute bottom-4 right-4 w-6 h-6 opacity-70">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Décoration"
                 className="w-full h-full object-contain"
               />
@@ -98,28 +98,28 @@ function Programmation() {
               {/* Éléments décoratifs aux coins comme sur les cartes */}
               <div className="absolute top-3 left-3 w-6 h-6 opacity-70">
                 <img
-                  src="/assets/Elmts/picto3.png"
+                  src="/assets/pictos/picto3.png"
                   alt="Décoration"
                   className="w-full h-full object-contain"
                 />
               </div>
               <div className="absolute top-3 right-3 w-6 h-6 opacity-70">
                 <img
-                  src="/assets/Elmts/picto3.png"
+                  src="/assets/pictos/picto3.png"
                   alt="Décoration"
                   className="w-full h-full object-contain"
                 />
               </div>
               <div className="absolute bottom-3 left-3 w-6 h-6 opacity-70">
                 <img
-                  src="/assets/Elmts/picto3.png"
+                  src="/assets/pictos/picto3.png"
                   alt="Décoration"
                   className="w-full h-full object-contain"
                 />
               </div>
               <div className="absolute bottom-3 right-3 w-6 h-6 opacity-70">
                 <img
-                  src="/assets/Elmts/picto3.png"
+                  src="/assets/pictos/picto3.png"
                   alt="Décoration"
                   className="w-full h-full object-contain"
                 />

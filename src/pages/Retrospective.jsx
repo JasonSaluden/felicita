@@ -3,7 +3,6 @@ import { useParams, Navigate } from "react-router-dom";
 import ArtistCardSimple from "../components/ArtistCardSimple";
 import ModalArtiste from "../components/ModalArtiste";
 import { editions, getEditionByAnnee } from "../data/editionsData";
-import PoissonsFond from "../components/PoissonsFond";
 
 function Retrospective() {
   const { annee } = useParams();
@@ -31,15 +30,17 @@ function Retrospective() {
   }
 
   return (
-    <div className="relative isolate overflow-hidden min-h-screen bg-[#0E5C3A]">
-      <PoissonsFond />
+    <div
+      className="relative isolate overflow-hidden min-h-screen bg-[#0E5C3A] bg-cover bg-center"
+      style={{ backgroundImage: "url('/assets/backgrounds/BackgroundBody.webp')" }}
+    >
       {/* Header avec titre et pictos */}
       <div className="pt-16 pb-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-6 mb-8">
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Picto"
                 className="h-6 w-6 object-contain opacity-80"
               />
@@ -47,7 +48,7 @@ function Retrospective() {
                 RÉTROSPECTIVE
               </h1>
               <img
-                src="/assets/Elmts/picto3.png"
+                src="/assets/pictos/picto3.png"
                 alt="Picto"
                 className="h-6 w-6 object-contain opacity-80"
               />
@@ -95,7 +96,7 @@ function Retrospective() {
               <div className="flex items-center justify-center mt-4">
                 <div className="h-px w-24 bg-gray-300/70"></div>
                 <img
-                  src="/assets/Elmts/picto3.png"
+                  src="/assets/pictos/picto3.png"
                   alt="Picto"
                   className="h-5 w-5 object-contain opacity-80 mx-4"
                 />
@@ -122,7 +123,7 @@ function Retrospective() {
           <div className="text-center">
             <div className="inline-block bg-white/60 backdrop-blur-sm border border-gray-200 px-8 py-6 rounded-2xl shadow-sm">
               <p className="text-lg text-gray-700 font-medium">
-                La programmation de cette édition arrive bientôt.
+                La programmation et quelques photos de cette édition arrivent bientôt 😁
               </p>
             </div>
           </div>
@@ -138,7 +139,7 @@ function Retrospective() {
               <div className="flex items-center justify-center mt-4">
                 <div className="h-px w-24 bg-gray-300/70"></div>
                 <img
-                  src="/assets/Elmts/picto3.png"
+                  src="/assets/pictos/picto3.png"
                   alt="Picto"
                   className="h-5 w-5 object-contain opacity-80 mx-4"
                 />

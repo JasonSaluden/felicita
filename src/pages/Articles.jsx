@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../supabaseClient'
-import PoissonsFond from '../components/PoissonsFond'
 
 export default function Articles() {
   const [articles, setArticles] = useState([])
@@ -193,7 +192,6 @@ export default function Articles() {
 
   return (
     <div className="relative isolate overflow-hidden min-h-screen bg-[#0E5C3A] py-8 px-4">
-      <PoissonsFond />
       {/* Header avec sélecteur de layout */}
       <div className="max-w-6xl mx-auto mb-8">
         <div className="text-center mb-8">

@@ -2,13 +2,13 @@ function Footer() {
   const partners = [
     // Publics
     {
-      src: "./assets/partners/Brissac-Loire-Aubance-Horizontal-RVB-.png",
+      src: "./assets/partners/Brissac-Loire-Aubance-Horizontal-RVB-.webp",
       alt: "Brissac Loire Aubance",
       cat: "publics",
       link: "https://www.brissacloireaubance.fr",
     },
     {
-      src: "./assets/partners/Departement_Anjou_cmjn.png",
+      src: "./assets/partners/Departement_Anjou_cmjn.webp",
       alt: "Anjou Département",
       cat: "publics",
       link: "https://www.maine-et-loire.fr",
@@ -16,61 +16,61 @@ function Footer() {
 
     // Locaux
     {
-      src: "./assets/partners/Bricomarche_logo_2022.svg.png",
+      src: "./assets/partners/Bricomarche_logo_2022.svg.webp",
       alt: "Bricomarché",
       cat: "locaux",
       link: "https://www.bricomarche.com/magasin/brissac-quince/20320",
     },
     {
-      src: "./assets/partners/la_bonne_conduite.png",
+      src: "./assets/partners/la_bonne_conduite.webp",
       alt: "La Bonne Conduite",
       cat: "locaux",
       link: "https://labonneconduite49.fr",
     },
     {
-      src: "./assets/partners/Logo_l_appart_fitness.png",
+      src: "./assets/partners/Logo_l_appart_fitness.webp",
       alt: "L'appart fitness",
       cat: "locaux",
       link: "https://clubs.lappartfitness.com/23-l-appart-fitness-brissac",
     },
     {
-      src: "./assets/partners/Logo 1 brain 2 fleurs.png",
+      src: "./assets/partners/Logo 1 brain 2 fleurs.webp",
       alt: "Un brin deux fleurs",
       cat: "locaux",
       link: "https://www.artisansfleuristesdefrance.com/livraison/49-brissac-loire-aubance-un-brin-deux-fleurs?srsltid=AfmBOoqx9OemNXYeSZZka9bzfAIeWLzYcIUKcdtQrCrlQzBUlOBzGSe8",
     },
     {
-      src: "./assets/partners/logo_la_cave_bio.png",
+      src: "./assets/partners/logo_la_cave_bio.webp",
       alt: "La cave bio",
       cat: "locaux",
       link: "https://lacavebio.fr",
     },
     {
-      src: "./assets/partners/Logo-Fromagerie-Rouet-F-Couleur.png",
+      src: "./assets/partners/Logo-Fromagerie-Rouet-F-Couleur.webp",
       alt: "Fromagerie Rouet",
       cat: "locaux",
       link: "https://fromagerie-cremerie-rouet.fr",
     },
     {
-      src: "./assets/partners/le_moulin_de_sarre_logo.png",
+      src: "./assets/partners/le_moulin_de_sarre_logo.webp",
       alt: "Moulin de Sarré",
       cat: "locaux",
       link: "https://www.moulin-de-sarre.fr",
     },
     {
-      src: "./assets/partners/Logo montgolfières.png",
+      src: "./assets/partners/Logo montgolfières.webp",
       alt: "Montgolfières d'Anjou",
       cat: "locaux",
       link: "https://montgolfieres.fr",
     },
     {
-      src: "./assets/partners/Akoufen-LaBotellerie_logo1-RVB-web.jpg",
+      src: "./assets/partners/Akoufen-LaBotellerie_logo1-RVB-web.webp",
       alt: "Akoufen La Botellerie",
       cat: "locaux",
       link: "https://www.akoufen.com",
     },
     {
-      src: "./assets/partners/Logo_Ouest_Ouvrage.png",
+      src: "./assets/partners/Logo_Ouest_Ouvrage.webp",
       alt: "Ouest Ouvrage",
       cat: "locaux",
       link: "https://www.ouest-ouvrage.com",
@@ -78,7 +78,7 @@ function Footer() {
 
     // Hors Brissac
     {
-      src: "./assets/partners/1024px-Logo_Radio_Campus_Angers.png",
+      src: "./assets/partners/1024px-Logo_Radio_Campus_Angers.webp",
       alt: "Radio Campus Angers",
       cat: "media",
       link: "https://www.radiocampusangers.com",
@@ -125,7 +125,7 @@ function Footer() {
             <div className="flex items-start space-x-6">
               <div className="flex-shrink-0">
                 <img
-                  src="./assets/Logo_Felicita_rose.png"
+                  src="/assets/logos/Logo_Felicita_rose.webp"
                   alt="Felicità Festival Logo"
                   className="w-24 h-auto"
                 />

@@ -15,7 +15,7 @@ function Billetterie() {
     <main
       className="flex flex-col items-center justify-center min-h-screen p-8 bg-cover bg-center relative font-baseRegular"
       style={{
-        backgroundImage: "url('/assets/billetterie.jpg')",
+        backgroundImage: "url('/assets/backgrounds/billetterie.webp')",
       }}
     >
       <div className="absolute inset-0 bg-black/20"></div>
