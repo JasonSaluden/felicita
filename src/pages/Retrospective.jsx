@@ -3,6 +3,7 @@ import { useParams, Navigate } from "react-router-dom";
 import ArtistCardSimple from "../components/ArtistCardSimple";
 import ModalArtiste from "../components/ModalArtiste";
 import { editions, getEditionByAnnee } from "../data/editionsData";
+import PoissonsFond from "../components/PoissonsFond";
 
 function Retrospective() {
   const { annee } = useParams();
@@ -30,7 +31,8 @@ function Retrospective() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0E5C3A]">
+    <div className="relative isolate overflow-hidden min-h-screen bg-[#0E5C3A]">
+      <PoissonsFond />
       {/* Header avec titre et pictos */}
       <div className="pt-16 pb-12">
         <div className="max-w-7xl mx-auto px-6">

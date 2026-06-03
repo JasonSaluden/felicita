@@ -17,7 +17,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#0E5C3A] text-[#F4D4DC]">
+      <div className="min-h-screen bg-[#01250C] text-[#F4D4DC]">
         <BandeauHeader />
         <Navbar />
         <main>

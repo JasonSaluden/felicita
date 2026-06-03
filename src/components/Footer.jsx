@@ -116,7 +116,7 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-[#0E5C3A] to-[#0A4A2D] text-[#F4D4DC] font-baseRegular relative">
+    <footer className="bg-#0E5C3A text-[#F4D4DC] font-baseRegular relative">
       {/* Section principale */}
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -125,13 +125,13 @@ function Footer() {
             <div className="flex items-start space-x-6">
               <div className="flex-shrink-0">
                 <img
-                  src="./assets/logoFelicita.png"
+                  src="./assets/Logo_Felicita_rose.png"
                   alt="Felicità Festival Logo"
                   className="w-24 h-auto"
                 />
               </div>
               <div>
-                <p className="bg-[#F0A5B8] text-[#FFFFFF] text-lg mb-4 font-medium px-3 py-1 rounded inline-block">
+                <p className="bg-[#0E5C3A] text-[#FFFFFF] text-lg mb-4 font-medium px-3 py-1 rounded inline-block">
                   Festival musical & artistique
                 </p>
                 <div className="space-y-3 text-[#F4D4DC]">
@@ -150,15 +150,16 @@ function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-xl font-bold mb-6 bg-[#F0A5B8] text-[#FFFFFF] px-3 py-1 rounded">
+            <h4 className="text-xl font-bold mb-6 bg-[#0E5C3A] text-[#FFFFFF] px-3 py-1 rounded">
               Navigation
             </h4>
             <ul className="space-y-3">
               {[
                 { href: "/", label: "Accueil" },
+                { href: "/infospratiques", label: "Infos Pratiques" },
                 { href: "/programmation", label: "Programmation" },
-                { href: "/contact", label: "Nous Contacter" },
                 { href: "/billetterie", label: "Billetterie" },
+                { href: "/contact", label: "Contact" },
               ].map((item, idx) => (
                 <li key={idx}>
                   <a
@@ -174,7 +175,7 @@ function Footer() {
 
           {/* Réseaux sociaux */}
           <div>
-            <h4 className="text-xl font-bold mb-6 bg-[#F0A5B8] text-[#FFFFFF] px-3 py-1 rounded">
+            <h4 className="text-xl font-bold mb-6 bg-[#0E5C3A] text-[#FFFFFF] px-3 py-1 rounded">
               Suivez-nous
             </h4>
             <div className="flex justify-center space-x-6 mb-8">
@@ -182,7 +183,7 @@ function Footer() {
                   href="https://www.facebook.com/lafelicitafestival"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/80 p-4 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-105"
+                  className="bg-[#F0A5B8] p-4 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-105"
                 >
                   <svg
                     className="w-7 h-7 text-blue-600"
@@ -197,7 +198,7 @@ function Footer() {
                   href="https://www.instagram.com/lafelicitafestival"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/80 p-4 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-105"
+                  className="bg-[#F0A5B8] p-4 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-105"
                 >
                   <svg
                     className="w-7 h-7 text-pink-600"
@@ -260,12 +261,6 @@ function Footer() {
       <div className="border-t border-[#F4D4DC]/30">
         <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-[#F4D4DC]">
           <div>© 2026 Felicità Festival. Tous droits réservés.</div>
-          <a
-            href="/contact"
-            className="hover:text-[#F0A5B8] transition-colors duration-200"
-          >
-            Contact
-          </a>
         </div>
       </div>
     </footer>

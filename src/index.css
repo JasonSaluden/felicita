@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #0E5C3A;
+  background-color: #01250C;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -24,11 +24,11 @@ code {
 }
 
 .logoAccueil{
-  width: 44%;
+  width: 20%;
 }
 
 :root{
-  --ff-bg1:#0E5C3A;
+  --ff-bg1:#01250C;
   --ff-bg2:#2A5DB8;
   --ff-text:#F4D4DC;
   --ff-navy:#0A1F14;

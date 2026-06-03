@@ -84,3 +84,64 @@
 .animate-spin-reverse {
   animation: spin-reverse 8s linear infinite;
 }
+
+/* 🦞 Écrevisse de la navbar : léger balancement façon "je m'agrippe à la barre" */
+@keyframes ecrevisse-sway {
+  0%, 100% {
+    transform: rotate(-2.5deg) translateY(0);
+  }
+  50% {
+    transform: rotate(2.5deg) translateY(-4px);
+  }
+}
+
+.animate-ecrevisse {
+  transform-origin: bottom center;
+  animation: ecrevisse-sway 4s ease-in-out infinite;
+}
+
+/* Au survol de la navbar, l'écrevisse se redresse et met les pinces en avant */
+.ecrevisse-host:hover .animate-ecrevisse {
+  animation-play-state: paused;
+  transform: scale(1.08) translateY(-6px) rotate(0deg);
+  transition: transform 0.4s ease-out;
+}
+
+.animate-float {
+  animation: float-soft 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-soft 8s ease-in-out infinite;
+}
+
+/* 🐟 Dérive du banc de poissons en fond — deux trajectoires distinctes */
+@keyframes drift-a {
+  0%   { transform: translateX(-12%) translateY(0) rotate(-1deg); }
+  50%  { transform: translateX(12%) translateY(-28px) rotate(2deg); }
+  100% { transform: translateX(-12%) translateY(0) rotate(-1deg); }
+}
+
+@keyframes drift-b {
+  0%   { transform: translateX(10%) translateY(-10px) rotate(1deg); }
+  50%  { transform: translateX(-14%) translateY(22px) rotate(-2deg); }
+  100% { transform: translateX(10%) translateY(-10px) rotate(1deg); }
+}
+
+.animate-drift {
+  animation: drift-a 18s ease-in-out infinite;
+}
+
+.animate-drift-slow {
+  animation: drift-b 26s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ecrevisse,
+  .animate-float,
+  .animate-float-slow,
+  .animate-drift,
+  .animate-drift-slow {
+    animation: none;
+  }
+}

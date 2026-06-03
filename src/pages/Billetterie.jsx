@@ -15,7 +15,7 @@ function Billetterie() {
     <main
       className="flex flex-col items-center justify-center min-h-screen p-8 bg-cover bg-center relative font-baseRegular"
       style={{
-        backgroundImage: "url('/assets/0070 coesamuse_ Chloé André.jpg')",
+        backgroundImage: "url('/assets/billetterie.jpg')",
       }}
     >
       <div className="absolute inset-0 bg-black/20"></div>

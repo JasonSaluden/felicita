@@ -5,7 +5,7 @@ function Contact() {
     <main
     className="flex flex-col items-center justify-center min-h-screen p-8 bg-cover bg-center relative font-baseRegular"
     style={{
-      backgroundImage: "url('/assets/coesamuseIMGM8556.JPG')",
+      backgroundImage: "url('/assets/contact_sunset.JPG')",
     }}>
       <div className="min-h-screen">
         {/* Header avec titre et pictos - AMÉLIORÉ */}

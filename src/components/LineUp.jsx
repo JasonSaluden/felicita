@@ -1,8 +1,32 @@
 // components/LineUp.jsx
+import PoissonsFond from "./PoissonsFond";
 
 function LineUp() {
   return (
-    <section className="pb-16 px-6 bg-[#0E5C3A] font-baseRegular">
+    <section
+      className="relative isolate flow-root pb-16 px-6 bg-[#0E5C3A] bg-cover bg-center font-baseRegular"
+      style={{ backgroundImage: "url('/assets/BackgroundBody.jpg')" }}
+    >
+      <PoissonsFond />
+
+      {/* 🫧 Bulle d'annonce qui chevauche le Hero et la LineUp */}
+      <div className="relative z-30 -mt-24 mb-12 flex justify-center px-4">
+        <div className="max-w-4xl w-full">
+          <div className="relative rounded-3xl px-8 py-6 shadow-2xl
+                          bg-gradient-to-br from-[#F0A5B8]/95 via-[#F0A5B8]/90 to-[#F4D4DC]/80
+                          backdrop-blur-lg border border-white/50
+                          transform hover:scale-105 transition-all duration-500">
+            <div className="text-center">
+              <p className="text-lg md:text-xl text-gray-800 mb-4 leading-relaxed">
+              Découvrez une programmation unique avec des artistes émergent·e·s et locaux·ales,
+              des installations lumineuses et sonores immersives, ainsi que des ateliers créatifs pour tous les âges.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -47,8 +71,14 @@ function LineUp() {
             <div className="inline-block bg-orange-200 text-orange-800 px-4 py-1 rounded-full text-sm font-bold mb-5 border border-orange-300">
               ÉDITION 2026
             </div>
-            <h3 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 tracking-wide animate-pulse">
+            <h3 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 tracking-wide flex flex-col items-center justify-center gap-4">
               Ça arrive bientôt
+              <img
+                src="/assets/mascottes/Felicita_Ed7_Ecrevisse.png"
+                alt="Ecrevisse"
+                style={{ width: "300px", height: "auto" }}
+                className="object-contain"
+              />
             </h3>
             <p className="text-lg text-gray-700 max-w-md mx-auto mb-8">
               On peaufine la programmation de cette nouvelle édition. Les
@@ -57,7 +87,7 @@ function LineUp() {
 
             <a
               href="/retrospective"
-              className="inline-block bg-[#F0A5B8] text-[#0A1F14] px-8 py-3 rounded-full font-bold hover:bg-[#E89BAE] transition-colors"
+              className="inline-block bg-[#CB97FF] text-[#0A1F14] px-8 py-3 rounded-full font-bold hover:bg-[#E89BAE] transition-colors"
             >
               Revivre les éditions passées
             </a>

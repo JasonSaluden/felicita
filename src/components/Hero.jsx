@@ -30,28 +30,35 @@ function Hero() {
         {/* Contenu principal */}
         <div className="relative z-10 h-full flex items-center justify-between px-6 pl-24 pr-0 max-w-[100rem]">
           {/* Partie gauche - Texte principal */}
-          <div className="flex-1 text-white">
+          <div className="flex-1 text-[#F0A5B8]">
             <div className="max-w-xl">
-              <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
-                La Felicità
+              <h1
+                className="text-5xl lg:text-7xl font-bold mb-4 leading-tight"
+                style={{
+                  WebkitTextStrokeWidth: "13px",
+                  WebkitTextStrokeColor: "#01250C",
+                  paintOrder: "stroke fill",
+                }}
+              >
+                La <span style={{ color: "#F4D4DC" }}>Felicità</span>
                 <br />
-                <span className="text-yellow-300">Festival</span>
+                Festival
                 <br />
                  revient
               </h1>
-              <p className="text-xl lg:text-2xl mb-6 text-gray-200">
+              <p className="text-xl lg:text-2xl mb-6 text-[#F4D4DC]">
                 La Felicità, le festival angevin qui célèbre la fin de l'été en musique, est de retour pour sa 7ème édition
               </p>
 
               {/* Date et lieu */}
-              <div className="space-y-2 text-lg">
-                <div className="flex items-center space-x-2">
-                  <span className="text-yellow-300">📅</span>
+              <div className="space-y-2 text-lg text-[#F4D4DC] w-[11vw] min-w-[200px]">
+                <div className="flex items-center space-x-2 bg-[#01250C] rounded-xl px-3 py-1">
+                  <span>📅</span>
                   <span>Samedi 29 Août 2026</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-yellow-300">📍</span>
-                  <span className="bg-white-300 px-2 py-1 rounded">Brissac-Quincé - 49320</span>
+                <div className="flex items-center space-x-2 bg-[#01250C] rounded-xl px-3 py-1">
+                  <span>📍</span>
+                  <span className="">Brissac-Quincé - 49320</span>
                 </div>
               </div>
             </div>
@@ -67,36 +74,10 @@ function Hero() {
                 onClick={() => setIsModalOpen(true)}
               /> */}
               {/* Badge "Édition 2026" */}
-              <div className="absolute -top-3 -right-3 bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold rotate-12">
+              {/* <div className="absolute -top-3 -right-3 bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold rotate-12">
                 Édition 2026
-              </div>
+              </div> */}
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* 🫧 Bulle d'annonce comme pont vers LineUp */}
-      <div className="relative -mt-20 z-30 flex justify-center px-4 pb-16">
-        <div className="max-w-4xl w-full">
-          {/* Bulle principale avec effet de transition */}
-          <div className="relative rounded-3xl px-8 py-6 shadow-2xl
-                          bg-gradient-to-br from-[#F0A5B8]/95 via-[#F0A5B8]/90 to-[#F4D4DC]/80 
-                          backdrop-blur-lg border border-white/50
-                          transform hover:scale-105 transition-all duration-500">
-            
-            {/* Contenu de la bulle */}
-            <div className="text-center">
-              <p className="text-lg md:text-xl text-gray-800 mb-4 leading-relaxed">
-              Découvrez une programmation unique avec des artistes émergent·e·s et locaux·ales, 
-              des installations lumineuses et sonores immersives, ainsi que des ateliers créatifs pour tous les âges.
-              </p>
-
-            </div>
-
-            {/* Éléments décoratifs flottants */}
-            <div className="absolute -top-3 -left-3 w-6 h-6 bg-yellow-400 rounded-full opacity-80 animate-pulse"></div>
-            <div className="absolute -top-2 -right-4 w-4 h-4 bg-pink-400 rounded-full opacity-70 animate-pulse delay-300"></div>
-            <div className="absolute -bottom-2 left-8 w-5 h-5 bg-purple-400 rounded-full opacity-60 animate-pulse delay-500"></div>
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ export const editions = [
     numero: 6,
     annee: 2025,
     theme: "La Cité du Vent",
-    affiche: "/assets/Affiche_Felicita_Festival_2025.jpg",
+    affiche: "/assets/affiches/Affiche_Felicita_Festival_2025.jpg",
     artists: artistsData,
     // Partenaires & sponsors de l'édition. lien: null si pas de site.
     partenaires: [
@@ -36,7 +36,7 @@ export const editions = [
     numero: 5,
     annee: 2024,
     theme: "La cité radieuse",
-    affiche: "/assets/Affiche_Felicita_Festival_2024.jpg",
+    affiche: "/assets/affiches/Affiche_Felicita_Festival_2024.jpg",
     artists: [],
     partenaires: [],
   },
@@ -44,7 +44,7 @@ export const editions = [
     numero: 4,
     annee: 2023,
     theme: "LA cité qui chante",
-    affiche: "/assets/Affiche_Felicita_Festival_2023.jpg",
+    affiche: "/assets/affiches/Affiche_Felicita_Festival_2023.jpg",
     artists: [],
     partenaires: [],
   },
@@ -52,7 +52,7 @@ export const editions = [
     numero: 3,
     annee: 2022,
     theme: "La methamosphose",
-    affiche: "/assets/Affiche_Felicita_Festival_2022.jpg",
+    affiche: "/assets/affiches/Affiche_Felicita_Festival_2022.jpg",
     artists: [],
     partenaires: [],
   },
@@ -60,18 +60,18 @@ export const editions = [
     numero: 2,
     annee: 2021,
     theme: "",
-    affiche: "/assets/Affiche_Felicita_Festival_2021.jpg",
+    affiche: "/assets/affiches/Affiche_Felicita_Festival_2021.jpg",
     artists: [],
     partenaires: [],
   },
-  {
-    numero: 1,
-    annee: 2020,
-    theme: "",
-    affiche: null,
-    artists: [],
-    partenaires: [],
-  },
+  // {
+  //   numero: 1,
+  //   annee: 2020,
+  //   theme: "",
+  //   affiche: null,
+  //   artists: [],
+  //   partenaires: [],
+  // },
 ];
 
 // Helpers

@@ -58,8 +58,11 @@ function Navbar() {
 
   return (
     <>
-      {/* LOGO */}
-      <div className="flex flex-col items-center pt-12">
+      {/* LOGO sur fond bannière */}
+      <div
+        className="flex flex-col items-center pt-12 bg-cover bg-center"
+        style={{ backgroundImage: "url('/assets/BanniereHeader.jpg')" }}
+      >
         <div
           className={`transition-all duration-500 ease-in-out ${
             isScrolled
@@ -69,7 +72,7 @@ function Navbar() {
         >
           <Link to="/" className="flex items-center mb-4 logoContainer">
             <img
-              src="/assets/logoFelicita.png"
+              src="/assets/Logo_Felicita_rose.png"
               alt="Logo Felicita"
               className="logoAccueil"
             />
@@ -78,8 +81,10 @@ function Navbar() {
       </div>
 
       {/* NAVBAR */}
-      <nav className="sticky top-7 z-50 w-full bg-[#F4D4DC] font-baseRegular shadow-lg rounded-lg py-2 px-4">
-        <ul className="flex flex-wrap justify-center gap-6 text-sm tracking-wide py-2">
+      <nav className="ecrevisse-host sticky top-0 z-50 w-full bg-[#F4D4DC] font-base shadow-lg rounded-lg py-2 px-4">
+        
+
+        <ul className="flex flex-wrap justify-center gap-6 text-base tracking-wide py-2">
           {/* Accueil */}
           <li className="relative group flex items-center">
             <Link
@@ -95,8 +100,9 @@ function Navbar() {
           <li className="flex items-center justify-center">
             <img
               src="/assets/Elmts/picto3.png"
-              alt="Line Up"
-              className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
+              alt=""
+              aria-hidden="true"
+              className="h-4 w-4 object-contain opacity-90 hover:opacity-100 hover:scale-110 transition"
             />
           </li>
 
@@ -115,8 +121,9 @@ function Navbar() {
           <li className="flex items-center justify-center">
             <img
               src="/assets/Elmts/picto3.png"
-              alt="Line Up"
-              className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
+              alt=""
+              aria-hidden="true"
+              className="h-4 w-4 object-contain opacity-90 hover:opacity-100 hover:scale-110 transition"
             />
           </li>
 
@@ -135,8 +142,9 @@ function Navbar() {
           <li className="flex items-center justify-center">
             <img
               src="/assets/Elmts/picto3.png"
-              alt="Line Up"
-              className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
+              alt=""
+              aria-hidden="true"
+              className="h-4 w-4 object-contain opacity-90 hover:opacity-100 hover:scale-110 transition"
             />
           </li>
 
@@ -196,8 +204,9 @@ function Navbar() {
           <li className="flex items-center justify-center">
             <img
               src="/assets/Elmts/picto3.png"
-              alt="Line Up"
-              className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
+              alt=""
+              aria-hidden="true"
+              className="h-4 w-4 object-contain opacity-90 hover:opacity-100 hover:scale-110 transition"
             />
           </li>
 
@@ -216,8 +225,9 @@ function Navbar() {
           <li className="flex items-center justify-center">
             <img
               src="/assets/Elmts/picto3.png"
-              alt="Line Up"
-              className="h-4 w-4 object-contain opacity-80 hover:opacity-100 transition"
+              alt=""
+              aria-hidden="true"
+              className="h-4 w-4 object-contain opacity-90 hover:opacity-100 hover:scale-110 transition"
             />
           </li>
 
