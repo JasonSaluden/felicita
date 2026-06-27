@@ -1,5 +1,5 @@
-// data/artistsData.js
-export const artistsData = [
+// data/artistes2025.js
+export const artistes2025 = [
   {
     id: 2,
     name: "Spoink",
@@ -153,13 +153,13 @@ export const artistsData = [
 
 // Fonctions utiles pour manipuler les données
 export const getArtistById = (id) =>
-  artistsData.find((artist) => artist.id === id);
+  artistes2025.find((artist) => artist.id === id);
 
 export const getArtistsByGenre = (genre) =>
-  artistsData.filter((artist) => artist.genre === genre);
+  artistes2025.filter((artist) => artist.genre === genre);
 
 export const getArtistsByTimeSlot = (timeStart, timeEnd) => {
-  return artistsData.filter((artist) => {
+  return artistes2025.filter((artist) => {
     // Conversion simple des heures pour comparaison
     const artistHour = parseInt(artist.time.split("h")[0]);
     const startHour = parseInt(timeStart.split("h")[0]);
@@ -170,4 +170,4 @@ export const getArtistsByTimeSlot = (timeStart, timeEnd) => {
 };
 
 // Export par défaut de toutes les données
-export default artistsData;
+export default artistes2025;

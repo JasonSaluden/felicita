@@ -1,6 +1,6 @@
 // hooks/useArtistsData.js
 import { useState, useEffect } from 'react';
-import { artistsData } from '../data/artistsData'; 
+import { artistes2025 } from '../data/artistes2025'; 
 
 const useArtistsData = () => {
   const [artists, setArtists] = useState([]);
@@ -12,9 +12,9 @@ const useArtistsData = () => {
       try {
         setLoading(true);
         
-        // Utilise les données importées depuis artistsData.js
+        // Utilise les données importées depuis artistes2025.js
         await new Promise(resolve => setTimeout(resolve, 300)); // Simule un délai
-        setArtists(artistsData);
+        setArtists(artistes2025);
         
         // Plus tard, tu peux remplacer par un vrai appel API :
         // const response = await fetch('/api/artists');
@@ -24,7 +24,7 @@ const useArtistsData = () => {
         setError(null);
       } catch (err) {
         setError(err.message);
-        setArtists(artistsData); // Fallback sur les données locales
+        setArtists(artistes2025); // Fallback sur les données locales
       } finally {
         setLoading(false);
       }
@@ -41,7 +41,7 @@ const useArtistsData = () => {
     getArtistsByGenre: (genre) => artists.filter(artist => artist.genre === genre),
     refreshArtists: () => {
       // Fonction pour recharger les données
-      setArtists(artistsData);
+      setArtists(artistes2025);
     }
   };
 };

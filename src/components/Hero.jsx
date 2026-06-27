@@ -4,7 +4,9 @@ function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    const handleKeyDown = (e) => { if (e.key === "Escape") setIsModalOpen(false); };
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setIsModalOpen(false);
+    };
     if (isModalOpen) {
       document.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
@@ -21,40 +23,36 @@ function Hero() {
     <main className="w-full bg-[#0E5C3A] overflow-hidden font-baseRegular">
       {/* Section principale avec image de fond */}
       <div
-        className="relative w-full h-[80vh] bg-cover bg-center pt-16 pb-28"
-        style={{ backgroundImage: "url('/assets/backgrounds/VianneyToutSeul.webp')" }}
+        className="relative w-full min-h-[70vh] lg:h-[80vh] bg-cover bg-center pt-16 pb-16 lg:pb-28"
+        style={{
+          backgroundImage: "url('/assets/photos/Lulu_et_Rom_Accueil.webp')",
+        }}
       >
         {/* Overlay pour la lisibilité */}
         <div className="absolute inset-0 bg-black/30"></div>
 
         {/* Contenu principal */}
-        <div className="relative z-10 h-full flex items-center justify-between px-6 pl-24 pr-0 max-w-[100rem]">
+        <div className="relative z-10 h-full flex items-center justify-between px-6 lg:pl-24 lg:pr-0 max-w-[100rem] mx-auto">
           {/* Partie gauche - Texte principal */}
           <div className="flex-1 text-[#F0A5B8]">
             <div className="max-w-xl">
-              <h1
-                className="text-5xl lg:text-7xl font-bold mb-4 leading-tight"
-                style={{
-                  WebkitTextStrokeWidth: "13px",
-                  WebkitTextStrokeColor: "#01250C",
-                  paintOrder: "stroke fill",
-                }}
-              >
-                La <span style={{ color: "#F4D4DC" }}>Felicità</span>
+              <h1 className="hero-title text-4xl sm:text-5xl lg:text-7xl font-bold mb-4 leading-tight">
+                La Felicità
                 <br />
                 Festival
                 <br />
-                 revient
+                revient
               </h1>
-              <p className="text-xl lg:text-2xl mb-6 text-[#F4D4DC]">
-                La Felicità, le festival angevin qui célèbre la fin de l'été en musique, est de retour pour sa 7ème édition
+              <p className="text-lg sm:text-xl lg:text-2xl mb-6 text-[#F4D4DC]">
+                La Felicità, le festival angevin qui célèbre la fin de l'été en
+                musique, est de retour pour sa 7ème édition
               </p>
 
               {/* Date et lieu */}
-              <div className="space-y-2 text-lg text-[#F4D4DC] w-[11vw] min-w-[200px]">
+              <div className="space-y-2 text-base sm:text-lg text-[#F4D4DC] w-fit max-w-xs">
                 <div className="flex items-center space-x-2 bg-[#01250C] rounded-xl px-3 py-1">
                   <span>📅</span>
-                  <span>Samedi 29 Août 2026</span>
+                  <span>Samedi 29 août 2026</span>
                 </div>
                 <div className="flex items-center space-x-2 bg-[#01250C] rounded-xl px-3 py-1">
                   <span>📍</span>

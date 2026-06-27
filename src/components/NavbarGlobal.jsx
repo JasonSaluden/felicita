@@ -6,6 +6,7 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const [isRetroOpen, setIsRetroOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -22,9 +23,9 @@ function Navbar() {
     const updatePath = () => {
       setCurrentPath(window.location.pathname);
     };
-    
+
     window.addEventListener("popstate", updatePath);
-    
+
     return () => window.removeEventListener("popstate", updatePath);
   }, []);
 
@@ -51,6 +52,7 @@ function Navbar() {
   // Fonction pour gérer le clic sur un lien
   const handleLinkClick = () => {
     setIsRetroOpen(false);
+    setIsMenuOpen(false);
     setTimeout(() => {
       setCurrentPath(window.location.pathname);
     }, 100);
@@ -82,9 +84,49 @@ function Navbar() {
 
       {/* NAVBAR */}
       <nav className="ecrevisse-host sticky top-0 z-50 w-full bg-[#F4D4DC] font-base shadow-lg rounded-lg py-2 px-4">
-        
 
-        <ul className="flex flex-wrap justify-center gap-6 text-base tracking-wide py-2">
+        {/* Barre mobile : libellé + bouton hamburger */}
+        <div className="lg:hidden flex items-center justify-between">
+          <span className="font-bold text-[#0A1F14] tracking-wide px-2">
+            Menu
+          </span>
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={isMenuOpen}
+            className="p-2 text-[#0A1F14] hover:bg-[#F0A5B8] rounded-md transition-colors"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        <ul
+          className={`${
+            isMenuOpen ? "flex" : "hidden"
+          } lg:flex flex-col lg:flex-row flex-wrap items-center justify-center gap-3 lg:gap-6 text-base tracking-wide py-2`}
+        >
           {/* Accueil */}
           <li className="relative group flex items-center">
             <Link
@@ -97,7 +139,7 @@ function Navbar() {
           </li>
 
           {/* Picto */}
-          <li className="flex items-center justify-center">
+          <li className="hidden lg:flex items-center justify-center">
             <img
               src="/assets/pictos/picto3.png"
               alt=""
@@ -118,7 +160,7 @@ function Navbar() {
           </li>
 
           {/* Picto */}
-          <li className="flex items-center justify-center">
+          <li className="hidden lg:flex items-center justify-center">
             <img
               src="/assets/pictos/picto3.png"
               alt=""
@@ -139,7 +181,7 @@ function Navbar() {
           </li>
 
           {/* Picto */}
-          <li className="flex items-center justify-center">
+          <li className="hidden lg:flex items-center justify-center">
             <img
               src="/assets/pictos/picto3.png"
               alt=""
@@ -201,7 +243,7 @@ function Navbar() {
           </li>
 
           {/* Picto */}
-          <li className="flex items-center justify-center">
+          <li className="hidden lg:flex items-center justify-center">
             <img
               src="/assets/pictos/picto3.png"
               alt=""
@@ -222,7 +264,7 @@ function Navbar() {
           </li>
 
           {/* Picto */}
-          <li className="flex items-center justify-center">
+          <li className="hidden lg:flex items-center justify-center">
             <img
               src="/assets/pictos/picto3.png"
               alt=""

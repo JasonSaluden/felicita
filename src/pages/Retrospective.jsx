@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import ArtistCardSimple from "../components/ArtistCardSimple";
 import ModalArtiste from "../components/ModalArtiste";
+import Partenaires from "../components/Partenaires";
 import { editions, getEditionByAnnee } from "../data/editionsData";
 
 function Retrospective() {
@@ -129,56 +130,11 @@ function Retrospective() {
           </div>
         )}
 
-        {/* Partenaires de l'édition */}
-        {edition.partenaires && edition.partenaires.length > 0 && (
-          <div className="mt-20">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#F4D4DC] tracking-wide">
-                Nos partenaires cette année-là
-              </h2>
-              <div className="flex items-center justify-center mt-4">
-                <div className="h-px w-24 bg-gray-300/70"></div>
-                <img
-                  src="/assets/pictos/picto3.png"
-                  alt="Picto"
-                  className="h-5 w-5 object-contain opacity-80 mx-4"
-                />
-                <div className="h-px w-24 bg-gray-300/70"></div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-              {edition.partenaires.map((partenaire) => {
-                const contenu = (
-                  <div className="bg-white rounded-2xl shadow-lg h-32 flex items-center justify-center p-6 transition-transform duration-200 group-hover:scale-105">
-                    <img
-                      src={partenaire.logo}
-                      alt={partenaire.nom}
-                      title={partenaire.nom}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                );
-
-                return partenaire.lien ? (
-                  <a
-                    key={partenaire.nom}
-                    href={partenaire.lien}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block"
-                  >
-                    {contenu}
-                  </a>
-                ) : (
-                  <div key={partenaire.nom} className="group">
-                    {contenu}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
+        {/* Partenaires de l'édition (groupés par catégorie) */}
+        <Partenaires
+          partenaires={edition.partenaires}
+          titre="Nos partenaires cette année-là"
+        />
       </div>
 
       {/* Modal artiste */}

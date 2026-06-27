@@ -181,17 +181,6 @@ function Contact() {
                   </svg>
                 </a>
               </div>
-
-              {/* Section Newsletter */}
-              <div className="bg-white/60 backdrop-blur-sm border border-gray-200 p-6 rounded-2xl shadow-sm">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">
-                  Inscrivez-vous à notre Newsletter
-                </h3>
-                <p className="text-gray-700 mb-4">
-                  Restez informés des dernières nouvelles du festival !
-                </p>
-                <p>🚧 En construction 🚧</p>
-              </div>
             </div>
           </div>
         </div>

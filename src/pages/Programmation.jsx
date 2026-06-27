@@ -1,4 +1,29 @@
+import { useState } from "react";
+import ArtistCardSimple from "../components/ArtistCardSimple";
+import ModalArtiste from "../components/ModalArtiste";
+import Partenaires from "../components/Partenaires";
+import { EDITION_EN_COURS } from "../data/editionsData";
+
 function Programmation() {
+  const artists = EDITION_EN_COURS.artists;
+  const aDesArtistes = artists.length > 0;
+
+  const partenaires = EDITION_EN_COURS.partenaires;
+
+  // État pour la modal
+  const [selectedArtist, setSelectedArtist] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (artist) => {
+    setSelectedArtist(artist);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedArtist(null);
+  };
+
   return (
     <div
       className="relative isolate overflow-hidden min-h-screen bg-[#0E5C3A] bg-cover bg-center"
@@ -30,7 +55,7 @@ function Programmation() {
             {/* Sous-titre avec cadre */}
             <div className="inline-block bg-white/60 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm">
               <p className="text-xl text-gray-700 font-medium">
-                Samedi 29 Août 2026
+                Samedi 29 août 2026
               </p>
             </div>
           </div>
@@ -39,58 +64,91 @@ function Programmation() {
 
       {/* Contenu principal */}
       <div className="max-w-7xl mx-auto px-6 pb-16">
-        {/* Bloc "Ça arrive bientôt" */}
-        <div className="flex justify-center mb-16">
-          <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-lg px-10 py-14 max-w-2xl w-full text-center overflow-hidden">
-            {/* Éléments décoratifs aux coins */}
-            <div className="absolute top-4 left-4 w-6 h-6 opacity-70">
-              <img
-                src="/assets/pictos/picto3.png"
-                alt="Décoration"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="absolute top-4 right-4 w-6 h-6 opacity-70">
-              <img
-                src="/assets/pictos/picto3.png"
-                alt="Décoration"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="absolute bottom-4 left-4 w-6 h-6 opacity-70">
-              <img
-                src="/assets/pictos/picto3.png"
-                alt="Décoration"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="absolute bottom-4 right-4 w-6 h-6 opacity-70">
-              <img
-                src="/assets/pictos/picto3.png"
-                alt="Décoration"
-                className="w-full h-full object-contain"
-              />
+        {aDesArtistes ? (
+          /* ===== La programmation est annoncée : on affiche les artistes ===== */
+          <>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#F4D4DC] tracking-wide">
+                Les artistes de cette édition
+              </h2>
+              <div className="flex items-center justify-center mt-4">
+                <div className="h-px w-24 bg-gray-300/70"></div>
+                <img
+                  src="/assets/pictos/picto3.png"
+                  alt="Picto"
+                  className="h-5 w-5 object-contain opacity-80 mx-4"
+                />
+                <div className="h-px w-24 bg-gray-300/70"></div>
+              </div>
             </div>
 
-            <div className="inline-block bg-orange-200 text-orange-800 px-4 py-1 rounded-full text-sm font-bold mb-5 border border-orange-300">
-              ÉDITION 2026
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
+              {artists
+                .slice()
+                .sort((a, b) => a.id - b.id)
+                .map((artist) => (
+                  <div
+                    key={artist.id}
+                    onClick={() => openModal(artist)}
+                    className="cursor-pointer transform transition-transform duration-200 hover:scale-[1.02]"
+                  >
+                    <ArtistCardSimple artist={artist} />
+                  </div>
+                ))}
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 tracking-wide animate-pulse">
-              Ça arrive bientôt
-            </h2>
-            <p className="text-lg text-gray-700 max-w-md mx-auto">
-              La programmation de cette nouvelle édition est en cours de
-              préparation. Restez connectés, les artistes seront bientôt
-              dévoilés !
-            </p>
+          </>
+        ) : (
+          /* ===== Pas encore annoncée : bloc "Ça arrive bientôt" ===== */
+          <div className="flex justify-center mb-16">
+            <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-lg px-10 py-14 max-w-2xl w-full text-center overflow-hidden">
+              {/* Éléments décoratifs aux coins */}
+              <div className="absolute top-4 left-4 w-6 h-6 opacity-70">
+                <img
+                  src="/assets/pictos/picto3.png"
+                  alt="Décoration"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="absolute top-4 right-4 w-6 h-6 opacity-70">
+                <img
+                  src="/assets/pictos/picto3.png"
+                  alt="Décoration"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="absolute bottom-4 left-4 w-6 h-6 opacity-70">
+                <img
+                  src="/assets/pictos/picto3.png"
+                  alt="Décoration"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="absolute bottom-4 right-4 w-6 h-6 opacity-70">
+                <img
+                  src="/assets/pictos/picto3.png"
+                  alt="Décoration"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <div className="inline-block bg-orange-200 text-orange-800 px-4 py-1 rounded-full text-sm font-bold mb-5 border border-orange-300">
+                ÉDITION 2026
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 tracking-wide animate-pulse">
+                Ça arrive bientôt
+              </h2>
+              <p className="text-lg text-gray-700 max-w-md mx-auto">
+                La programmation de cette nouvelle édition est en cours de
+                préparation. Restez connectés, les artistes seront bientôt
+                dévoilés !
+              </p>
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="text-center">
           <a
-            href="https://www.helloasso.com/associations/la-felicita-festival/evenements/la-felicita-2025-la-cite-du-vent"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/billetterie"
             className="inline-block relative group"
           >
             {/* Bouton principal dans le thème des cartes */}
@@ -139,13 +197,23 @@ function Programmation() {
 
                 {/* Date répétée pour cohérence */}
                 <p className="text-lg font-medium text-gray-700 mb-3">
-                  SAMEDI 30 AOÛT
+                  SAMEDI 29 AOÛT
                 </p>
               </div>
             </div>
           </a>
         </div>
+
+        {/* Partenaires de l'édition (groupés par catégorie) */}
+        <Partenaires partenaires={partenaires} />
       </div>
+
+      {/* Modal artiste */}
+      <ModalArtiste
+        artist={selectedArtist}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 
 function ModalArtiste({ artist, isOpen, onClose }) {
   // Gestion des touches et scroll
@@ -81,7 +82,7 @@ function ModalArtiste({ artist, isOpen, onClose }) {
     </div>
   );
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
       {/* Overlay */}
       <div
@@ -301,7 +302,7 @@ function ModalArtiste({ artist, isOpen, onClose }) {
               {/* Info supplémentaire */}
               <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-6 text-center">
                 <p className="text-gray-600 text-sm mb-2">
-                  💫 Performance prévue le <strong>Samedi 29 Août 2026</strong>
+                  💫 Performance prévue le <strong>Samedi 29 août 2026</strong>
                 </p>
                 <p className="text-gray-500 text-xs">
                   Appuyez sur Échap pour fermer
@@ -311,7 +312,8 @@ function ModalArtiste({ artist, isOpen, onClose }) {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 

@@ -27,6 +27,26 @@ code {
   width: 20%;
 }
 
+/* Logo plus grand sur petits écrans (20% serait minuscule) */
+@media (max-width: 1023px) {
+  .logoAccueil {
+    width: 42%;
+  }
+}
+
+/* Contour du titre du Hero : épais sur desktop, plus fin sur mobile
+   (un contour de 13px sur un texte mobile le rend illisible) */
+.hero-title {
+  -webkit-text-stroke-color: #01250C;
+  -webkit-text-stroke-width: 5px;
+  paint-order: stroke fill;
+}
+@media (min-width: 1024px) {
+  .hero-title {
+    -webkit-text-stroke-width: 13px;
+  }
+}
+
 :root{
   --ff-bg1:#01250C;
   --ff-bg2:#2A5DB8;
