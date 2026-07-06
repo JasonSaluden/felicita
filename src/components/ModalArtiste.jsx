@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
+import { getPlatformInfo, PlatformIcon } from "../data/socialPlatforms";
 
 function ModalArtiste({ artist, isOpen, onClose }) {
   // Gestion des touches et scroll
@@ -179,34 +180,7 @@ function ModalArtiste({ artist, isOpen, onClose }) {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {Object.entries(artist.socialLinks).map(
                         ([platform, link]) => {
-                          // Fonction pour obtenir le bon nom d'affichage
-                          const getDisplayName = (platformKey) => {
-                            switch (platformKey) {
-                              case "instagram1":
-                                return "Instagram GUIBY";
-                              case "instagram2":
-                                return "Instagram EERLOW";
-                              case "LinkTree":
-                                return "LinkTree";
-                              case "site":
-                                return "Site Web";
-                              case "facebook":
-                                return "Facebook";
-                              case "soundcloud":
-                                return "SoundCloud";
-                              case "bandcamp":
-                                return "Bandcamp";
-                              case "youtube":
-                                return "YouTube";
-                              case "spotify":
-                                return "Spotify";
-                              default:
-                                return (
-                                  platformKey.charAt(0).toUpperCase() +
-                                  platformKey.slice(1)
-                                );
-                            }
-                          };
+                          const { label } = getPlatformInfo(platform);
 
                           return (
                             <a
@@ -217,21 +191,12 @@ function ModalArtiste({ artist, isOpen, onClose }) {
                               className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors duration-200 group"
                             >
                               <span className="flex items-center space-x-3">
-                                <span className="text-2xl">
-                                  {(platform === "instagram" ||
-                                    platform === "instagram1" ||
-                                    platform === "instagram2") &&
-                                    "📸"}
-                                  {platform === "spotify" && "🎵"}
-                                  {platform === "soundcloud" && "🎧"}
-                                  {platform === "bandcamp" && "💿"}
-                                  {platform === "youtube" && "🎬"}
-                                  {platform === "facebook" && "👥"}
-                                  {platform === "site" && "🌐"}
-                                  {platform === "LinkTree" && "🔗"}
-                                </span>
+                                <PlatformIcon
+                                  platform={platform}
+                                  className="w-6 h-6 text-gray-600"
+                                />
                                 <span className="font-medium text-gray-800">
-                                  {getDisplayName(platform)}
+                                  {label}
                                 </span>
                               </span>
                               <svg

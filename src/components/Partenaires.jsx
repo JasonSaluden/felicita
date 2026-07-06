@@ -17,12 +17,19 @@ function Partenaires({ partenaires, titre = "Nos partenaires" }) {
   const renderPartenaire = (partenaire) => {
     const contenu = (
       <div className="bg-white rounded-2xl shadow-lg h-32 flex items-center justify-center p-6 transition-transform duration-200 group-hover:scale-105">
-        <img
-          src={partenaire.logo}
-          alt={partenaire.nom}
-          title={partenaire.nom}
-          className="max-h-full max-w-full object-contain"
-        />
+        {partenaire.logo ? (
+          <img
+            src={partenaire.logo}
+            alt={partenaire.nom}
+            title={partenaire.nom}
+            className="max-h-full max-w-full object-contain"
+          />
+        ) : (
+          /* Pas encore de logo : on affiche le nom du partenaire */
+          <span className="text-center font-bold text-gray-700 leading-snug">
+            {partenaire.nom}
+          </span>
+        )}
       </div>
     );
 

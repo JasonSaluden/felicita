@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useArtistsData from "../hooks/useArtistsData"; // Import du hook externe
+import { getPlatformInfo, PlatformIcon } from "../data/socialPlatforms";
 
 // ========================
 // COMPOSANT CARTE ARTISTE
@@ -67,16 +68,13 @@ function ArtistCard({ artist }) {
                         rel="noopener noreferrer"
                         className="flex items-center justify-between w-full py-3 px-4 bg-white/40 hover:bg-white/60 backdrop-blur-sm rounded-lg transition-all duration-300 hover:scale-105 border border-white/30"
                       >
-                        <span className="text-sm font-medium text-gray-700 capitalize">
-                          {platform}
+                        <span className="text-sm font-medium text-gray-700">
+                          {getPlatformInfo(platform).label}
                         </span>
-                        <span className="text-lg">
-                          {platform === "instagram" && "📸"}
-                          {platform === "spotify" && "🎵"}
-                          {platform === "soundcloud" && "🎧"}
-                          {platform === "bandcamp" && "💿"}
-                          {platform === "youtube" && "🎬"}
-                        </span>
+                        <PlatformIcon
+                          platform={platform}
+                          className="w-5 h-5 text-gray-700"
+                        />
                       </a>
                     )
                   )}

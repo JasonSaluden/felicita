@@ -22,16 +22,20 @@
 //    socialLinks: {                           // tous optionnels
 //      instagram: "https://instagram.com/...",
 //      soundcloud: "https://soundcloud.com/...",
-//      site: "https://...",
-//    },
+//      linktree: "https://linktr.ee/...",     // beacons, spotify, youtube,
+//      site: "https://...",                   // bandcamp, facebook... marchent aussi
+//    },                                       // (liste dans data/socialPlatforms.js)
 //    video: {                                 // 1 vidéo (optionnel)
 //      type: "youtube",
 //      id: "ID_YOUTUBE",                       // la partie après watch?v=
 //    },
+//    // Pour une vidéo téléchargée : mettre le fichier (en .mp4 !) dans
+//    // public/assets/videos/ et remplacer `video` par :
+//    // video: { type: "local", src: "/assets/videos/MonClip.mp4" },
 //    // Pour PLUSIEURS vidéos, remplace `video` par :
 //    // videos: [
 //    //   { type: "youtube", id: "ID_1" },
-//    //   { type: "youtube", id: "ID_2" },
+//    //   { type: "local", src: "/assets/videos/MonClip.mp4" },
 //    // ],
 //  },
 // ========================================================================
@@ -44,16 +48,15 @@ export const artistes2026 = [
    image2: "/assets/artistes/2026/LaClaraSofia_Slide1.webp",
    description:
      "“Je suis immense, je contiens des multitudes”, des mots que La Clara Sofia emprunte à Walt Whitman et qui irriguent sa musique écrite en portugais et en anglais, se faisant l’écho des villes et des vies qu’elle a vécues. Sur scène, avec pour leitmotiv de faire bouger les corps et les âmes, dans un trio voix-basse-objets percussifs, le public est enveloppé dans un cocon de pop alternative tissé aux fils du Brésil.",
-   genre: "Techno",
-   time: "18h",                                
+   genre: "Alt-pop",
+   time: "",                                
    socialLinks: {                           
-     instagram: "https://instagram.com/...",
-     soundcloud: "https://soundcloud.com/...",
-     site: "https://...",
+     instagram: "https://www.instagram.com/laclarasofia/",
+     beacons: "https://beacons.ai/laclarasofia?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn1IesPelt2OmIp_Efdg1dTZBde9em3eWdAAlOLXaYsCbZ3DeGuz7ITt38wEg_aem_L7xZGZbj9xeK5LwIKlf48g",
    },
    video: {                                
      type: "youtube",
-     id: "ID_YOUTUBE",                    
+     id: "unxa_1M74Rc",                    
    },
   },
   {
@@ -63,16 +66,16 @@ export const artistes2026 = [
     image2: "/assets/artistes/2026/Kriill_Slide1.webp",
     description:
       "",
-    genre: "Techno",
-    time: "18h",                                
+    genre: "Alt-pop",
+    time: "",                                
     socialLinks: {                           
-      instagram: "https://instagram.com/...",
-      soundcloud: "https://soundcloud.com/...",
-      site: "https://...",
+      instagram: "https://www.instagram.com/kriill_music/?hl=fr",
+      site: "https://lnk.bio/kriill?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGntgU9XMf6xxCcvoX_3sSltU6EbIrZ3XKi4499krddkp8RkICum1suP2sQ0-o_aem_37rLePGWmcOx-te1dm68Qg",
+      bandcamp : "https://kriillmusic.bandcamp.com/album/listen-to-the-whale"
     },
     video: {                                
       type: "youtube",
-      id: "ID_YOUTUBE",                    
+      id: "QQpOBo8rdPU",                    
     },
   },
   {
@@ -82,16 +85,16 @@ export const artistes2026 = [
     image2: "/assets/artistes/2026/NoSexLastNight_Slide1.webp",
     description:
       "Le son new wave de No Sex Last Night sent la sueur, l’angoisse et les nuits sans fin. Le duo transforme ses névroses de zoomers en beats sombres, bruts et profondément vivants. Avec des textes en français, à la fois naïfs et cruellement lucides pour exister un peu plus fort.",
-    genre: "Techno",
-    time: "18h",                                
+    genre: "ColdWave",
+    time: "",                                
     socialLinks: {                           
       instagram: "https://www.instagram.com/nosexlastnightt/?hl=fr",
-      soundcloud: "https://soundcloud.com/...",
-      site: "https://...",
+      spotify: "https://open.spotify.com/intl-fr/artist/4OwWT91x4jWdIGWqKnUH6z",
+      deezer: "https://www.deezer.com/fr/artist/208471927",
     },
     video: {                                
       type: "youtube",
-      id: "ID_YOUTUBE",                    
+      id: "H2_urwDyUVQ",                    
     },
   },
   {
@@ -100,47 +103,46 @@ export const artistes2026 = [
     image: "/assets/artistes/2026/Nao_Slide1.webp",
     image2: "/assets/artistes/2026/Nao_Slide1.webp",
     description:
-      "",
+      "Nao évolue dans un milieu musical multiculturel marqué par l’immigration de sa famille japonaise en Amérique latine. Très proche des sonorités latino-américaines, notamment le reggaeton, qu’elle allie au latincore ou à la brazilian funk, elle circule dans des espaces de fêtes militants, fusionnant ses influences avec des genres comme le jersey club ou la bass music. Proche des collectifs d’artistes asio-descendant·es Slayyysian et Tiger Bomb, elle est fortement engagée auprès de la représentation des artistes queer asio-descendant·es en France et plus précisément en région parisienne et lilloise.",
     genre: "Techno",
-    time: "18h",                                
+    time: "",                                
     socialLinks: {                           
-      instagram: "https://instagram.com/...",
-      soundcloud: "https://soundcloud.com/...",
-      site: "https://...",
+      instagram: "https://www.instagram.com/naocqr/",
+      soundcloud: "https://soundcloud.com/user370155625?ref=clipboard&p=i&c=1&si=D000161B12D243A88001950C4D924DF9&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
     },
     video: {                                
-      type: "youtube",
-      id: "ID_YOUTUBE",                    
+      type: "local",
+      src: "/assets/videos/Teaser_Nao.mp4",                   
     },
   },
   {
     id: 5,                                   
     name: "DJ Startup",
-    image: "/assets/artistes/2026/.webp",
+    image: "/assets/artistes/2026/DJ_Startup.png",
     image2: "/assets/artistes/2026/.webp",
     description:
       "Simon Lahure aka Dj Startup est à la recherche la formule occulte qui permettra relancer l’épidémie de danse de Strasbourg en 1518. Dans un flow exaltant de mélodies midi, guimbardes, flutiots et ocarinas souffleront la musique d’une teuf antédiluvienne.",
-    genre: "Techno",
-    time: "18h",                                
+    genre: "Electro",
+    time: "",                                
     socialLinks: {                           
-      instagram: "https://instagram.com/...",
-      soundcloud: "https://soundcloud.com/...",
-      site: "https://...",
+      instagram: "www.instagram.com/simon_lahure?igsh=bTJrenp5c3IzMjdm",
+      soundcloud: "https://on.soundcloud.com/HtfPznjkUrnmqutM9",
+      bandcamp: "https://carpacciocathedrale.bandcamp.com/album/team-building-boot-camp-cc005",
     },
     video: {                                
       type: "youtube",
-      id: "ID_YOUTUBE",                    
+      id: "baJBmhg90VM",                    
     },
   },
   {
     id: 6,                                   
-    name: "Azar Azar",
-    image: "/assets/artistes/2026/.webp",
+    name: "!Azar Azar!",
+    image: "/assets/artistes/2026/AzarAzar.jpg",
     image2: "/assets/artistes/2026/.webp",
     description:
       "",
-    genre: "Techno",
-    time: "18h",                                
+    genre: "Improvized Live Techno",
+    time: "",                                
     socialLinks: {                           
       instagram: "https://instagram.com/...",
       soundcloud: "https://soundcloud.com/...",
