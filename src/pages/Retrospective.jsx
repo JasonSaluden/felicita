@@ -39,19 +39,21 @@ function Retrospective() {
       <div className="pt-16 pb-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-6 mb-8">
+            <div className="flex items-center justify-center space-x-3 sm:space-x-6 mb-8">
               <img
                 src="/assets/pictos/picto3.png"
-                alt="Picto"
-                className="h-6 w-6 object-contain opacity-80"
+                alt=""
+                aria-hidden="true"
+                className="hidden sm:block h-6 w-6 object-contain opacity-80"
               />
-              <h1 className="text-4xl lg:text-5xl font-bold text-[#F4D4DC]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F4D4DC]">
                 RÉTROSPECTIVE
               </h1>
               <img
                 src="/assets/pictos/picto3.png"
-                alt="Picto"
-                className="h-6 w-6 object-contain opacity-80"
+                alt=""
+                aria-hidden="true"
+                className="hidden sm:block h-6 w-6 object-contain opacity-80"
               />
             </div>
 
@@ -105,14 +107,23 @@ function Retrospective() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {edition.artists
               .slice()
               .sort((a, b) => a.id - b.id)
               .map((artist) => (
                 <div
                   key={artist.id}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Découvrir ${artist.name}`}
                   onClick={() => openModal(artist)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      openModal(artist);
+                    }
+                  }}
                   className="cursor-pointer transform transition-transform duration-200 hover:scale-[1.02]"
                 >
                   <ArtistCardSimple artist={artist} />

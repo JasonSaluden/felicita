@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ArtistCardSimple from "../components/ArtistCardSimple";
 import ModalArtiste from "../components/ModalArtiste";
 import Partenaires from "../components/Partenaires";
@@ -34,21 +35,21 @@ function Programmation() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
             {/* Titre avec pictos */}
-            <div className="flex items-center justify-center space-x-6 mb-8">
+            <div className="flex items-center justify-center space-x-3 sm:space-x-6 mb-8">
               <img
-                src="/assets\pictos\picto2.png"
+                src="/assets/pictos/picto2.png"
                 alt=""
                 aria-hidden="true"
-                className="h-8 w-8 object-contain opacity-90"
+                className="hidden sm:block h-8 w-8 object-contain opacity-90"
               />
-              <h1 className="text-4xl lg:text-5xl font-bold text-[#F4D4DC]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F4D4DC]">
                 PROGRAMMATION
               </h1>
               <img
-                src="/assets\pictos\picto2.png"
+                src="/assets/pictos/picto2.png"
                 alt=""
                 aria-hidden="true"
-                className="h-8 w-8 object-contain opacity-90"
+                className="hidden sm:block h-8 w-8 object-contain opacity-90"
               />
             </div>
 
@@ -82,14 +83,23 @@ function Programmation() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
               {artists
                 .slice()
                 .sort((a, b) => a.id - b.id)
                 .map((artist) => (
                   <div
                     key={artist.id}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Découvrir ${artist.name}`}
                     onClick={() => openModal(artist)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        openModal(artist);
+                      }
+                    }}
                     className="cursor-pointer transform transition-transform duration-200 hover:scale-[1.02]"
                   >
                     <ArtistCardSimple artist={artist} />
@@ -100,7 +110,7 @@ function Programmation() {
         ) : (
           /* ===== Pas encore annoncée : bloc "Ça arrive bientôt" ===== */
           <div className="flex justify-center mb-16">
-            <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-lg px-10 py-14 max-w-2xl w-full text-center overflow-hidden">
+            <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-lg px-6 py-10 sm:px-10 sm:py-14 max-w-2xl w-full text-center overflow-hidden">
               {/* Éléments décoratifs aux coins */}
               <div className="absolute top-4 left-4 w-6 h-6 opacity-70">
                 <img
@@ -147,12 +157,12 @@ function Programmation() {
         )}
 
         <div className="text-center">
-          <a
-            href="/billetterie"
+          <Link
+            to="/billetterie"
             className="inline-block relative group"
           >
             {/* Bouton principal dans le thème des cartes */}
-            <div className="bg-gradient-to-br from-blue-100 to-blue-200 hover:from-blue-150 hover:to-blue-250 border-2 border-orange-200 px-12 py-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-blue-100 to-blue-200 hover:from-blue-150 hover:to-blue-250 border-2 border-orange-200 px-6 py-6 sm:px-12 sm:py-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 relative overflow-hidden">
               {/* Éléments décoratifs aux coins comme sur les cartes */}
               <div className="absolute top-3 left-3 w-6 h-6 opacity-70">
                 <img
@@ -201,7 +211,7 @@ function Programmation() {
                 </p>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
 
         {/* Partenaires de l'édition (groupés par catégorie) */}

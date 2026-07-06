@@ -13,21 +13,23 @@ function Contact() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center">
               {/* Container avec fond pour améliorer la visibilité */}
-              <div className="bg-white/80 backdrop-blur-md border-2 border-white/50 p-8 rounded-3xl shadow-xl mb-8 inline-block">
+              <div className="bg-white/80 backdrop-blur-md border-2 border-white/50 p-4 sm:p-8 rounded-3xl shadow-xl mb-8 inline-block">
                 {/* Titre avec pictos */}
-                <div className="flex items-center justify-center space-x-6 mb-4">
+                <div className="flex items-center justify-center space-x-3 sm:space-x-6 mb-4">
                   <img
                     src="/assets/pictos/picto3.png"
-                    alt="Picto"
-                    className="h-8 w-8 object-contain opacity-90"
+                    alt=""
+                    aria-hidden="true"
+                    className="hidden sm:block h-8 w-8 object-contain opacity-90"
                   />
-                  <h1 className="text-4xl lg:text-6xl font-bold text-gray-800 drop-shadow-lg">
+                  <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-800 drop-shadow-lg">
                     CONTACT
                   </h1>
                   <img
                     src="/assets/pictos/picto3.png"
-                    alt="Picto"
-                    className="h-8 w-8 object-contain opacity-90"
+                    alt=""
+                    aria-hidden="true"
+                    className="hidden sm:block h-8 w-8 object-contain opacity-90"
                   />
                 </div>
 
@@ -45,7 +47,7 @@ function Contact() {
         {/* Contenu principal */}
         <div className="max-w-4xl mx-auto px-6 pb-16 space-y-12">
           {/* Container principal pour le contact */}
-          <div className="bg-gradient-to-br from-blue-100 to-blue-200 border-2 border-orange-200 p-8 rounded-3xl shadow-lg relative overflow-hidden">
+          <div className="bg-gradient-to-br from-blue-100 to-blue-200 border-2 border-orange-200 p-4 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
             {/* Pictos décoratifs */}
             <div className="absolute top-3 left-3 w-6 h-6 opacity-70">
               <img
@@ -86,7 +88,7 @@ function Contact() {
                 Pour toute demande envoyez nous un mail à cette adresse
               </h2>
 
-              <div className="bg-white/80 backdrop-blur-sm border border-gray-200 px-6 py-4 rounded-2xl shadow-sm inline-flex items-center space-x-3 hover:shadow-lg hover:scale-105 transition-all">
+              <div className="bg-white/80 backdrop-blur-sm border border-gray-200 px-4 sm:px-6 py-4 rounded-2xl shadow-sm inline-flex items-center space-x-3 hover:shadow-lg hover:scale-105 transition-all max-w-full">
                 <div className="w-6 h-6 flex-shrink-0 text-blue-600 animate-pulse">
                   <svg
                     fill="currentColor"
@@ -99,7 +101,7 @@ function Contact() {
                 </div>
                 <a
                   href="mailto:contactlafelicita@gmail.com"
-                  className="text-xl font-bold text-blue-700 hover:text-orange-500 transition-colors duration-300 underline-offset-4"
+                  className="text-lg sm:text-xl font-bold text-blue-700 hover:text-orange-500 transition-colors duration-300 underline-offset-4 break-all"
                 >
                   contactlafelicita@gmail.com
                 </a>
@@ -108,7 +110,7 @@ function Contact() {
           </div>
 
           {/* Container réseaux sociaux et newsletter */}
-          <div className="bg-gradient-to-br from-yellow-100 to-yellow-200 border-2 border-pink-200 p-8 rounded-3xl shadow-lg relative overflow-hidden">
+          <div className="bg-gradient-to-br from-yellow-100 to-yellow-200 border-2 border-pink-200 p-4 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
             {/* Pictos décoratifs */}
             <div className="absolute top-4 left-4 w-6 h-6 opacity-70">
               <img

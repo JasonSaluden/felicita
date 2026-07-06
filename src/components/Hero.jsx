@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 
+// Affiche de l'édition en cours. Mettre à null pour masquer les emplacements
+// affiche (desktop, mobile et modal) en attendant la prochaine édition.
+const AFFICHE_EDITION = "/assets/affiches/Affiche_Felicita_Festival_2026.webp";
+
 function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -32,7 +36,7 @@ function Hero() {
         <div className="absolute inset-0 bg-black/30"></div>
 
         {/* Contenu principal */}
-        <div className="relative z-10 h-full flex items-center justify-between px-6 lg:pl-24 lg:pr-0 max-w-[100rem] mx-auto">
+        <div className="relative z-10 h-full flex items-center justify-between px-6 lg:pl-24 lg:pr-12 max-w-[100rem] mx-auto">
           {/* Partie gauche - Texte principal */}
           <div className="flex-1 text-[#F0A5B8]">
             <div className="max-w-xl">
@@ -56,53 +60,61 @@ function Hero() {
                 </div>
                 <div className="flex items-center space-x-2 bg-[#01250C] rounded-xl px-3 py-1">
                   <span>📍</span>
-                  <span className="">Brissac-Quincé - 49320</span>
+                  <span>Brissac-Quincé - 49320</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Partie droite - Affiche du festival plus grande (Desktop) */}
-          <div className="hidden lg:block flex-shrink-0 ml-8">
-            <div className="relative group">
-              {/* <img
-                src="/assets/affiches/Affiche_Felicita_Festival_2025.webp"
-                alt="Affiche Felicità Festival 2025"
-                className="w-96 h-auto rounded-lg shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300"
-                onClick={() => setIsModalOpen(true)}
-              /> */}
-              {/* Badge "Édition 2026" */}
-              {/* <div className="absolute -top-3 -right-3 bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold rotate-12">
-                Édition 2026
-              </div> */}
+          {/* Partie droite - Affiche du festival (desktop) */}
+          {AFFICHE_EDITION && (
+            <div className="hidden lg:block flex-shrink-0 ml-8">
+              <div className="relative">
+                <img
+                  src={AFFICHE_EDITION}
+                  alt="Affiche La Felicità Festival 2026"
+                  className="w-auto max-w-96 max-h-[calc(80vh-11rem)] rounded-lg shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300"
+                  onClick={() => setIsModalOpen(true)}
+                />
+                <div className="absolute -top-3 -right-3 bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold rotate-12">
+                  Édition 2026
+                </div>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 
-      {/* Version mobile de l'affiche plus grande */}
-      <div className="lg:hidden bg-[#0E5C3A] py-8">
-        <div className="text-center px-6">
-          <h3 className="text-xl font-bold text-gray-800 mb-4">Affiche 2026</h3>
-          <div className="flex justify-center">
-            <div className="relative">
-              <img
-                src="/assets/affiches/Affiche_Felicita_Festival_2025.webp"
-                alt="Affiche Felicità Festival 2025"
-                className="w-80 h-auto rounded-lg shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300"
-                onClick={() => setIsModalOpen(true)}
-              />
-              <div className="absolute -top-2 -right-2 bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-bold">
-                2026
+      {/* Affiche du festival (mobile) */}
+      {AFFICHE_EDITION && (
+        <div className="lg:hidden bg-[#0E5C3A] py-8">
+          <div className="text-center px-6">
+            <h3 className="text-xl font-bold text-[#F4D4DC] mb-4">
+              Affiche 2026
+            </h3>
+            <div className="flex justify-center">
+              <div className="relative">
+                <img
+                  src={AFFICHE_EDITION}
+                  alt="Affiche La Felicità Festival 2026"
+                  className="w-80 max-w-full h-auto rounded-lg shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+                  onClick={() => setIsModalOpen(true)}
+                />
+                <div className="absolute -top-2 -right-2 bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-bold">
+                  2026
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
-      {/* Modal simple et fonctionnelle */}
-      {isModalOpen && (
+      {/* Modal d'affichage de l'affiche en grand */}
+      {isModalOpen && AFFICHE_EDITION && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Affiche La Felicità Festival 2026"
           className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center p-4"
           onClick={() => setIsModalOpen(false)}
         >
@@ -114,8 +126,8 @@ function Hero() {
               ✕ Fermer
             </button>
             <img
-              src="/assets/affiches/Affiche_Felicita_Festival_2025.webp"
-              alt="Affiche Felicità Festival 2025"
+              src={AFFICHE_EDITION}
+              alt="Affiche La Felicità Festival 2026"
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />

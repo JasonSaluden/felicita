@@ -1,122 +1,8 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
-  const partners = [
-    // Publics
-    {
-      src: "./assets/partners/Brissac-Loire-Aubance-Horizontal-RVB-.webp",
-      alt: "Brissac Loire Aubance",
-      cat: "publics",
-      link: "https://www.brissacloireaubance.fr",
-    },
-    {
-      src: "./assets/partners/Departement_Anjou_cmjn.webp",
-      alt: "Anjou Département",
-      cat: "publics",
-      link: "https://www.maine-et-loire.fr",
-    },
-
-    // Locaux
-    {
-      src: "./assets/partners/Bricomarche_logo_2022.svg.webp",
-      alt: "Bricomarché",
-      cat: "locaux",
-      link: "https://www.bricomarche.com/magasin/brissac-quince/20320",
-    },
-    {
-      src: "./assets/partners/la_bonne_conduite.webp",
-      alt: "La Bonne Conduite",
-      cat: "locaux",
-      link: "https://labonneconduite49.fr",
-    },
-    {
-      src: "./assets/partners/Logo_l_appart_fitness.webp",
-      alt: "L'appart fitness",
-      cat: "locaux",
-      link: "https://clubs.lappartfitness.com/23-l-appart-fitness-brissac",
-    },
-    {
-      src: "./assets/partners/Logo 1 brain 2 fleurs.webp",
-      alt: "Un brin deux fleurs",
-      cat: "locaux",
-      link: "https://www.artisansfleuristesdefrance.com/livraison/49-brissac-loire-aubance-un-brin-deux-fleurs?srsltid=AfmBOoqx9OemNXYeSZZka9bzfAIeWLzYcIUKcdtQrCrlQzBUlOBzGSe8",
-    },
-    {
-      src: "./assets/partners/logo_la_cave_bio.webp",
-      alt: "La cave bio",
-      cat: "locaux",
-      link: "https://lacavebio.fr",
-    },
-    {
-      src: "./assets/partners/Logo-Fromagerie-Rouet-F-Couleur.webp",
-      alt: "Fromagerie Rouet",
-      cat: "locaux",
-      link: "https://fromagerie-cremerie-rouet.fr",
-    },
-    {
-      src: "./assets/partners/le_moulin_de_sarre_logo.webp",
-      alt: "Moulin de Sarré",
-      cat: "locaux",
-      link: "https://www.moulin-de-sarre.fr",
-    },
-    {
-      src: "./assets/partners/Logo montgolfières.webp",
-      alt: "Montgolfières d'Anjou",
-      cat: "locaux",
-      link: "https://montgolfieres.fr",
-    },
-    {
-      src: "./assets/partners/Akoufen-LaBotellerie_logo1-RVB-web.webp",
-      alt: "Akoufen La Botellerie",
-      cat: "locaux",
-      link: "https://www.akoufen.com",
-    },
-    {
-      src: "./assets/partners/Logo_Ouest_Ouvrage.webp",
-      alt: "Ouest Ouvrage",
-      cat: "locaux",
-      link: "https://www.ouest-ouvrage.com",
-    },
-
-    // Hors Brissac
-    {
-      src: "./assets/partners/1024px-Logo_Radio_Campus_Angers.webp",
-      alt: "Radio Campus Angers",
-      cat: "media",
-      link: "https://www.radiocampusangers.com",
-    },
-    {
-      src: "./assets/partners/SUN-LOGO-JAUNE.png",
-      alt: "SUN Radio",
-      cat: "media",
-      link: "https://lesonunique.com",
-    },
-  ];
-
-  // eslint-disable-next-line no-unused-vars
-  const renderPartners = (categoryName, size = "normal") => {
-    const heightClass = size === "large" ? "h-24 md:h-28" : "h-18 md:h-20";
-    const maxWidthClass = size === "large" ? "max-w-[220px]" : "max-w-[180px]";
-
-    return partners
-      .filter((p) => p.cat === categoryName)
-      .map((p) => (
-        <a
-          key={p.alt}
-          href={p.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex items-center justify-center"
-        >
-          <img
-            src={p.src}
-            alt={p.alt}
-            className={`${heightClass} w-auto ${maxWidthClass} object-contain transition-transform duration-300 filter brightness-90 hover:brightness-100 hover:scale-105`}
-          />
-        </a>
-      ));
-  };
-
   return (
-    <footer className="bg-#0E5C3A text-[#F4D4DC] font-baseRegular relative">
+    <footer className="bg-[#0E5C3A] text-[#F4D4DC] font-baseRegular relative">
       {/* Section principale */}
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -160,14 +46,14 @@ function Footer() {
                 { href: "/programmation", label: "Programmation" },
                 { href: "/billetterie", label: "Billetterie" },
                 { href: "/contact", label: "Contact" },
-              ].map((item, idx) => (
-                <li key={idx}>
-                  <a
-                    href={item.href}
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link
+                    to={item.href}
                     className="text-[#F4D4DC] hover:text-[#F0A5B8] transition-colors duration-200 hover:translate-x-1 transform block"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -183,6 +69,7 @@ function Footer() {
                 href="https://www.instagram.com/lafelicitafestival"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram du festival"
                 className="bg-[#F0A5B8] p-4 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-105"
               >
                 <svg
@@ -198,6 +85,7 @@ function Footer() {
                 href="https://www.facebook.com/lafelicitafestival"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook du festival"
                 className="bg-[#F0A5B8] p-4 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-105"
               >
                 <svg
@@ -212,50 +100,6 @@ function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Section partenaires */}
-      {/* <div className="border-t border-[#F4D4DC]/30 bg-[#F4D4DC]/5">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="text-center mb-10">
-            <h3 className="text-3xl font-bold bg-[#F0A5B8] text-[#FFFFFF] px-4 py-2 rounded inline-block mb-4">
-              Nos Partenaires
-            </h3>
-            <p className="text-[#F4D4DC] text-lg max-w-2xl mx-auto">
-              Un grand merci à nos partenaires qui rendent ce festival possible
-            </p>
-          </div> */}
-
-      {/* Section Partenaires Locaux */}
-      {/* <div className="mb-16">
-            <h4 className="text-2xl font-bold text-center text-[#F4D4DC] mb-8">
-              Partenaires Locaux
-            </h4> */}
-
-      {/* Partenaires Publics en ligne */}
-      {/* <div className="flex justify-center items-center gap-12 mb-8">
-              {renderPartners("publics")}
-            </div> */}
-
-      {/* Séparation horizontale */}
-      {/* <div className="w-full h-px bg-gradient-to-r from-transparent via-[#F4D4DC]/30 to-transparent mb-8"></div> */}
-
-      {/* Partenaires Locaux justifiés */}
-      {/* <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
-              {renderPartners("locaux")}
-            </div>
-          </div> */}
-
-      {/* Section Partenaires Média - Plus gros */}
-      {/* <div className="mb-8">
-            <h4 className="text-2xl font-bold text-center text-[#F4D4DC] mb-8">
-              Partenaires Média
-            </h4>
-            <div className="flex flex-wrap justify-center items-center gap-12">
-              {renderPartners("media", "large")}
-            </div>
-          </div> */}
-      {/* </div>
-      </div> */}
 
       {/* Copyright */}
       <div className="border-t border-[#F4D4DC]/30">

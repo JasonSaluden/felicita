@@ -38,13 +38,22 @@ code {
    (un contour de 13px sur un texte mobile le rend illisible) */
 .hero-title {
   -webkit-text-stroke-color: #01250C;
-  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-width: 3px;
   paint-order: stroke fill;
 }
 @media (min-width: 1024px) {
   .hero-title {
     -webkit-text-stroke-width: 13px;
   }
+}
+
+/* Cache la scrollbar de la piste du carrousel (le scroll reste fonctionnel) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 :root{

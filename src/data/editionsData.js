@@ -15,7 +15,7 @@ export const EDITION_EN_COURS = {
   numero: 7,
   annee: 2026,
   theme: "",
-  affiche: null, // ex: "/assets/affiches/Affiche_Felicita_Festival_2026.webp"
+  affiche: "/assets/affiches/Affiche_Felicita_Festival_2026.webp",
   artists: artistes2026,
   partenaires: partenaires2026,
 };
@@ -43,7 +43,7 @@ export const editions = [
   {
     numero: 4,
     annee: 2023,
-    theme: "LA cité qui chante",
+    theme: "La cité qui chante",
     affiche: "/assets/affiches/Affiche_Felicita_Festival_2023.webp",
     artists: [],
     partenaires: [],
@@ -51,7 +51,7 @@ export const editions = [
   {
     numero: 3,
     annee: 2022,
-    theme: "La methamosphose",
+    theme: "La métamorphose",
     affiche: "/assets/affiches/Affiche_Felicita_Festival_2022.webp",
     artists: [],
     partenaires: [],

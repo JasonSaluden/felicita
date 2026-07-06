@@ -1,5 +1,6 @@
 // components/LineUp.jsx
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ArtistCardSimple from "./ArtistCardSimple";
 import ModalArtiste from "./ModalArtiste";
 import { EDITION_EN_COURS } from "../data/editionsData";
@@ -35,12 +36,13 @@ function LineUp() {
       style={{ backgroundImage: "url('/assets/backgrounds/BackgroundBody.webp')" }}
     >
 
-      {/* 🫧 Bulle d'annonce qui chevauche le Hero et la LineUp */}
-      <div className="relative z-30 -mt-24 mb-12 flex justify-center px-4">
+      {/* 🫧 Bulle d'annonce qui chevauche le Hero et la LineUp
+          (chevauchement réduit sur mobile pour ne pas recouvrir le contenu du Hero) */}
+      <div className="relative z-30 -mt-6 lg:-mt-24 mb-12 flex justify-center px-4">
         <div className="max-w-4xl w-full">
-          <div className="relative rounded-3xl px-8 py-6 shadow-2xl
+          <div className="relative rounded-3xl px-6 py-6 sm:px-8 shadow-2xl
                           bg-gradient-to-br from-[#F0A5B8]/95 via-[#F0A5B8]/90 to-[#F4D4DC]/80
-                          backdrop-blur-lg border border-white/50
+                          border border-white/50
                           transform hover:scale-105 transition-all duration-500">
             <div className="text-center">
               <p className="text-lg md:text-xl text-gray-800 mb-4 leading-relaxed">
@@ -68,32 +70,36 @@ function LineUp() {
               {aLaUne.map((artist) => (
                 <div
                   key={artist.id}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Découvrir ${artist.name}`}
                   onClick={() => openModal(artist)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      openModal(artist);
+                    }
+                  }}
                   className="cursor-pointer transform transition-transform duration-200 hover:scale-[1.03]"
                 >
                   <ArtistCardSimple artist={artist} />
-                  {artist.name && (
-                    <p className="mt-3 text-center text-lg font-bold text-[#F4D4DC]">
-                      {artist.name}
-                    </p>
-                  )}
                 </div>
               ))}
             </div>
 
             <div className="text-center mt-12">
-              <a
-                href="/programmation"
+              <Link
+                to="/programmation"
                 className="inline-block bg-[#CB97FF] text-[#0A1F14] px-8 py-3 rounded-full font-bold hover:bg-[#E89BAE] transition-colors"
               >
                 Voir toute la programmation
-              </a>
+              </Link>
             </div>
           </>
         ) : (
           /* ===== Pas encore d'artistes : bloc "Ça arrive bientôt" ===== */
           <div className="flex justify-center">
-            <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-lg px-10 py-14 max-w-2xl w-full text-center overflow-hidden">
+            <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-lg px-6 py-10 sm:px-10 sm:py-14 max-w-2xl w-full text-center overflow-hidden">
               {/* Éléments décoratifs aux coins */}
               <div className="absolute top-4 left-4 w-6 h-6 opacity-70">
                 <img
@@ -141,12 +147,12 @@ function LineUp() {
                 artistes seront dévoilés très prochainement !
               </p>
 
-              <a
-                href="/retrospective"
+              <Link
+                to="/retrospective"
                 className="inline-block bg-[#CB97FF] text-[#0A1F14] px-8 py-3 rounded-full font-bold hover:bg-[#E89BAE] transition-colors"
               >
                 Revivre les éditions passées
-              </a>
+              </Link>
             </div>
           </div>
         )}

@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Billetterie() {
-  const handleIframeLoad = () => {
-    window.addEventListener('message', (e) => {
-      const dataHeight = e.data.height;
-      const haWidgetElement = document.getElementById('haWidget');
-      if (haWidgetElement && dataHeight) {
-        haWidgetElement.style.height = dataHeight + 'px';
+  // Le widget HelloAsso envoie sa hauteur via postMessage : on ajuste
+  // l'iframe en conséquence, en n'acceptant que les messages de helloasso.com.
+  useEffect(() => {
+    const onMessage = (e) => {
+      let host;
+      try {
+        host = new URL(e.origin).hostname;
+      } catch {
+        return;
       }
-    });
-  };
+      if (host !== "helloasso.com" && !host.endsWith(".helloasso.com")) return;
+
+      const dataHeight = e.data?.height;
+      const haWidgetElement = document.getElementById("haWidget");
+      if (haWidgetElement && dataHeight) {
+        haWidgetElement.style.height = dataHeight + "px";
+      }
+    };
+
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, []);
 
   return (
     <main
-      className="flex flex-col items-center justify-center min-h-screen p-8 bg-cover bg-center relative font-baseRegular"
+      className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-8 bg-cover bg-center relative font-baseRegular"
       style={{
         backgroundImage: "url('/assets/backgrounds/billetterie.webp')",
       }}
@@ -28,10 +41,9 @@ function Billetterie() {
           allowTransparency="true"
           src="https://www.helloasso.com/associations/la-felicita-festival/evenements/la-felicita-2026-la-cite-au-bord-de-ruisseau/widget"
           style={{
-            width: '100%',
-            border: 'none'
+            width: "100%",
+            border: "none",
           }}
-          onLoad={handleIframeLoad}
         ></iframe>
       </div>
     </main>

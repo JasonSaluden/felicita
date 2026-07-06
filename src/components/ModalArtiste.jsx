@@ -83,7 +83,12 @@ function ModalArtiste({ artist, isOpen, onClose }) {
   );
 
   return createPortal(
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Fiche de l'artiste ${artist.name}`}
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+    >
       {/* Overlay */}
       <div
         className="absolute inset-0 bg-black/80 backdrop-blur-sm"
@@ -117,12 +122,13 @@ function ModalArtiste({ artist, isOpen, onClose }) {
 
         {/* Contenu en deux colonnes */}
         <div className="flex flex-col lg:flex-row h-full min-h-0">
-          {/* Colonne gauche - Image fixe */}
-          <div className="lg:w-1/2 bg-gray-100 flex items-center justify-center p-6 relative flex-shrink-0">
+          {/* Colonne gauche - Image fixe
+              (hauteur limitée sur mobile pour laisser la place au texte) */}
+          <div className="lg:w-1/2 max-h-[40vh] lg:max-h-none bg-gray-100 flex items-center justify-center p-4 lg:p-6 relative flex-shrink-0">
             <img
               src={artist.image}
               alt={`${artist.name}`}
-              className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+              className="max-w-full max-h-[35vh] lg:max-h-full object-contain rounded-lg shadow-lg"
             />
 
             {/* Badge genre et heure */}

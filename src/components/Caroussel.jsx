@@ -62,16 +62,18 @@ export default function Carousel({
     };
   }, []);
 
-  // Navigation clavier
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [index]);
+  // Navigation clavier (uniquement quand le carrousel a le focus,
+  // pour ne pas capter les flèches sur toute la page)
+  const onKeyDown = (e) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      prev();
+    }
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      next();
+    }
+  };
 
   // Autoplay
   useEffect(() => {
@@ -89,6 +91,8 @@ export default function Carousel({
   return (
     <div
       className="w-full select-none"
+      tabIndex={0}
+      onKeyDown={onKeyDown}
       onMouseEnter={() => (isPaused.current = true)}
       onMouseLeave={() => (isPaused.current = false)}
       onTouchStart={() => (isPaused.current = true)}
@@ -150,17 +154,6 @@ export default function Carousel({
           />
         ))}
       </div>
-
-      {/* Style pour cacher scrollbar */}
-      <style jsx>{`
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </div>
   );
 }

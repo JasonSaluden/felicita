@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import { editions } from "../data/editionsData";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const [isRetroOpen, setIsRetroOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+  const retroRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -18,20 +19,27 @@ function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Mettre à jour le path quand on navigue
+  // Fermer les menus à chaque navigation
   useEffect(() => {
-    const updatePath = () => {
-      setCurrentPath(window.location.pathname);
+    setIsRetroOpen(false);
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  // Fermer le sous-menu Rétrospective au clic en dehors
+  useEffect(() => {
+    if (!isRetroOpen) return;
+    const onClickOutside = (e) => {
+      if (retroRef.current && !retroRef.current.contains(e.target)) {
+        setIsRetroOpen(false);
+      }
     };
-
-    window.addEventListener("popstate", updatePath);
-
-    return () => window.removeEventListener("popstate", updatePath);
-  }, []);
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
+  }, [isRetroOpen]);
 
   // Fonction pour vérifier si un lien est actif
   const isActive = (path) => {
-    return currentPath === path;
+    return pathname === path;
   };
 
   // Fonction pour obtenir les classes CSS du lien
@@ -47,15 +55,6 @@ function Navbar() {
     }
 
     return baseClasses;
-  };
-
-  // Fonction pour gérer le clic sur un lien
-  const handleLinkClick = () => {
-    setIsRetroOpen(false);
-    setIsMenuOpen(false);
-    setTimeout(() => {
-      setCurrentPath(window.location.pathname);
-    }, 100);
   };
 
   return (
@@ -83,7 +82,7 @@ function Navbar() {
       </div>
 
       {/* NAVBAR */}
-      <nav className="ecrevisse-host sticky top-0 z-50 w-full bg-[#F4D4DC] font-base shadow-lg rounded-lg py-2 px-4">
+      <nav className="sticky top-0 z-50 w-full bg-[#F4D4DC] font-base shadow-lg rounded-lg py-2 px-4">
 
         {/* Barre mobile : libellé + bouton hamburger */}
         <div className="lg:hidden flex items-center justify-between">
@@ -129,11 +128,7 @@ function Navbar() {
         >
           {/* Accueil */}
           <li className="relative group flex items-center">
-            <Link
-              to="/"
-              className={getLinkClasses("/")}
-              onClick={handleLinkClick}
-            >
+            <Link to="/" className={getLinkClasses("/")}>
               Accueil
             </Link>
           </li>
@@ -153,7 +148,6 @@ function Navbar() {
             <Link
               to="/infospratiques"
               className={getLinkClasses("/infospratiques")}
-              onClick={handleLinkClick}
             >
               Infos Pratiques
             </Link>
@@ -174,7 +168,6 @@ function Navbar() {
             <Link
               to="/programmation"
               className={getLinkClasses("/programmation")}
-              onClick={handleLinkClick}
             >
               Programmation
             </Link>
@@ -191,13 +184,16 @@ function Navbar() {
           </li>
 
           {/* Rétrospective (menu déroulant) */}
-          <li className="relative flex items-center">
+          <li
+            ref={retroRef}
+            className="relative flex flex-col items-center lg:flex-row"
+          >
             <button
               type="button"
               onClick={() => setIsRetroOpen((open) => !open)}
               aria-expanded={isRetroOpen}
               className={`flex items-center justify-center h-10 gap-1 text-[#0A1F14] hover:underline transition-all ${
-                currentPath.startsWith("/retrospective")
+                pathname.startsWith("/retrospective")
                   ? "underline font-bold"
                   : ""
               }`}
@@ -221,8 +217,8 @@ function Navbar() {
             </button>
 
             {isRetroOpen && (
-
-              <ul className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-44 bg-[#F4D4DC] rounded-lg shadow-lg py-2 z-50">
+              /* Dans le flux en mobile (menu en colonne), flottant en desktop */
+              <ul className="static w-full max-w-[16rem] mt-2 border border-[#0A1F14]/10 lg:border-0 lg:absolute lg:top-full lg:left-1/2 lg:-translate-x-1/2 lg:w-44 lg:max-w-none bg-[#F4D4DC] rounded-lg shadow-lg py-2 z-50">
                 <li className="px-4 py-2 text-center text-xs font-bold uppercase tracking-wide text-[#0A1F14]/60 cursor-default select-none border-b border-[#0A1F14]/15 mb-1">
                   Editions précédentes
                 </li>
@@ -230,7 +226,6 @@ function Navbar() {
                   <li key={edition.annee}>
                     <Link
                       to={`/retrospective/${edition.annee}`}
-                      onClick={handleLinkClick}
                       className="block px-4 py-2 text-center text-[#0A1F14] hover:bg-[#F0A5B8] transition-colors rounded-md mx-1"
                     >
                       {edition.numero}
@@ -257,7 +252,6 @@ function Navbar() {
             <Link
               to="/billetterie"
               className={getLinkClasses("/billetterie", true)}
-              onClick={handleLinkClick}
             >
               Billetterie
             </Link>
@@ -275,11 +269,7 @@ function Navbar() {
 
           {/* Contact */}
           <li className="relative group flex items-center">
-            <Link
-              to="/contact"
-              className={getLinkClasses("/contact")}
-              onClick={handleLinkClick}
-            >
+            <Link to="/contact" className={getLinkClasses("/contact")}>
               Contact
             </Link>
           </li>

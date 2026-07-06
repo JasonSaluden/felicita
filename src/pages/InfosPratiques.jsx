@@ -21,21 +21,21 @@ function InfosPratiques() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
             {/* Titre avec pictos */}
-            <div className="flex items-center justify-center space-x-6 mb-8">
+            <div className="flex items-center justify-center space-x-3 sm:space-x-6 mb-8">
               <img
-                src="/assets\pictos\picto2.png"
+                src="/assets/pictos/picto2.png"
                 alt=""
                 aria-hidden="true"
-                className="h-8 w-8 object-contain opacity-90"
+                className="hidden sm:block h-8 w-8 object-contain opacity-90"
               />
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-800">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800">
                 INFOS PRATIQUES
               </h1>
               <img
-                src="/assets\pictos\picto2.png"
+                src="/assets/pictos/picto2.png"
                 alt=""
                 aria-hidden="true"
-                className="h-8 w-8 object-contain opacity-90"
+                className="hidden sm:block h-8 w-8 object-contain opacity-90"
               />
             </div>
 
@@ -73,7 +73,7 @@ function InfosPratiques() {
         {/* Onglet Comment venir */}
         {activeTab === "venir" && (
           <div className="mb-16">
-            <div className="bg-gradient-to-br from-blue-100 to-blue-200 border-2 border-orange-200 p-8 rounded-3xl shadow-lg relative overflow-hidden">
+            <div className="bg-gradient-to-br from-blue-100 to-blue-200 border-2 border-orange-200 p-4 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
               <div className="relative z-10">
                 {/* Badge */}
                 <div className="inline-block bg-blue-200 text-blue-800 px-4 py-1 rounded-full text-sm font-bold mb-6 border border-blue-300">
@@ -102,7 +102,7 @@ function InfosPratiques() {
                   </div>
                   <p className="text-center text-sm text-gray-600 mt-2">
                     <strong>Adresse :</strong> La Felicità Festival, Vilvert,
-                    43920 Brissac Loire Aubance
+                    49320 Brissac Loire Aubance
                   </p>
                 </div>
               </div>
@@ -113,7 +113,7 @@ function InfosPratiques() {
         {/* Onglet Quoi manger */}
         {activeTab === "manger" && (
           <div className="mb-16">
-            <div className="bg-gradient-to-br from-orange-100 to-orange-200 border-2 border-blue-200 p-8 rounded-3xl shadow-lg relative overflow-hidden">
+            <div className="bg-gradient-to-br from-orange-100 to-orange-200 border-2 border-blue-200 p-4 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
               <div className="relative z-10">
                 {/* Badge */}
                 <div className="inline-block bg-orange-200 text-orange-800 px-4 py-1 rounded-full text-sm font-bold mb-6 border border-orange-300">
@@ -159,7 +159,6 @@ function InfosPratiques() {
                   {/* À manger */}
                   <div className="bg-white/70 p-6 rounded-2xl border border-gray-200">
                     <div className="text-center mb-4">
-                      
                       <h3 className="text-xl font-bold text-gray-800 mb-2">
                         À manger
                       </h3>
@@ -167,42 +166,53 @@ function InfosPratiques() {
 
                     {[
                       {
-                        key: "fouees",
-                        badge: "🥖 Fouées by Moulin de Sarré",
-                        desc: "Salées & sucrées, avec plein de choix de garniture",
-                        cls: "bg-red-50 border-red-200 text-red-800",
+                        titre: "Felichi'Fouées by Moulin de Sarré",
+                        items: [
+                          {
+                            key: "fouees-salees",
+                            badge: "🥖 Fouées salées",
+                            desc: "Nature, beurre, rillauds, rillettes, chèvre-miel, fromage, courgettes-falafels ou champignons persillés",
+                            cls: "bg-red-50 border-red-200 text-red-800",
+                          },
+                          {
+                            key: "fouees-sucrees",
+                            badge: "🍯 Fouées sucrées",
+                            desc: "Nocciolata ou miel",
+                            cls: "bg-pink-50 border-pink-200 text-pink-800",
+                          },
+                        ],
                       },
                       {
-                        key: "Barquettes de frites",
-                        badge: "🍟 Barquettes de frites",
-                        desc: "Bonne dose de frites, sauce au choix",
-                        cls: "bg-amber-50 border-amber-200 text-amber-800",
+                        titre: "Barquettes",
+                        items: [
+                          {
+                            key: "frites",
+                            badge: "🍟 Barquette de frites",
+                            desc: "Bonne dose de frites, sauce au choix",
+                            cls: "bg-amber-50 border-amber-200 text-amber-800",
+                          },
+                          {
+                            key: "falafels",
+                            badge: "🧆 Barquette de falafels",
+                            desc: "Boulettes de pois chiches, sauce au choix",
+                            cls: "bg-lime-100 border-lime-300 text-lime-900",
+                          },
+                        ],
                       },
-                      {
-                        key: "Barquettes de falafels",
-                        badge: "🧆 Barquettes de falafels",
-                        desc: "Boulettes de pois chiches, sauce au choix",
-                        cls: "bg-lime-100 border-lime-300 text-lime-900",
-                      },
-                      {
-                        key: "crepe-bn",
-                        badge: "🌾 Crêpes blé noir",
-                        desc: "Galettes de sarasin",
-                        cls: "bg-emerald-50 border-emerald-200 text-emerald-800",
-                      },
-                      {
-                        key: "crepe-fr",
-                        badge: "🥞 Crêpes froment",
-                        desc: "Crèpes sucrées au choix (nocciolata, caramel, confiture, miel…)",
-                        cls: "bg-pink-50 border-pink-200 text-pink-800",
-                      },
-                    ].map((item) => (
-                      <div
-                        key={item.key}
-                        className={`p-3 rounded-xl border mb-3 last:mb-0 ${item.cls}`}
-                      >
-                        <h4 className="font-medium mb-1">{item.badge}</h4>
-                        <p className="text-sm opacity-80">{item.desc}</p>
+                    ].map((groupe) => (
+                      <div key={groupe.titre} className="mb-5 last:mb-0">
+                        <h4 className="text-sm font-bold uppercase tracking-wide text-gray-600 text-center mb-3">
+                          {groupe.titre}
+                        </h4>
+                        {groupe.items.map((item) => (
+                          <div
+                            key={item.key}
+                            className={`p-3 rounded-xl border mb-3 last:mb-0 ${item.cls}`}
+                          >
+                            <h5 className="font-medium mb-1">{item.badge}</h5>
+                            <p className="text-sm opacity-80">{item.desc}</p>
+                          </div>
+                        ))}
                       </div>
                     ))}
                   </div>
@@ -250,7 +260,7 @@ function InfosPratiques() {
                           🍹 Cocktails
                         </h4>
                         <p className="text-sm text-purple-700 text-justify">
-                          Felici'Spritz, Felici'Sangria et Felici'Kir
+                          Spritz, Sangria et Kir
                         </p>
                       </div>
 
@@ -285,7 +295,7 @@ function InfosPratiques() {
         {/* Onglet Comment dormir */}
         {activeTab === "dormir" && (
           <div className="mb-16">
-            <div className="bg-gradient-to-br from-green-100 to-green-200 border-2 border-purple-200 p-8 rounded-3xl shadow-lg relative overflow-hidden">
+            <div className="bg-gradient-to-br from-green-100 to-green-200 border-2 border-purple-200 p-4 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
               <div className="relative z-10">
                 {/* Badge */}
                 <div className="inline-block bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-bold mb-6 border border-green-300">
@@ -345,8 +355,7 @@ function InfosPratiques() {
                       Emplacements
                     </h3>
                     <p className="text-sm text-gray-600">
-                      Grands espaces sous les arbres pour planter votre tente
-                      dans la Cité du Vent !
+                      Grands espaces sous les arbres pour planter votre tente !
                     </p>
                   </div>
 
@@ -475,7 +484,7 @@ function InfosPratiques() {
         {/* Onglet Kit festivalier */}
         {activeTab === "kit" && (
           <div className="mb-16">
-            <div className="bg-gradient-to-br from-purple-100 to-purple-200 border-2 border-green-200 p-8 rounded-3xl shadow-lg relative overflow-hidden">
+            <div className="bg-gradient-to-br from-purple-100 to-purple-200 border-2 border-green-200 p-4 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
               <div className="relative z-10">
                 {/* Badge */}
                 <div className="inline-block bg-purple-200 text-purple-800 px-4 py-1 rounded-full text-sm font-bold mb-6 border border-purple-300">
