@@ -44,8 +44,8 @@ export const artistes2026 = [
    {
    id: 1,                                   
    name: "La Clara Sofia",
-   image: "/assets/artistes/2026/LaClaraSofia_Slide1.webp",
-   image2: "/assets/artistes/2026/LaClaraSofia_Slide1.webp",
+   image: "/assets/artistes/2026/LaClaraSofia_post.webp",
+   image2: "/assets/artistes/2026/LaClaraSofia_post.webp",
    description:
      "“Je suis immense, je contiens des multitudes”, des mots que La Clara Sofia emprunte à Walt Whitman et qui irriguent sa musique écrite en portugais et en anglais, se faisant l’écho des villes et des vies qu’elle a vécues. Sur scène, avec pour leitmotiv de faire bouger les corps et les âmes, dans un trio voix-basse-objets percussifs, le public est enveloppé dans un cocon de pop alternative tissé aux fils du Brésil.",
    genre: "Alt-pop",
@@ -62,8 +62,8 @@ export const artistes2026 = [
   {
     id: 2,                                   
     name: "Kriill",
-    image: "/assets/artistes/2026/Kriill_Slide1.webp",
-    image2: "/assets/artistes/2026/Kriill_Slide1.webp",
+    image: "/assets/artistes/2026/Kriill_post.webp",
+    image2: "/assets/artistes/2026/Kriill_post.webp",
     description:
       "",
     genre: "Alt-pop",
@@ -81,8 +81,8 @@ export const artistes2026 = [
   {
     id: 3,                                   
     name: "No Sex Last Night",
-    image: "/assets/artistes/2026/NoSexLastNight_Slide1.webp",
-    image2: "/assets/artistes/2026/NoSexLastNight_Slide1.webp",
+    image: "/assets/artistes/2026/NoSexLastNight_post.webp",
+    image2: "/assets/artistes/2026/NoSexLastNight_post.webp",
     description:
       "Le son new wave de No Sex Last Night sent la sueur, l’angoisse et les nuits sans fin. Le duo transforme ses névroses de zoomers en beats sombres, bruts et profondément vivants. Avec des textes en français, à la fois naïfs et cruellement lucides pour exister un peu plus fort.",
     genre: "ColdWave",
@@ -100,8 +100,8 @@ export const artistes2026 = [
   {
     id: 4,                                   
     name: "NAO",
-    image: "/assets/artistes/2026/Nao_Slide1.webp",
-    image2: "/assets/artistes/2026/Nao_Slide1.webp",
+    image: "/assets/artistes/2026/Nao_post.webp",
+    image2: "/assets/artistes/2026/Nao_post.webp",
     description:
       "Nao évolue dans un milieu musical multiculturel marqué par l’immigration de sa famille japonaise en Amérique latine. Très proche des sonorités latino-américaines, notamment le reggaeton, qu’elle allie au latincore ou à la brazilian funk, elle circule dans des espaces de fêtes militants, fusionnant ses influences avec des genres comme le jersey club ou la bass music. Proche des collectifs d’artistes asio-descendant·es Slayyysian et Tiger Bomb, elle est fortement engagée auprès de la représentation des artistes queer asio-descendant·es en France et plus précisément en région parisienne et lilloise.",
     genre: "Techno",
@@ -118,8 +118,8 @@ export const artistes2026 = [
   {
     id: 5,                                   
     name: "DJ Startup",
-    image: "/assets/artistes/2026/DJ_Startup.png",
-    image2: "/assets/artistes/2026/.webp",
+    image: "/assets/artistes/2026/DJStartup_post.webp",
+    image2: "/assets/artistes/2026/DJStartup_post.webp",
     description:
       "Simon Lahure aka Dj Startup est à la recherche la formule occulte qui permettra relancer l’épidémie de danse de Strasbourg en 1518. Dans un flow exaltant de mélodies midi, guimbardes, flutiots et ocarinas souffleront la musique d’une teuf antédiluvienne.",
     genre: "Electro",
@@ -137,21 +137,26 @@ export const artistes2026 = [
   {
     id: 6,                                   
     name: "!Azar Azar!",
-    image: "/assets/artistes/2026/AzarAzar.jpg",
-    image2: "/assets/artistes/2026/.webp",
+    image: "/assets/artistes/2026/AzarAzar_post.webp",
+    image2: "/assets/artistes/2026/AzarAzar_post.webp",
     description:
       "",
     genre: "Improvized Live Techno",
-    time: "",                                
-    socialLinks: {                           
-      instagram: "https://instagram.com/...",
-      soundcloud: "https://soundcloud.com/...",
-      site: "https://...",
-    },  
-    video: {                                
-      type: "youtube",
-      id: "ID_YOUTUBE",                    
-    },
+    time: "",
+    // socialLinks: à compléter quand on a les liens
+    // video: à compléter quand on a un lien YouTube
+  },
+  {
+    id: 7,
+    name: "Jago",
+    image: "/assets/artistes/2026/Jago_post.webp",
+    image2: "/assets/artistes/2026/Jago_post.webp",
+    description:
+      "",
+    genre: "",
+    time: "",
+    // socialLinks: à compléter quand on a les liens
+    // video: à compléter quand on a un lien YouTube
   },
 ];
 

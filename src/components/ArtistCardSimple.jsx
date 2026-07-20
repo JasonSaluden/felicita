@@ -16,11 +16,11 @@ function ArtistCardSimple({ artist }) {
       </div>
 
       {/* Nom de l'artiste (visible aussi sur mobile, où le hover n'existe pas) */}
-      {artist.name && (
+      {/* {artist.name && (
         <p className="mt-3 text-center text-base sm:text-lg font-bold text-[#F4D4DC]">
           {artist.name}
         </p>
-      )}
+      )} */}
     </div>
   );
 }
