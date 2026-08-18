@@ -182,11 +182,6 @@ function InfosPratiques() {
           <div className="mb-16">
             <div className="bg-gradient-to-br from-blue-100 to-blue-200 border-2 border-orange-200 p-4 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
               <div className="relative z-10">
-                {/* Badge */}
-                <div className="inline-block bg-blue-200 text-blue-800 px-4 py-1 rounded-full text-sm font-bold mb-6 border border-blue-300">
-                  ACCÈS AU FESTIVAL
-                </div>
-
                 <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
                   Comment venir à la Felicità ?
                 </h2>
