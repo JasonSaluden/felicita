@@ -313,10 +313,6 @@ function InfosPratiques() {
           <div className="mb-16">
             <div className="bg-gradient-to-br from-orange-100 to-orange-200 border-2 border-blue-200 p-4 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
               <div className="relative z-10">
-                {/* Badge */}
-                <div className="inline-block bg-orange-200 text-orange-800 px-4 py-1 rounded-full text-sm font-bold mb-6 border border-orange-300">
-                  RESTAURATION & BOISSONS
-                </div>
 
                 <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
                   Se régaler sur place !
@@ -495,10 +491,6 @@ function InfosPratiques() {
           <div className="mb-16">
             <div className="bg-gradient-to-br from-green-100 to-green-200 border-2 border-purple-200 p-4 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
               <div className="relative z-10">
-                {/* Badge */}
-                <div className="inline-block bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-bold mb-6 border border-green-300">
-                  CAMPING SUR PLACE
-                </div>
 
                 <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
                   Dormez sous les étoiles !
@@ -684,10 +676,6 @@ function InfosPratiques() {
           <div className="mb-16">
             <div className="bg-gradient-to-br from-purple-100 to-purple-200 border-2 border-green-200 p-4 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
               <div className="relative z-10">
-                {/* Badge */}
-                <div className="inline-block bg-purple-200 text-purple-800 px-4 py-1 rounded-full text-sm font-bold mb-6 border border-purple-300">
-                  GUIDE DU FESTIVALIER
-                </div>
 
                 <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
                   Votre kit de survie pour le festival !
