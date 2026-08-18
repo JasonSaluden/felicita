@@ -1,6 +1,110 @@
 import React, { useState } from "react";
 import Carousel from "../components/Caroussel";
 
+// ===== Onglet « Comment venir ? » =====
+
+// Petites illustrations maison (SVG) pour chaque moyen de transport
+const proprietesIcone = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.6,
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": true,
+};
+
+const IconeNavette = ({ className }) => (
+  <svg {...proprietesIcone} className={className}>
+    <path d="M2.5 15.5V9a1.5 1.5 0 0 1 1.5-1.5h8.6l3 3.5h3.9a2 2 0 0 1 2 2v2.5" />
+    <path d="M2.5 15.5h19" />
+    <path d="M6 7.5v3.5h6.6" />
+    <circle cx="7" cy="17.5" r="1.7" />
+    <circle cx="17" cy="17.5" r="1.7" />
+  </svg>
+);
+
+const IconeCovoiturage = ({ className }) => (
+  <svg {...proprietesIcone} className={className}>
+    <path d="M3 15.5V13l2.2-4.4a1.6 1.6 0 0 1 1.4-.9h8.8a1.6 1.6 0 0 1 1.4.9L19 13v2.5" />
+    <path d="M3 15.5h16" />
+    <circle cx="7" cy="17.3" r="1.7" />
+    <circle cx="15" cy="17.3" r="1.7" />
+    <circle cx="9.3" cy="11" r="1" />
+    <circle cx="12.9" cy="11" r="1" />
+  </svg>
+);
+
+const IconeBus = ({ className }) => (
+  <svg {...proprietesIcone} className={className}>
+    <rect x="2.5" y="4" width="19" height="12.5" rx="2" />
+    <path d="M2.5 10h19" />
+    <path d="M8.5 4v6M14.5 4v6" />
+    <path d="M5.5 13.5h3M15.5 13.5h3" />
+    <circle cx="7" cy="18.5" r="1.6" />
+    <circle cx="17" cy="18.5" r="1.6" />
+  </svg>
+);
+
+const IconeVelo = ({ className }) => (
+  <svg {...proprietesIcone} className={className}>
+    <circle cx="5.5" cy="16.5" r="3.5" />
+    <circle cx="18.5" cy="16.5" r="3.5" />
+    <path d="M12 16.5 10 9.5M10 9.5 16 8.5M16 8.5 18.5 16.5M12 16.5 16 8.5" />
+    <path d="M8.7 9.5h2.6M15 7.2h2.4" />
+  </svg>
+);
+
+// Le lien de chaque moyen de transport pointe vers la plateforme correspondante
+const moyensDeVenir = [
+  {
+    id: "navette",
+    titre: "Navettes",
+    Icone: IconeNavette,
+    couleurIcone: "bg-pink-100 text-pink-700 border-pink-200",
+    texte:
+      "Plusieurs départs sont prévus samedi (11h30, 13h30, 15h30) depuis la gare d'Angers puis des retours dimanche (10h, 11h30, 14h) depuis La Felicità. Réservation obligatoire.",
+    lien: "https://www.helloasso.com/associations/la-felicita-festival/evenements/navettes-la-felicita-2026",
+    libelleLien: "Réserver ma navette",
+  },
+  {
+    id: "Covoiturage",
+    titre: "En covoiturage",
+    Icone: IconeCovoiturage,
+    couleurIcone: "bg-orange-100 text-orange-700 border-orange-200",
+    texte:
+      "Propose des places dans ta voiture ou trouve un trajet depuis chez toi sur la plateforme de covoiturage du festival.",
+    lien: "https://www.covievent.org/covoiturage/festival-la-felicita-7eme-edition/75af7e58f19552aadda14bc068ea2a84",
+    libelleLien: "Trouver un covoiturage",
+  },
+  {
+    id: "bus",
+    titre: "En bus",
+    Icone: IconeBus,
+    couleurIcone: "bg-blue-100 text-blue-700 border-blue-200",
+    texte:
+      "Depuis la gare d'Angers, rejoins le festival avec la ligne Aléop 405 (Angers ↔ Doué-en-Anjou ↔ Montreuil-Bellay), arrêts à Brissac-Quincé. Le tout en 35 min !",
+    lien: "/assets/docs/Horaires_Aleop_405_ete_2026.pdf",
+    libelleLien: "Voir les horaires (PDF)",
+  },
+  {
+    id: "velo",
+    titre: "À vélo",
+    Icone: IconeVelo,
+    couleurIcone: "bg-green-100 text-green-700 border-green-200",
+    texte:
+      "Départ collectif prévu depuis Angers vers 11h30 pour venir en mode tout doux ! Plus d'infos à venir",
+    // Pas encore de lien : la carte s'affiche sans bouton tant que `lien` est absent
+  },
+];
+
+// Temps de trajet en voiture depuis les villes voisines
+const tempsDeTrajet = [
+  { ville: "Angers", duree: "15 min" },
+  { ville: "Saumur", duree: "30 min" },
+  { ville: "Cholet", duree: "40 min" },
+];
+
 function InfosPratiques() {
   const [activeTab, setActiveTab] = useState("venir");
 
@@ -39,11 +143,14 @@ function InfosPratiques() {
               />
             </div>
 
-            {/* Sous-titre avec cadre */}
-            <div className="inline-block bg-white/60 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm">
-              <p className="text-xl text-gray-700 font-medium">
+            {/* Sous-titre : typographique, sans cadre, pour ne pas ressembler
+                à un bouton */}
+            <div className="inline-flex items-center gap-4">
+              <span className="hidden sm:block h-px w-10 bg-[#F0A5B8]"></span>
+              <p className="text-xl sm:text-2xl text-gray-800 font-medium italic">
                 Tout ce qu'il faut savoir pour venir
               </p>
+              <span className="hidden sm:block h-px w-10 bg-[#F0A5B8]"></span>
             </div>
           </div>
         </div>
@@ -83,6 +190,102 @@ function InfosPratiques() {
                 <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
                   Comment venir à la Felicità ?
                 </h2>
+
+                {/* Temps de trajet en voiture */}
+                <div className="bg-white/70 p-6 rounded-2xl border border-gray-200 mb-8">
+                  {/* Volontairement plat et anguleux : ce sont des infos,
+                      pas des boutons */}
+                  <div className="flex flex-wrap justify-center gap-4">
+                    {tempsDeTrajet.map(({ ville, duree }) => (
+                      <span
+                        key={ville}
+                        className="inline-flex items-baseline gap-2 border-l-4 border-[#F0A5B8] bg-white/50 pl-3 pr-4 py-1.5 rounded-r-md"
+                      >
+                        <span className="text-sm text-gray-700">{ville}</span>
+                        <span className="text-lg font-bold text-[#0E5C3A]">
+                          {duree}
+                        </span>
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-center text-xs text-gray-500 mt-3 italic">
+                    Temps de trajet en voiture
+                  </p>
+                </div>
+
+                {/* Les différents moyens de venir */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                  {moyensDeVenir.map(
+                    ({
+                      id,
+                      titre,
+                      Icone,
+                      couleurIcone,
+                      texte,
+                      lien,
+                      libelleLien,
+                    }) => {
+                      const estUnPdf = Boolean(lien) && lien.endsWith(".pdf");
+
+                      return (
+                        <div
+                          key={id}
+                          className="bg-white/70 p-6 rounded-2xl border border-gray-200 flex flex-col items-center text-center transition-transform duration-200 hover:scale-[1.02]"
+                        >
+                          <div
+                            className={`w-16 h-16 rounded-full border-2 flex items-center justify-center mb-4 ${couleurIcone}`}
+                          >
+                            <Icone className="w-9 h-9" />
+                          </div>
+
+                          <h3 className="text-lg font-bold text-gray-800 mb-2">
+                            {titre}
+                          </h3>
+
+                          <p className="text-sm text-gray-600 mb-5 flex-1">
+                            {texte}
+                          </p>
+
+                          {/* Bouton d'action : vert festival + rose, pour ne pas
+                              être confondu avec les onglets et les encarts */}
+                          {lien ? (
+                            <a
+                              href={lien}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 bg-[#0E5C3A] hover:bg-[#0A1F14] text-[#F4D4DC] font-bold text-sm uppercase tracking-wide px-5 py-2.5 rounded-md shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+                            >
+                              {libelleLien}
+                              <svg
+                                className="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d={
+                                    estUnPdf
+                                      ? "M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"
+                                      : "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                  }
+                                />
+                              </svg>
+                            </a>
+                          ) : (
+                            /* Pas encore de plateforme pour ce moyen de transport */
+                            <span className="text-xs font-bold uppercase tracking-wide text-[#0E5C3A]/60 border-t border-dashed border-[#0E5C3A]/30 pt-3 w-full">
+                              Bientôt disponible
+                            </span>
+                          )}
+                        </div>
+                      );
+                    }
+                  )}
+                </div>
 
                 {/* Carte Google Maps */}
                 <div className="bg-white/70 p-4 rounded-2xl border border-gray-200">

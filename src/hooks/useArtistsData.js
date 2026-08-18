@@ -16,11 +16,6 @@ const useArtistsData = () => {
         await new Promise(resolve => setTimeout(resolve, 300)); // Simule un délai
         setArtists(artistes2025);
         
-        // Plus tard, tu peux remplacer par un vrai appel API :
-        // const response = await fetch('/api/artists');
-        // const data = await response.json();
-        // setArtists(data);
-        
         setError(null);
       } catch (err) {
         setError(err.message);

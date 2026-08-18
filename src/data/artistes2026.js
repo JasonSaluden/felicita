@@ -37,6 +37,17 @@
 //    //   { type: "youtube", id: "ID_1" },
 //    //   { type: "local", src: "/assets/videos/MonClip.mp4" },
 //    // ],
+//    // Pour un COLLECTIF / DUO : ajoute `members` (optionnel). La modal
+//    // affiche alors la bio du collectif puis un bloc par membre.
+//    // members: [
+//    //   {
+//    //     name: "Nom du membre",
+//    //     image: "/assets/artistes/2026/Membre_post.webp",  // optionnel
+//    //     description: "Bio du membre.",
+//    //     genre: "Son style",                                // optionnel
+//    //     socialLinks: { instagram: "https://..." },         // optionnel
+//    //   },
+//    // ],
 //  },
 // ========================================================================
 
@@ -54,9 +65,9 @@ export const artistes2026 = [
      instagram: "https://www.instagram.com/laclarasofia/",
      beacons: "https://beacons.ai/laclarasofia?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn1IesPelt2OmIp_Efdg1dTZBde9em3eWdAAlOLXaYsCbZ3DeGuz7ITt38wEg_aem_L7xZGZbj9xeK5LwIKlf48g",
    },
-   video: {                                
-     type: "youtube",
-     id: "unxa_1M74Rc",                    
+   video: {
+     type: "local",
+     src: "/assets/videos/LaClaraSofia_post.mp4",
    },
   },
   {
@@ -65,7 +76,7 @@ export const artistes2026 = [
     image: "/assets/artistes/2026/Kriill_post.webp",
     image2: "/assets/artistes/2026/Kriill_post.webp",
     description:
-      "",
+      "🌊 Kriill brouille les frontières entre rock alternatif, pop atmosphérique et expérimentation sonore. Le trio parisien compose une musique à la fois sensible, puissante et hypnotique, portée par trois voix harmonieuses, des instruments singuliers et des arrangements d'une grande finesse. Avec leur nouvel album Listen To The Whale, Kriill livre un rock élégant et intense, qui questionne notre époque et notre rapport au monde. Entre l'énergie de Tame Impala et la richesse mélodique des Beatles, découvrez l’univers de Kriill à La Felicità !",
     genre: "Alt-pop",
     time: "",                                
     socialLinks: {                           
@@ -73,9 +84,9 @@ export const artistes2026 = [
       site: "https://lnk.bio/kriill?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGntgU9XMf6xxCcvoX_3sSltU6EbIrZ3XKi4499krddkp8RkICum1suP2sQ0-o_aem_37rLePGWmcOx-te1dm68Qg",
       bandcamp : "https://kriillmusic.bandcamp.com/album/listen-to-the-whale"
     },
-    video: {                                
-      type: "youtube",
-      id: "QQpOBo8rdPU",                    
+    video: {
+      type: "local",
+      src: "/assets/videos/Kriill_post.mp4",
     },
   },
   {
@@ -92,9 +103,9 @@ export const artistes2026 = [
       spotify: "https://open.spotify.com/intl-fr/artist/4OwWT91x4jWdIGWqKnUH6z",
       deezer: "https://www.deezer.com/fr/artist/208471927",
     },
-    video: {                                
-      type: "youtube",
-      id: "H2_urwDyUVQ",                    
+    video: {
+      type: "local",
+      src: "/assets/videos/NoSexLastNight_post.mp4",
     },
   },
   {
@@ -110,9 +121,9 @@ export const artistes2026 = [
       instagram: "https://www.instagram.com/naocqr/",
       soundcloud: "https://soundcloud.com/user370155625?ref=clipboard&p=i&c=1&si=D000161B12D243A88001950C4D924DF9&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
     },
-    video: {                                
+    video: {
       type: "local",
-      src: "/assets/videos/Teaser_Nao.mp4",                   
+      src: "/assets/videos/Nao_post.mp4",
     },
   },
   {
@@ -129,9 +140,9 @@ export const artistes2026 = [
       soundcloud: "https://on.soundcloud.com/HtfPznjkUrnmqutM9",
       bandcamp: "https://carpacciocathedrale.bandcamp.com/album/team-building-boot-camp-cc005",
     },
-    video: {                                
-      type: "youtube",
-      id: "baJBmhg90VM",                    
+    video: {
+      type: "local",
+      src: "/assets/videos/DJStartup_post.mp4",
     },
   },
   {
@@ -140,11 +151,13 @@ export const artistes2026 = [
     image: "/assets/artistes/2026/AzarAzar_post.webp",
     image2: "/assets/artistes/2026/AzarAzar_post.webp",
     description:
-      "",
+      "!AZAR AZAR! c’est une batterie sans le rock et  des synthés sans la pop. Dans le sillage de Concrete au son plus froid de la techno berlinoise. Le duo cherche au travers de ses improvisation à plonger le public dans une trance hypnotique ! Préparez vous à danser avec !Azar Azar!",
     genre: "Improvized Live Techno",
     time: "",
-    // socialLinks: à compléter quand on a les liens
-    // video: à compléter quand on a un lien YouTube
+    video: {
+      type: "local",
+      src: "/assets/videos/AzarAzar_post.mp4",
+    },
   },
   {
     id: 7,
@@ -152,15 +165,76 @@ export const artistes2026 = [
     image: "/assets/artistes/2026/Jago_post.webp",
     image2: "/assets/artistes/2026/Jago_post.webp",
     description:
-      "",
+      "Lauréate du Tremplin La Felicità au Nid du Héron, Jago revient sur scène à La Felicità avec son univers sensible, où la douceur côtoie les failles. Inspirée par l'indie pop, les textes de Pomme et les textures de Feu! Chatterton, elle compose une musique qui cherche à éclairer les zones d'ombre, sans jamais les effacer. Entourée de son groupe, elle donne vie à des chansons qui parlent d'émancipation, de fragilité et de cette lumière que l'on apprend à faire grandir en soi",
     genre: "",
     time: "",
-    // socialLinks: à compléter quand on a les liens
-    // video: à compléter quand on a un lien YouTube
+    video: {
+      type: "local",
+      src: "/assets/videos/Jago_post.mp4",
+    },
+  },
+  {
+    id: 8,
+    name: "112 VKRM",
+    image: "/assets/artistes/2026/112VKRM_MicroVegas_post.webp",
+    image2: "/assets/artistes/2026/112VKRM_YazUnderwater_post.webp",
+    description:
+      "112 VKRM (vacarme) a pour vocation de développer une dynamique collective et de fédérer des DJ d’horizons différents, tout en visibilisant les femmes et les minorités de genre dans les musiques actuelles de la scène angevine.\nÀ Felicita, le collectif débarque en duo : Micro Vegas et yaz.underwater.",
+    genre: "Collectif DJ — club, bass & techno mutante",
+    time: "",
+    socialLinks: {
+      instagram: "https://www.instagram.com/112_vkrm/",
+      soundcloud: "https://soundcloud.com/112vkrm",
+    },
+    members: [
+      {
+        name: "Micro Vegas",
+        image: "/assets/artistes/2026/112VKRM_MicroVegas_post.webp",
+        description:
+          "Membre du collectif 112 VKRM, Micro Vegas mixe un son hybride tantôt nerveux, entre techno déconstruite, reggaeton mutant et baile rave, tantôt expérimental et cinématographique, au croisement de l’ambient et du drone. Dans ses sets, pas de ligne droite : virages, secousses souterraines.",
+        genre: "Dance Electroclash Booty Ambient Latin",
+        socialLinks: {
+          instagram: "https://www.instagram.com/jinnieroche/?hl=fr",
+          soundcloud: "https://soundcloud.com/112vkrm",
+        },
+      },
+      {
+        name: "yaz.underwater",
+        image: "/assets/artistes/2026/112VKRM_YazUnderwater_post.webp",
+        description:
+          "Membre et co-fondatrice du collectif angevin 112 VKRM, yaz.underwater oscille entre les genres sans frontière. Dans ses sets percussifs, elle s’amuse en passant par des inspirations UK bass où se mêlent rythmiques grime, dubstep et UK funky, aux sonorités latines pour faire danser sous tous les horizons.",
+        genre: "UK / latin bass music, breaks, global club",
+        socialLinks: {
+          instagram: "https://www.instagram.com/yasminesbn/?hl=fr",
+          soundcloud: "https://on.soundcloud.com/V7MfAbYGAogXHnK9A",
+        },
+      },
+    ],
+  },
+  {
+    id: 9,
+    name: "Lanlaire",
+    image: "/assets/artistes/2026/Lanlaire_post.webp",
+    image2: "/assets/artistes/2026/Lanlaire_post.webp",
+    description:
+      "Avec leur projet Lanlaire, Esther & Nathan proposent un concert théâtralisé. De 1683 à 2026, reprises et compositions dialoguent à l’aide du piano et de la voix, mais aussi du cajon, du glockenspiel et autres surprises musicales. Dans un rapport tantôt clownesque, tantôt amoureux, les deux interprètes inventent un monde musical tonitruant où la chanson française est à l’honneur, aux côtés de répertoires lyrique, jazz, électro... Lanlaire déclame sa poésie fragile et extravagante, tissant des liens entre les morceaux pour former une sorte de parcours initiatique exalté.",
+    genre: "Chanson française théâtralisée",
+    time: "",
+    videos: [
+      {
+        type: "local",
+        src: "/assets/videos/Lanlaire_Extrait.mp4",
+        title: "Vous êtes comme la musique (extrait)",
+      },
+      {
+        type: "local",
+        src: "/assets/videos/Lanlaire_Teaser.mp4",
+        title: "Teaser",
+      },
+    ],
   },
 ];
 
-// Fonctions utiles (même logique que artistes2025.js)
 export const getArtiste2026ById = (id) =>
   artistes2026.find((artist) => artist.id === id);
 

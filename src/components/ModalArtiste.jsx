@@ -1,8 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { getPlatformInfo, PlatformIcon } from "../data/socialPlatforms";
 
 function ModalArtiste({ artist, isOpen, onClose }) {
+  // Slide affichée dans la colonne de gauche (utile pour les collectifs,
+  // qui ont un visuel par membre)
+  const [slideActive, setSlideActive] = useState(0);
+
+  // On revient sur la première slide à chaque ouverture / changement d'artiste
+  useEffect(() => {
+    setSlideActive(0);
+  }, [artist, isOpen]);
+
   // Gestion des touches et scroll
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -25,6 +34,26 @@ function ModalArtiste({ artist, isOpen, onClose }) {
   }, [isOpen, onClose]);
 
   if (!isOpen || !artist) return null;
+
+  // Un collectif / duo : plusieurs artistes sous un même nom de scène
+  const estUnCollectif = Array.isArray(artist.members) && artist.members.length > 0;
+
+  // Visuels de la colonne de gauche : un collectif montre ses deux slides,
+  // un artiste seul garde son unique slide.
+  const visuels =
+    estUnCollectif && artist.image2 && artist.image2 !== artist.image
+      ? [
+          { src: artist.image, alt: artist.members[0]?.name || artist.name },
+          { src: artist.image2, alt: artist.members[1]?.name || artist.name },
+        ]
+      : [{ src: artist.image, alt: artist.name }];
+
+  const indexActif = slideActive % visuels.length;
+  const visuelActif = visuels[indexActif];
+  const slidePrecedente = () =>
+    setSlideActive((index) => (index - 1 + visuels.length) % visuels.length);
+  const slideSuivante = () =>
+    setSlideActive((index) => (index + 1) % visuels.length);
 
   // Fonction pour gérer l'erreur de chargement vidéo
   const handleVideoError = (e) => {
@@ -126,11 +155,77 @@ function ModalArtiste({ artist, isOpen, onClose }) {
           {/* Colonne gauche - Image fixe
               (hauteur limitée sur mobile pour laisser la place au texte) */}
           <div className="lg:w-1/2 max-h-[40vh] lg:max-h-none bg-gray-100 flex items-center justify-center p-4 lg:p-6 relative flex-shrink-0">
+            {/* Un collectif a une slide par membre : on navigue de l'une à
+                l'autre avec les flèches (une seule image affichée à la fois) */}
             <img
-              src={artist.image}
-              alt={`${artist.name}`}
+              src={visuelActif.src}
+              alt={visuelActif.alt}
               className="max-w-full max-h-[35vh] lg:max-h-full object-contain rounded-lg shadow-lg"
             />
+
+            {visuels.length > 1 && (
+              <>
+                <button
+                  onClick={slidePrecedente}
+                  aria-label="Slide précédente"
+                  className="absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors duration-200"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </button>
+
+                <button
+                  onClick={slideSuivante}
+                  aria-label="Slide suivante"
+                  className="absolute right-2 lg:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors duration-200"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+
+                {/* Nom du membre affiché + pastilles de navigation */}
+                <div className="absolute bottom-2 lg:bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/50 text-white px-3 py-1.5 rounded-full backdrop-blur-sm">
+                  <span className="text-xs font-medium">{visuelActif.alt}</span>
+                  <span className="flex items-center gap-1.5">
+                    {visuels.map((visuel, index) => (
+                      <button
+                        key={visuel.src}
+                        onClick={() => setSlideActive(index)}
+                        aria-label={`Voir ${visuel.alt}`}
+                        aria-current={index === indexActif}
+                        className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                          index === indexActif
+                            ? "bg-white"
+                            : "bg-white/40 hover:bg-white/70"
+                        }`}
+                      />
+                    ))}
+                  </span>
+                </div>
+              </>
+            )}
 
             {/* Badge genre et heure */}
             {/* <div className="absolute top-4 left-4">
@@ -163,19 +258,84 @@ function ModalArtiste({ artist, isOpen, onClose }) {
               {/* Description */}
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
-                  À propos
+                  {estUnCollectif ? "Le collectif" : "À propos"}
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line text-center">
                   {artist.description}
                 </p>
               </div>
 
+              {/* Membres (collectif / duo) */}
+              {estUnCollectif && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">
+                    {artist.members.length === 2
+                      ? "Le duo"
+                      : "Les membres du collectif"}
+                  </h3>
+                  <div className="space-y-4">
+                    {artist.members.map((member) => (
+                      <div
+                        key={member.name}
+                        className="bg-gray-50 rounded-lg p-4 flex flex-col sm:flex-row sm:items-start gap-4"
+                      >
+                        {member.image && (
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            className="w-full sm:w-24 h-40 sm:h-28 object-cover rounded-lg shadow-sm flex-shrink-0"
+                          />
+                        )}
+                        <div className="min-w-0">
+                          <h4 className="text-lg font-bold text-gray-800">
+                            {member.name}
+                          </h4>
+                          {member.genre && (
+                            <p className="text-sm text-purple-700 mb-2">
+                              {member.genre}
+                            </p>
+                          )}
+                          {member.description && (
+                            <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+                              {member.description}
+                            </p>
+                          )}
+                          {member.socialLinks && (
+                            <div className="flex flex-wrap gap-3 mt-3">
+                              {Object.entries(member.socialLinks).map(
+                                ([platform, link]) => (
+                                  <a
+                                    key={platform}
+                                    href={link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center space-x-2 px-3 py-2 bg-white hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors duration-200"
+                                  >
+                                    <PlatformIcon
+                                      platform={platform}
+                                      className="w-4 h-4 text-gray-600"
+                                    />
+                                    <span className="text-sm font-medium text-gray-700">
+                                      {getPlatformInfo(platform).label}
+                                    </span>
+                                  </a>
+                                )
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Réseaux sociaux */}
               {artist.socialLinks &&
                 Object.keys(artist.socialLinks).length > 0 && (
                   <div className="mb-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">
-                      Suivre l'artiste
+                      {estUnCollectif ? "Suivre le collectif" : "Suivre l'artiste"}
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {Object.entries(artist.socialLinks).map(
