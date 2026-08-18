@@ -57,12 +57,16 @@ function Retrospective() {
               />
             </div>
 
-            <div className="inline-block bg-white/60 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm">
-              <p className="text-xl text-gray-700 font-medium">
+            {/* Sous-titre : typographique, sans cadre (même traitement que sur
+                Infos Pratiques et Programmation) */}
+            <div className="inline-flex items-center gap-4">
+              <span className="hidden sm:block h-px w-10 bg-[#F0A5B8]"></span>
+              <p className="text-xl sm:text-2xl text-[#F4D4DC] font-medium italic">
                 {edition.theme && `  ${edition.theme} • `}
                 {edition.numero}
                 <sup>e</sup> édition <br></br>{edition.annee}
               </p>
+              <span className="hidden sm:block h-px w-10 bg-[#F0A5B8]"></span>
             </div>
           </div>
         </div>

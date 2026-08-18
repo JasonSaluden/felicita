@@ -93,7 +93,7 @@ const moyensDeVenir = [
     Icone: IconeVelo,
     couleurIcone: "bg-green-100 text-green-700 border-green-200",
     texte:
-      "Départ collectif prévu depuis Angers vers 11h30 pour venir en mode tout doux ! Plus d'infos à venir",
+      "Départ collectif prévu depuis Angers vers 13h30 pour venir en mode tout doux ! Plus d'infos à venir",
     // Pas encore de lien : la carte s'affiche sans bouton tant que `lien` est absent
   },
 ];

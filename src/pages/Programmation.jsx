@@ -53,11 +53,14 @@ function Programmation() {
               />
             </div>
 
-            {/* Sous-titre avec cadre */}
-            <div className="inline-block bg-white/60 backdrop-blur-sm border border-gray-200 px-6 py-3 rounded-full shadow-sm">
-              <p className="text-xl text-gray-700 font-medium">
+            {/* Sous-titre : typographique, sans cadre, pour ne pas ressembler
+                à un bouton (même traitement que sur Infos Pratiques) */}
+            <div className="inline-flex items-center gap-4">
+              <span className="hidden sm:block h-px w-10 bg-[#F0A5B8]"></span>
+              <p className="text-xl sm:text-2xl text-[#F4D4DC] font-medium italic">
                 Samedi 29 août 2026
               </p>
+              <span className="hidden sm:block h-px w-10 bg-[#F0A5B8]"></span>
             </div>
           </div>
         </div>
