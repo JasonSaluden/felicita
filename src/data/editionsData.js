@@ -1,6 +1,7 @@
 // data/editionsData.js
 import { artistes2025 } from "./artistes2025";
 import { artistes2026 } from "./artistes2026";
+import { activites2026 } from "./activites2026";
 import { partenaires2025 } from "./partenaires2025";
 import { partenaires2026 } from "./partenaires2026";
 
@@ -17,6 +18,8 @@ export const EDITION_EN_COURS = {
   theme: "",
   affiche: "/assets/affiches/Affiche_Felicita_Festival_2026.webp",
   artists: artistes2026,
+  // Activités gratuites (à partir de 14h) : voir activites2026.js
+  activites: activites2026,
   partenaires: partenaires2026,
 };
 

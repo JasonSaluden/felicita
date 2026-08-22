@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import ArtistCardSimple from "../components/ArtistCardSimple";
 import ModalArtiste from "../components/ModalArtiste";
 import Partenaires from "../components/Partenaires";
+import Activites from "../components/Activites";
 import { EDITION_EN_COURS } from "../data/editionsData";
 
 function Programmation() {
@@ -10,6 +11,16 @@ function Programmation() {
   const aDesArtistes = artists.length > 0;
 
   const partenaires = EDITION_EN_COURS.partenaires;
+  const activites = EDITION_EN_COURS.activites || [];
+
+  // Défilement vers la section ciblée par l'ancre (#activites par exemple) :
+  // react-router ne le fait pas tout seul lors d'un changement de page.
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    const cible = document.getElementById(hash.slice(1));
+    if (cible) cible.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [hash]);
 
   // État pour la modal
   const [selectedArtist, setSelectedArtist] = useState(null);
@@ -73,7 +84,7 @@ function Programmation() {
           <>
             <div className="text-center mb-10">
               <h2 className="text-3xl lg:text-4xl font-bold text-[#F4D4DC] tracking-wide">
-                Les artistes de cette édition
+                Les concerts
               </h2>
               <div className="flex items-center justify-center mt-4">
                 <div className="h-px w-24 bg-gray-300/70"></div>
@@ -154,8 +165,16 @@ function Programmation() {
                 La programmation de cette nouvelle édition est en cours de
                 préparation. Restez connectés, les artistes seront bientôt
                 dévoilés !
+                
               </p>
             </div>
+          </div>
+        )}
+
+        {/* Activités gratuites, à la suite des artistes (ancre #activites) */}
+        {activites.length > 0 && (
+          <div className="mb-16">
+            <Activites activites={activites} />
           </div>
         )}
 

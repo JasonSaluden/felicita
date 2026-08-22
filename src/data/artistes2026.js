@@ -211,28 +211,6 @@ export const artistes2026 = [
       },
     ],
   },
-  {
-    id: 9,
-    name: "Lanlaire",
-    image: "/assets/artistes/2026/Lanlaire_post.webp",
-    image2: "/assets/artistes/2026/Lanlaire_post.webp",
-    description:
-      "Avec leur projet Lanlaire, Esther & Nathan proposent un concert théâtralisé. De 1683 à 2026, reprises et compositions dialoguent à l’aide du piano et de la voix, mais aussi du cajon, du glockenspiel et autres surprises musicales. Dans un rapport tantôt clownesque, tantôt amoureux, les deux interprètes inventent un monde musical tonitruant où la chanson française est à l’honneur, aux côtés de répertoires lyrique, jazz, électro... Lanlaire déclame sa poésie fragile et extravagante, tissant des liens entre les morceaux pour former une sorte de parcours initiatique exalté.",
-    genre: "Chanson française théâtralisée",
-    time: "",
-    videos: [
-      {
-        type: "local",
-        src: "/assets/videos/Lanlaire_Extrait.mp4",
-        title: "Vous êtes comme la musique (extrait)",
-      },
-      {
-        type: "local",
-        src: "/assets/videos/Lanlaire_Teaser.mp4",
-        title: "Teaser",
-      },
-    ],
-  },
 ];
 
 export const getArtiste2026ById = (id) =>

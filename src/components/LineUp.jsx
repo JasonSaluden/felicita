@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ArtistCardSimple from "./ArtistCardSimple";
 import ModalArtiste from "./ModalArtiste";
+import Activites from "./Activites";
 import { EDITION_EN_COURS } from "../data/editionsData";
 
 function LineUp() {
@@ -15,6 +16,9 @@ function LineUp() {
     .sort((a, b) => a.id - b.id)
     .slice(0, 3);
   const aDesArtistes = aLaUne.length > 0;
+
+  // Activités gratuites de l'édition en cours (aperçu de 3 sur l'accueil)
+  const activites = EDITION_EN_COURS.activites || [];
 
   // Modal artiste
   const [selectedArtist, setSelectedArtist] = useState(null);
@@ -157,6 +161,26 @@ function LineUp() {
           </div>
         )}
       </div>
+
+      {/* ===== Aperçu des activités gratuites ===== */}
+      {activites.length > 0 && (
+        <div className="max-w-7xl mx-auto mt-20">
+          <Activites
+            activites={activites}
+            limite={3}
+            id="apercu-activites"
+          />
+
+          <div className="text-center mt-12">
+            <Link
+              to="/programmation#activites"
+              className="inline-block bg-[#CB97FF] text-[#0A1F14] px-8 py-3 rounded-full font-bold hover:bg-[#E89BAE] transition-colors"
+            >
+              Découvrir toutes les activités
+            </Link>
+          </div>
+        </div>
+      )}
 
       {/* Modal artiste */}
       <ModalArtiste
